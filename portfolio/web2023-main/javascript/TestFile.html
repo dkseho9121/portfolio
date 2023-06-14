@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript : 배열객체</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <link rel="shortcut icon" href="assets/ico/javascript.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/javascript192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/ico/javascript192x192.png">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">배열 메서드 : join() : 배열 요소 문자열 결합</a></li>
+                <li><a href="#">배열 메서드 : push() : 배열 마지막 요소에 요소를 추가</a>★</li>
+                <li><a href="#">배열 메서드 : pop() : 배열 마지막 요소를 삭제</a></li>
+                <li><a href="#">배열 메서드 : unshift() : 배열 처음 요소에 요소를 추가</a></li>
+                <li><a href="#">배열 메서드 : shift() : 배열 처음 요소를 삭제</a></li>
+                <li><a href="#">배열 메서드 : reverse()</a></li>
+                <li><a href="#">배열 메서드 : sort()</a>★</li>
+                <li><a href="#">배열 메서드 : concat()</a></li>
+                <li><a href="#">배열 메서드 : reduce()</a></li>
+                <li><a href="#">배열 메서드 : reduceRight()</a></li>
+                <li><a href="#">배열 메서드 : slice()</a>★★</li>
+                <li><a href="#">배열 메서드 : splice()</a>★★</li>
+                <li><a href="#">배열 메서드 : indexOf()</a>★</li>
+                <li><a href="#">배열 메서드 : lastindexOf()</a></li>
+                <li><a href="#">배열 메서드 : includes()</a></li>
+                <li><a href="#">배열 메서드 : findIndex()</a></li>
+                <li><a href="#">배열 메서드 : filter()</a></li>
+                <li><a href="#">배열 메서드 : map()</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="container">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#">01. 변수 : 데이터 저장</a></li>
+                    <li><a href="#">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
+                    <li><a href="#">03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
+                    <li><a href="#">04. 변수 : 지역 변수 + 전역 변수(스코프)</a></li>
+                    <li><a href="#">05. 상수 : 데이터 저장 + 데이터 변경(X)</a></li>
+                    <li><a href="#">06. 배열 : 데이터 저장(여러개) : 표현방법1</a></li>
+                    <li><a href="#">07. 배열 : 데이터 저장(여러개) : 표현방법2</a></li>
+                    <li><a href="#">08. 배열 : 데이터 저장(여러개) : 표현방법3</a></li>
+                    <li><a href="#">09. 배열 : 데이터 저장(여러개) : 표현방법4</a></li>
+                    <li><a href="#">10. 객체 : 데이터 저장(키와값) : 표현방법1</a></li>
+                    <li><a href="#">11. 객체 : 데이터 저장(키와값) : 표현방법2</a></li>
+                    <li><a href="#">12. 객체 : 데이터 저장(키와값) : 표현방법3</a></li>
+                    <li><a href="#">13. 객체 : 데이터 저장(키와값) : 표현방법4</a></li>
+                    <li><a href="#">14. 객체 : 데이터 저장(키와값) : 표현방법5</a></li>
+                    <li><a href="#">15. 객체 : 데이터 저장(키와값) : 표현방법6</a></li>
+                    <li><a href="#">16. 객체 : 데이터 저장(키와값) : 표현방법7</a></li>
+                    <li><a href="#">17. 객체 : 데이터 저장(키와값) : 표현방법8</a></li>
+                    <li><a href="#">++ 식별자, 예약자</a></li>
+                    <li><a href="#">++ 연산자(전치, 후치)</a></li>
+                    <li><a href="#">++ 형변화, typeof( )</a></li>
+
+                </ul>
+            </div>
+            <div class="main__sample">
+                <div id="sample01" class="sample" style="padding-top: 40px;">
+                        <h3>01. 변수 : 데이터 저장</h3>
+                    변수는 데이터를 저장하는 "저장소" 이며 이 저장소에는 숫자, 문자, 함수, 객체 등을 저장할수 있습니다.</br>
+                    <div class="script">
+                        <pre class="line-numbers"><code class="language-js">{
+    var x = 100;        
+    var y = 200;            
+    var z = "javascript";
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+}
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                "javascript"
+                            </div>
+                        </details>
+                    </div>
+                    <div class="notice">
+                        변수는 데이터를 저장하는 <mark>"저장소"</mark> 이며 이 <mark>저장소에는 숫자, 문자, 함수, 객체 등을 저장할수 있습니다.</mark><br>
+                        JavaScript es6가 나온 후로는 var를 쓰지 않습니다.<br> 왜냐하면 var는 문제점이 많기 때문입니다.
+                        var의 많은 문제점들중 하나는 <mark>변수 중복</mark>입니다.<br>
+                        변수가 중복이되어 에러가 나야하는 코드를 입력했을때 var를 사용하면 정상적으로 결과가 출력이 됩니다.<br>
+                        혼자서는 문제가없을지 모르지만, 이게 <mark>다수와 함께하는 프로젝트라면 나비효과처럼 엄청난 문제를 일으킬것입니다.</mark>
+                    </div>
+                </div>
+                <!-- //sample01 -->
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="dlscks0930@naver.com">dlscks0930@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/prism.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

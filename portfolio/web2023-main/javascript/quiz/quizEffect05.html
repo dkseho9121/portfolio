@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트05</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../javascript14.html">Quiz</a> <em>객관식 확인하기(여러문제)유형</em></h1>
+        <ul>
+            <li><a href="quizEffect01.html">1</a></li>
+            <li><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect03.html">3</a></li>
+            <li><a href="quizEffect04.html">4</a></li>
+            <li class="active"><a href="quizEffect05.html">5</a></li>
+            <li><a href="quizEffect06.html">6</a></li>
+            <li><a href="quizEffect07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //header-->
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header">
+                    <h2 class="quiz__title"></h2>
+                </div>
+                <div class="quiz__main">
+                    <div class="quiz__question"></div>
+                    <div class="quiz__view">
+                        <div class="dog__wrap">
+                            <div class="true">정답입니다!</div>
+                            <div class="false">틀렸습니다!</div>
+                            <div class="card-container">
+                                <div class="dog">
+                                    <div class="head">
+                                        <div class="ears"></div>
+                                        <div class="face"></div>
+                                        <div class="eyes">
+                                            <div class="teardrop"></div>
+                                        </div>
+                                        <div class="nose"></div>
+                                        <div class="mouth">
+                                            <div class="tongue"></div>
+                                        </div>
+                                        <div class="chin"></div>
+                                    </div>
+                                    <div class="body">
+                                        <div class="tail"></div>
+                                        <div class="legs"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__choice">
+                        <label for="choice1">
+                            <input type="radio" id="choice1" name="choice" value="1">
+                            <span></span>
+                        </label>
+                        <label for="choice2">
+                            <input type="radio" id="choice2" name="choice" value="2">
+                            <span></span>
+                        </label>
+                        <label for="choice3">
+                            <input type="radio" id="choice3" name="choice" value="3">
+                            <span></span>
+                        </label>
+                        <label for="choice4">
+                            <input type="radio" id="choice4" name="choice" value="4">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="quiz__answer">
+                        <button class="confirm">정답 확인하기</button>
+                    </div>
+                    <div class="quiz__desc"></div>
+                </div>
+            </div>
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:dlscks0930@gmail.com">dlscks0930@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>
+        // 문제 정보
+        const quizInfo = [
+            {
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050201",
+                infoQuestion: "연산작업을 할 때, 연산의 중간 결과나 데이터 저장시 레지스터를 사용하는 주된 이유는?",
+                infoChoice: {
+                    1: "인터럽트 요청을 방지하기 위하여",
+                    2: "연산 속도 향상을 위하여",
+                    3: "기억 장소를 절약하기 위하여",
+                    4: "연산의 정확성을 위하여",
+                },
+                infoAnswer: "2",
+                infoDesc: "연산작업을 할 때, 연산의 중간 결과나 데이터 저장시 레지스터를 사용하는 주된 이유는 연산속도 향상을 위해서 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050202",
+                infoQuestion: "반가산기(Half-Adder)에서 두 개의 입력 비트가 모두 1일 때 합(Sum)은?",
+                infoChoice: {
+                    1: "0",
+                    2: "1",
+                    3: "10",
+                    4: "11",
+                },
+                infoAnswer: "1",
+                infoDesc: "반가산기(Half-Adder)에서 두 개의 입력 비트가 모두 1일 때 합(Sum)은 0입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050203",
+                infoQuestion: "컴퓨터에 의하여 다음에 실행될 명령어의 주소가 저장되어 있는 기억 장소는?",
+                infoChoice: {
+                    1: "프로그램 카운터(Program Counter)",
+                    2: "메모리 레지스터(Memory Register)",
+                    3: "명령어 레지스터(Instruction Register)",
+                    4: "인덱스 레지스터(Index Register)",
+                },
+                infoAnswer: "1",
+                infoDesc: "프로그램 카운터는 컴퓨터에의하여 다음에 실행될 명령어의 주소가 저장되어있는 기억장소입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050204",
+                infoQuestion: "CPU 에서 명령이 실행되는 순서를 제어하거나 특정 프로그램에 관련된 컴퓨터 시스템의 상태를 나타내고 유지하기 위한 제어 워드로서, 실행중인 CPU의 상황을 나타내는 것은?",
+                infoChoice: {
+                    1: "PSW",
+                    2: "MBR",
+                    3: "MAR",
+                    4: "PC",
+                },
+                infoAnswer: "1",
+                infoDesc: "CPU 에서 명령이 실행되는 순서를 제어하거나 특정 프로그램에 관련된 컴퓨터 시스템의 상태를 나타내고 유지하기 위한 제어 워드로서, 실행중인 CPU의 상황을 나타내는 것은 PSW입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050205",
+                infoQuestion: "명령어는 연산자 부분과 주소 부분으로 구성되는데 주소(Operand)부분의 구성 요소가 아닌 것은?",
+                infoChoice: {
+                    1: "데이터의 주소자체",
+                    2: "명령어 순서",
+                    3: "데이터 종류",
+                    4: "데이터가 있는 주소를 구하는데 필요한 정보",
+                },
+                infoAnswer: "3",
+                infoDesc: "명령어는 연산자 부분과 주소 부분으로 구성되는데 다양한 구성요소중 데이터 종류는 주소부분의 구성요소가 아닙니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050206",
+                infoQuestion: "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는?",
+                infoChoice: {
+                    1: "6",
+                    2: "8",
+                    3: "10",
+                    4: "12",
+                },
+                infoAnswer: "3",
+                infoDesc: "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는 10입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050207",
+                infoQuestion: "연산자의 기능과 거리가 먼 것은?",
+                infoChoice: {
+                    1: "주소지정 기능",
+                    2: "제어 기능",
+                    3: "함수연산 기능",
+                    4: "입출력 기능",
+                },
+                infoAnswer: "1",
+                infoDesc: "연산자의 기능과 거리가 먼 것은 주소지정 기능이라고 할수있습니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050208",
+                infoQuestion: "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는?",
+                infoChoice: {
+                    1: "<img style='width:130px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname01.jpg?raw=true'>",
+                    2: "<img style='width:130px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname021.jpg?raw=true'>",
+                    3: "<img style='width:130px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname012.jpg?raw=true'>",
+                    4: "<img style='width:130px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname014.jpg?raw=true'>",
+                },
+                infoAnswer: "3",
+                infoDesc: "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는 10입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050209",
+                infoQuestion: "번지(Address)로 지정된 저장위치(Storage Location)의 내용이 실제의 번지가 되는 주소지정번지는?",
+                infoChoice: {
+                    1: "간접지정번지",
+                    2: "완전지정번지",
+                    3: "절대지정번지",
+                    4: "상대지정번지",
+                },
+                infoAnswer: "1",
+                infoDesc: "번지(Address)로 지정된 저장위치(Storage Location)의 내용이 실제의 번지가 되는 주소지정번지는 간접지정번지 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050210",
+                infoQuestion: "2진수 0.1101을 10진수로 변환하면?",
+                infoChoice: {
+                    1: "0.8125",
+                    2: "0.875",
+                    3: "0.9375",
+                    4: "0.975",
+                },
+                infoAnswer: "1",
+                infoDesc: "진수 0.1101을 10진수로 변환하면 0.8125입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050211",
+                infoQuestion: "0-주소 명령은 연산시 어떤 자료 구조를 이용하는가?",
+                infoChoice: {
+                    1: "STACK",
+                    2: "TREE",
+                    3: "QUEUE",
+                    4: "DEQUE",
+                },
+                infoAnswer: "1",
+                infoDesc: "0-주소 명령은 연산시 STACK자료 구조를 이용합니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050212",
+                infoQuestion: "이항(Binary) 연산에 해당하는 것은??",
+                infoChoice: {
+                    1: "COMPLEMENT",
+                    2: "AND",
+                    3: "ROTATE",
+                    4: "SHIFT",
+                },
+                infoAnswer: "2",
+                infoDesc: "이항 연산에 해당하는것은 AND 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050213",
+                infoQuestion: "채널(Channel)은 어느 곳에 위치하는가?",
+                infoChoice: {
+                    1: "주기억장치와 CPU의 중간에 위치한다.",
+                    2: "연산장치와 레지스터 중간에 위치한다.",
+                    3: "주기억장치와 입·출력장치의 중간에 위치한다.",
+                    4: "주기억장치와 보조기억장치의 양쪽에 위치한다.",
+                },
+                infoAnswer: "3",
+                infoDesc: "채널은 주기억장치와 입출력장치의 중간에 위치합니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050214",
+                infoQuestion: "“NOR”회로에 대하여 바르게 설명된 것은?",
+                infoChoice: {
+                    1: "“OR”회로와 “NOT”회로의 분리회로",
+                    2: "“AND”회로와 “NOT”회로의 연결회로",
+                    3: "“OR”회로와 “NOT”회로의 결합회로",
+                    4: "“YES”회로와 “NO”회로의 결합회로",
+                },
+                infoAnswer: "3",
+                infoDesc: "“NOR”회로에 대하여 바르게 설명된 것은 “OR”회로와 “NOT”회로의 결합회로 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050215",
+                infoQuestion: "4매로 이루어진 디스크 팩에서 1면에 200개의 트랙을 사용할 수 있다고 할 때, 이 디스크팩의 사용 가능한 실린더는 모두 몇 개인가?",
+                infoChoice: {
+                    1: "100",
+                    2: "200",
+                    3: "400",
+                    4: "800",
+                },
+                infoAnswer: "3",
+                infoDesc: "200개입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050216",
+                infoQuestion: "논리적 연산의 종류에 해당되지 않는 것은?",
+                infoChoice: {
+                    1: "AND",
+                    2: "OR",
+                    3: "Rotate",
+                    4: "ADD",
+                },
+                infoAnswer: "4",
+                infoDesc: "ADD는 논리적연산자의 해당되지않습니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050217",
+                infoQuestion: "기억장치의 종류에 해당되지 않는 메모리(Memory)는?",
+                infoChoice: {
+                    1: "ROM",
+                    2: "RAM",
+                    3: "REM",
+                    4: "EPROM",
+                },
+                infoAnswer: "3",
+                infoDesc: "기억장치의 종류에 해당되지 않는 메모리(Memory)는 REM 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050218",
+                infoQuestion: "다음 보기의 기호에 맞는 불(Boolean) 대수식은? <br> <img style='width:300px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname053.gif?raw=true'>",
+                infoChoice: {
+                    1: "<img style='width:100px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname30.gif?raw=true'>",
+                    2: "<img style='width:100px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname31.gif?raw=true'>",
+                    3: "<img style='width:100px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname32.gif?raw=true'>",
+                    4: "<img style='width:100px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname33.gif?raw=true'>",
+                },
+                infoAnswer: "1",
+                infoDesc: "ㅎㅎ"
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050219",
+                infoQuestion: "다음 중 플립플롭의 종류가 아닌 것은?",
+                infoChoice: {
+                    1: "R-S",
+                    2: "J-K",
+                    3: "D",
+                    4: "R",
+                },
+                infoAnswer: "4",
+                infoDesc: "다음 중 플립플롭의 종류가 아닌 것은 R입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050220",
+                infoQuestion: "8개의 bit로 표현 가능한 정보의 최대 가지수는?",
+                infoChoice: {
+                    1: "255",
+                    2: "256",
+                    3: "257",
+                    4: "258",
+                },
+                infoAnswer: "2",
+                infoDesc: "8개의 bit로 표현 가능한 정보의 최대 가지수는 256입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050221",
+                infoQuestion: "INSA(SNO, NAME) 테이블에서 SNO가 100인 튜플을 삭제하는 SQL 문은?",
+                infoChoice: {
+                    1: "DELETE FROM INSA WHERE SNO = 100 ;",
+                    2: "REMOVE FROM INSA WHERE SNO = 100 ;",
+                    3: "DROP TABLE INSA WHERE SNO = 100 ;",
+                    4: "DESTROY INSA WHERE SNO = 100 ;",
+                },
+                infoAnswer: "1",
+                infoDesc: "INSA(SNO, NAME) 테이블에서 SNO가 100인 튜플을 삭제하는 SQL 문은 DELETE FROM INSA WHERE SNO = 100 ; 입니다.."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050222",
+                infoQuestion: "아래 보기에서 설명하는 내용과 가장 가까운 데이터베이스는? <br> <img style='width:450px' src='https://github.com/dkseho9121/web2023/blob/main/javascript/quiz/noname01444.gif?raw=true'>",
+                infoChoice: {
+                    1: "네트워크형 데이터베이스",
+                    2: "계층형 데이터베이스",
+                    3: "관계형 데이터베이스",
+                    4: "객체 지향 데이터베이스",
+                },
+                infoAnswer: "3",
+                infoDesc: "관계형 데이터베이스입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050223",
+                infoQuestion: "SQL 문의 형식 중 옳지 않은 것은?",
+                infoChoice: {
+                    1: "INSERT - SET - WHERE",
+                    2: "UPDATE - SET - WHERE",
+                    3: "DELETE - FROM - WHERE",
+                    4: "SELECT - FROM - WHERE",
+                },
+                infoAnswer: "1",
+                infoDesc: "INSERT - SET - WHERE은 SQL문의 형식이 아닙니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050224",
+                infoQuestion: "SQL에서 조건문을 기술할 수 있는 구문은?",
+                infoChoice: {
+                    1: "LIKE",
+                    2: "WHERE",
+                    3: "SELECT",
+                    4: "FROM",
+                },
+                infoAnswer: "2",
+                infoDesc: "SQL에서 조건문을 기술할 수 있는 구문은 WHERE 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050225",
+                infoQuestion: "테이블 구조를 변경하는데 사용하는 SQL 명령은?",
+                infoChoice: {
+                    1: "ALTER TABLE",
+                    2: "CREATE TABLE",
+                    3: "DROP TABLE",
+                    4: "CREATE INDEX",
+                },
+                infoAnswer: "1",
+                infoDesc: "테이블 구조를 변경하는데 사용하는 SQL 명령은 ALTER TABLE 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050226",
+                infoQuestion: "데이터베이스를 활용하는 업무처리 프로그램의 개발시 개발 순서로 바른 것은?",
+                infoChoice: {
+                    1: "설계 - 업무분석 - 프로그램 개발 - 테스트 - 운용 및 보수유지",
+                    2: "프로그램 개발 - 설계 - 운용 및 보수유지 - 테스트 - 업무분석",
+                    3: "설계 - 업무분석 - 프로그램 개발 - 운용 및 보수유지 - 테스트",
+                    4: "업무분석 - 설계 - 프로그램 개발 - 테스트 - 운용 및 보수유지",
+                },
+                infoAnswer: "4",
+                infoDesc: "업무분석 - 설계 - 프로그램 개발 - 테스트 - 운용 및 보수유지가 올바른 순서입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050227",
+                infoQuestion: "전자 회계장부라고 불리 우는 표 계산 프로그램을 의미하는 것은?",
+                infoChoice: {
+                    1: "Spread Sheet",
+                    2: "Presentation",
+                    3: "Word Processor",
+                    4: "CAD Program",
+                },
+                infoAnswer: "1",
+                infoDesc: "Spread Sheet는 전자회계장부라고 불리웁니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050228",
+                infoQuestion: "데이터베이스를 사용하는 경우의 장점이 아닌 것은?",
+                infoChoice: {
+                    1: "데이터 중복의 최대화",
+                    2: "데이터의 무결성 유지",
+                    3: "데이터의 공용 사용",
+                    4: "데이터의 일관성 유지",
+                },
+                infoAnswer: "1",
+                infoDesc: "데이터베이스를 사용하는 경우의 장점이 아닌 것은 데이터공용사용입니다.."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050229",
+                infoQuestion: "데이터베이스 구조를 3단계의 스키마로 나눌 경우 포함되지 않는 것은?",
+                infoChoice: {
+                    1: "외부 스키마",
+                    2: "개념 스키마",
+                    3: "논리 스키마",
+                    4: "내부 스키마",
+                },
+                infoAnswer: "3",
+                infoDesc: "데이터베이스 구조를 3단계의 스키마로 나눌 경우 포함되지 않는 것은 논리스키마 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050230",
+                infoQuestion: "프레젠테이션 프로그램을 사용하는 용도 중 가장 거리가 먼 것은?",
+                infoChoice: {
+                    1: "회사의 제품 선전용",
+                    2: "통계자료 작성",
+                    3: "신제품 설명회",
+                    4: "강연회 준비",
+                },
+                infoAnswer: "3",
+                infoDesc: "프레젠테이션 프로그램을 사용하는 용도 중 가장 거리가 먼 것은 통계자료 작성입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050231",
+                infoQuestion: "아래 내용이 설명하는 Windows 98의 기능은? <br> HardWare should autom atically be detecter and installed by windows98",
+                infoChoice: {
+                    1: "PnP(Plug and Play)",
+                    2: "Drag and Drop",
+                    3: "OLE(Object Linking and Embedding)",
+                    4: "DMA(Direct Memory Access)",
+                },
+                infoAnswer: "1",
+                infoDesc: "php는 위 보기 내용에서 설명하는 window98의 기능입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050232",
+                infoQuestion: "도스(MS-DOS)에서 Ctrl + Alt + Del 키를 눌러 재부팅 하였다. 이러한 재부팅 방법을 무엇이라 하는가?",
+                infoChoice: {
+                    1: "콜드 부팅 (Cold Booting)",
+                    2: "웜 부팅 (Warm Booting)",
+                    3: "하드 부팅 (Hard Booting)",
+                    4: "핫 부팅 (Hot Booting)",
+                },
+                infoAnswer: "2",
+                infoDesc: "웜 부팅이란 Ctrl + Alt + Del 키를 눌러 재부팅 하는것을 의미합니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050233",
+                infoQuestion: "운영체제의 구성 요소 중 프로세스를 생성, 실행, 중단, 소멸 시키는 것은?",
+                infoChoice: {
+                    1: "스케줄러(Scheduler)",
+                    2: "드라이버(Driver)",
+                    3: "에디터(Editor)",
+                    4: "풀러(Spooler)",
+                },
+                infoAnswer: "1",
+                infoDesc: "운영체제의 구성 요소 중 프로세스를 생성, 실행, 중단, 소멸 시키는 것은 스케줄러 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050234",
+                infoQuestion: "Windows 98의 시스템 도구 중 디스크의 손상된 부분을 점검하여 복구해 주는 것은?",
+                infoChoice: {
+                    1: "디스크 검사",
+                    2: "디스크 조각 모음",
+                    3: "디스크 공간 늘임",
+                    4: "디스크 압축",
+                },
+                infoAnswer: "1",
+                infoDesc: "Windows 98의 시스템 도구 중 디스크의 손상된 부분을 점검하여 복구해 주는 것은 디스크검사라고합니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050235",
+                infoQuestion: "Windows 98의 클립보드에 대한 설명으로 옳지 않은 것은?",
+                infoChoice: {
+                    1: "윈도에서 자료를 일시적으로 보관하는 장소를 제공한다",
+                    2: "선택된 대상을 클립보드에 오려두기를 할 때 사용되는 단축키는 Ctrl + V 이다.",
+                    3: "가장 최근에 저장된 파일 하나만을 저장할 수 있다.",
+                    4: "클립보드에 현재화면 전체를 복사하는 기능 키는 Print Screen이다.",
+                },
+                infoAnswer: "2",
+                infoDesc: "오려두기는 Ctrl + X 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050236",
+                infoQuestion: "Unix에서 태스크 스케줄링(Task-Scheduling) 및 기억장치 관리(Memory Management) 등의 일을 수행하는 부분은?",
+                infoChoice: {
+                    1: "Kernel",
+                    2: "Shell",
+                    3: "Utility Program",
+                    4: "Application Program",
+                },
+                infoAnswer: "1",
+                infoDesc: "Unix에서 태스크스케줄링 및 기억장치관리등의 일을 수행하는부분은 Kernel입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050237",
+                infoQuestion: "Windows 98에서 파일의 목록을 보는 방법으로서 적당하지 않은 것은?",
+                infoChoice: {
+                    1: "“내 컴퓨터”를 이용하여 파일의 목록을 볼 수 있다.",
+                    2: "“탐색기”를 이용하여 파일의 목록을 볼 수 있다.",
+                    3: "“파일관리자”를 이용하여 파일의 목록을 볼 수 있다.",
+                    4: "“작업표시줄”을 이용하여 파일의 목록을 볼 수 있다.",
+                },
+                infoAnswer: "4",
+                infoDesc: "Windows 98에서 파일의 목록을 보는 방법으로서 적당하지 않은 것은 “작업표시줄”을 이용하여 파일의 목록을 볼 수 있다.입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050238",
+                infoQuestion: "하드 디스크의 분할을 설정하고 논리적 드라이브 번호를 할당하는 DOS의 외부명령어는?",
+                infoChoice: {
+                    1: "FDISK",
+                    2: "CHKDSK",
+                    3: "RECOVER",
+                    4: "DISKCOMP",
+                },
+                infoAnswer: "1",
+                infoDesc: "하드 디스크의 분할을 설정하고 논리적 드라이브 번호를 할당하는 DOS의 외부명령어는 FDISK입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050239",
+                infoQuestion: "Windows 98의 특징으로 거리가 먼 것은?",
+                infoChoice: {
+                    1: "16비트 운영체제이다.",
+                    2: "Plug and Play 기능을 지원한다.",
+                    3: "인터넷 접속 기능이 있다.",
+                    4: "멀티 태스킹을 제공한다.",
+                },
+                infoAnswer: "1",
+                infoDesc: "Windows 98의 특징으로 거리가 먼 것은 16비트 운영체제입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050240",
+                infoQuestion: "도스(MS-DOS)에서 파일의 이름을 알파벳 순으로 표시하는 명령어는?",
+                infoChoice: {
+                    1: "DIR/ON",
+                    2: "DIR/OS",
+                    3: "DIR/OA",
+                    4: "DIR/OD",
+                },
+                infoAnswer: "1",
+                infoDesc: "도스(MS-DOS)에서 파일의 이름을 알파벳 순으로 표시하는 명령어는 DIR/ON"
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050241",
+                infoQuestion: "Which is not outer command at DOS?",
+                infoChoice: {
+                    1: "CHKDSK",
+                    2: "DISKCOPY",
+                    3: "PROMPT",
+                    4: "SYS",
+                },
+                infoAnswer: "3",
+                infoDesc: "ㅎㅎ"
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050242",
+                infoQuestion: "업무처리를 실시간 시스템(Real-Time System)으로 처리할 필요가 없는 것은?",
+                infoChoice: {
+                    1: "적의 공중 공격에 대비하여 동시에 여러 지점을 감시하는 시스템",
+                    2: "가솔린 정련에서 온도가 너무 높이 올라가는 경우 폭발을 방지하기 위해 조치를 취하는 시스템",
+                    3: "고객명단 자료를 월 단위로 묶어 처리하는 시스템",
+                    4: "교통 관리, 비행조정 등과 같은 외부 상태에 대한 신속한 제어를 목적으로 하는 시스템",
+                },
+                infoAnswer: "3",
+                infoDesc: "업무처리를 실시간 시스템(Real-Time System)으로 처리할 필요가 없는 것은 고객명단 자료를 월 단위로 묶어 처리하는 시스템"
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050243",
+                infoQuestion: "UNIX에서 입력시 사용되는 “Kill” 명령에 대한 설명으로 옳은 것은?",
+                infoChoice: {
+                    1: "마지막에 입력한 문자를 지운다.",
+                    2: "마지막에 입력한 단어를 지운다.",
+                    3: "한줄 전체를 지운다.",
+                    4: "새 줄의 입력을 위하여 한줄을 띄운다.",
+                },
+                infoAnswer: "3",
+                infoDesc: "UNIX에서 입력시 사용되는 “Kill” 명령에 대한 설명으로 옳은 것은 한줄 전체를 지운다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050244",
+                infoQuestion: "Windows 98에서 C 드라이브의 하드디스크 용량을 알고자 할 때, 옳지 않은 것은?",
+                infoChoice: {
+                    1: "“제어판”의 시스템 아이콘을 클릭한다.",
+                    2: "“MS-DOS”로 들어가 CHKDSK를 실행한다.",
+                    3: "“내 컴퓨터”의 C 드라이브 등록정보를 찾는다.",
+                    4: "“Windows 탐색기”의 C 드라이브 등록정보를 찾는다.",
+                },
+                infoAnswer: "1",
+                infoDesc: "Windows 98에서 C 드라이브의 하드디스크 용량을 알고자 할때 제어판의 시스템 아이콘을 클릭하는건 옳지않다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050245",
+                infoQuestion: "Windows 98에서 바탕화면에 있는 아이콘을 정렬하려고 할 때 기본적으로 제공하는 아이콘 정렬 방식이 아닌 것은?",
+                infoChoice: {
+                    1: "계단식 정렬",
+                    2: "크기별 정렬",
+                    3: "자동 정렬",
+                    4: "종류별 정렬",
+                },
+                infoAnswer: "1",
+                infoDesc: "Windows 98에서 바탕화면에 있는 아이콘을 정렬하려고 할 때 기본적으로 제공하는 아이콘 정렬방식은 계단식 정렬입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050246",
+                infoQuestion: "UNIX 시스템에서 명령어 해석기에 해당하는 것은?",
+                infoChoice: {
+                    1: "셸(Shell)",
+                    2: "커널(Kernel)",
+                    3: "유틸리티(Utility)",
+                    4: "응용 프로그램(Application Program)",
+                },
+                infoAnswer: "1",
+                infoDesc: "UNIX 시스템에서 명령어 해석기에 해당하는 것은 셸입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050247",
+                infoQuestion: "시스템의 날짜를 변경하거나, 확인할 수 있는 DOS 명령어는?",
+                infoChoice: {
+                    1: "TIME",
+                    2: "DATE",
+                    3: "MD",
+                    4: "DEL",
+                },
+                infoAnswer: "2",
+                infoDesc: "시스템의 날짜를 변경하거나, 확인할 수 있는 DOS 명령어는 DATE 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050248",
+                infoQuestion: "Windows 98에서 화면보호기의 설정은 어디에서 하는가?",
+                infoChoice: {
+                    1: "시스템",
+                    2: "멀티미디어",
+                    3: "멀티미디어",
+                    4: "내게 필요한 옵션",
+                },
+                infoAnswer: "3",
+                infoDesc: "Windows 98에서 화면보호기의 설정은 디스플레이에서 합니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050249",
+                infoQuestion: "Windows 98의 “제어판”에서 할 수 없는 작업은?",
+                infoChoice: {
+                    1: "마우스 환경설정",
+                    2: "시스템 날짜 변경",
+                    3: "그림 작성 및 수정",
+                    4: "프로그램 추가 및 삭제 필요한 옵션",
+                },
+                infoAnswer: "3",
+                infoDesc: "Windows 98 제어판에서 그림 작성 및 수정은 불가능합니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050250",
+                infoQuestion: "작업 수행 중 예기치 못한 돌발적인 사태가 발생하여 잠시 작업 수행을 멈추고 상황에 맞는 처리를 한 후, 다시 프로그램을 진행해 나가는 것을 의미하는 것은?",
+                infoChoice: {
+                    1: "스풀링",
+                    2: "인터럽트",
+                    3: "폴링",
+                    4: "버퍼링",
+                },
+                infoAnswer: "2",
+                infoDesc: "작업 수행 중 예기치 못한 돌발적인 사태가 발생하여 잠시 작업 수행을 멈추고 상황에 맞는 처리를 한 후, 다시 프로그램을 진행해 나가는 것을 인터럽트라 칭합니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050251",
+                infoQuestion: "우리나라의 무궁화위성과 같은 정지형 통신위성의 위치를 가장 적합하게 나타낸 것은?",
+                infoChoice: {
+                    1: "지상으로부터 약 15,000[km]",
+                    2: "지구의 북회귀선상으로부터 약 25,000[km]",
+                    3: "지구 적도 상공 약 36,000[km]",
+                    4: "지구 극점으로부터 약 45,000[km]",
+                },
+                infoAnswer: "3",
+                infoDesc: "우리나라의 무궁화위성과 같은 정지형 통신위성의 위치는 지구 적도 상공 약36,000km 입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050252",
+                infoQuestion: "위상이 일정하고 진폭이 0[V]와 5[V] 2가지 변화로써 신호를 1200보오[Baud]의 속도로 전송할 때 매초당 비트수[bps]는?",
+                infoChoice: {
+                    1: "1200",
+                    2: "2400",
+                    3: "4800",
+                    4: "9600",
+                },
+                infoAnswer: "1",
+                infoDesc: "위상이 일정하고 진폭이 0[V]와 5[V] 2가지 변화로써 신호를 1200보오[Baud]의 속도로 전송할 때 매초당 비트수[bps]는1200이다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050253",
+                infoQuestion: "광의 전반사와 관련하여 코어와 클래드의 굴절 계수 크기는?",
+                infoChoice: {
+                    1: "클래드의 굴절 계수가 코어쪽 보다 더 크다.",
+                    2: "코어의 굴절 계수가 클래드쪽 보다 더 크다.",
+                    3: "코어와 클래드의 굴절 계수는 같다.",
+                    4: "광상태에 따라 다르다.",
+                },
+                infoAnswer: "2",
+                infoDesc: "광의 전반사와 관련하여 코어와 클래드의 굴절 계수 크기는 코어의 굴절 계수가 클래드쪽 보다 더 크다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050254",
+                infoQuestion: "주파수분할 멀티플렉스(FDM)에 대한 설명으로 옳지 않은 것은?",
+                infoChoice: {
+                    1: "진폭편이 변조방식만을 사용",
+                    2: "시분할 멀티플렉스에 비해 비교적 간단한 구조",
+                    3: "재생증폭기는 전체 채널에 하나만 필요",
+                    4: "진폭 등화를 동시에 수행",
+                },
+                infoAnswer: "1",
+                infoDesc: "주파수분할 멀티플렉스(FDM)에 대한 설명으로 옳지 않은 것은 진폭편이 변조방식만을 사용한것입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050255",
+                infoQuestion: "다음 중 변복조 장치를 구분하는데 가장 적합한 방식은?",
+                infoChoice: {
+                    1: "직렬 변복조 장치와 병렬 변복조 장치",
+                    2: "2선 변복조 장치와 4선 변복조 장치",
+                    3: "비동기식 변복조 장치와 동기식 변복조 장치",
+                    4: "Half-Duplex 변복조 장치와 Full-Duplex 변복조 장치",
+                },
+                infoAnswer: "3",
+                infoDesc: "다음 중 변복조 장치를 구분하는데 가장 적합한 방식은 비동기식 변복조 장치와 동기식 변복조 장치방식입니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050256",
+                infoQuestion: "다음 중 정보통신 관련 프로토콜에 해당되지 않는 것은?",
+                infoChoice: {
+                    1: "EBCDIC",
+                    2: "BSC",
+                    3: "SDLC",
+                    4: "HDLC",
+                },
+                infoAnswer: "1",
+                infoDesc: "EBCDIC는 정보통신 관련 프로토콜에 해당되지 않습니다."
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050257",
+                infoQuestion: "정보통신회선을 멀티포인트(multipoint)로 구성할 때의 특성 설명으로 적합하지 않는 것은?",
+                infoChoice: {
+                    1: "회선경비가 증가한다.",
+                    2: "제어 소프트웨어가 간단하다.",
+                    3: "포트수가 증가한다",
+                    4: "변복조기의 대수가 증가한다.",
+                },
+                infoAnswer: "2",
+                infoDesc: "제어 소프트웨어가 간단한것은 정보통신회선을 멀티포인트(multipoint)로 구성할 때의 특성 설명으로 적합하지 않습니다. "
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050258",
+                infoQuestion: "정보통신 교환망에 해당되지 않는 것은?",
+                infoChoice: {
+                    1: " 회선 교환망",
+                    2: "메시지 교환망",
+                    3: "패킷 교환망",
+                    4: "방송통신 교환망",
+                },
+                infoAnswer: "4",
+                infoDesc: "정보통신 교환망에 해당되지 않는 것은 방송통신 교환망입니다. "
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050259",
+                infoQuestion: "다음 중 통신신호세기의 레벨을 나타내는 단위로 적합한 것은?",
+                infoChoice: {
+                    1: "헤르츠[Hz]",
+                    2: "데시벨[㏈]",
+                    3: "비피에스[bps]",
+                    4: "보오[Baud]",
+                },
+                infoAnswer: "2",
+                infoDesc: "다음 중 통신신호세기의 레벨을 나타내는 단위로 적합한 것은 데시벨입니다. "
+            },{
+                infoType: "정보처리 기능사",
+                infoTime: "2005년 2회",
+                infoNumber: "20050260",
+                infoQuestion: "에러를 검출후 재전송(ARQ)하는 방식에 요구되는 사항으로 가장 적합하지 않은 것은?",
+                infoChoice: {
+                    1: "에러 검출 방식은 반드시 패리티 검사 코드를 이용한다.",
+                    2: "역채널이 존재하여야 한다.",
+                    3: "수신 블럭에 에러가 있으면 인터럽트(Interrupt)를 할 수 있어야 한다.",
+                    4: "전송중인 메세지를 가지고 있을 버퍼기억 장치가 필요하다.",
+                },
+                infoAnswer: "1",
+                infoDesc: "에러 검출 방식은 반드시 패리티 검사 코드를 이용하는 방식은 에러를 검출후 재전송(ARQ)하는 방식에 요구되는 사항으로 가장 적합하지 않습니다."
+            },
+            
+            //{
+            //     infoType: "정보처리 기능사",
+            //     infoTime: "2005년 2회",
+            //     infoNumber: "20050206",
+            //     infoQuestion: "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는?<br><img style='width:300px' src='깃허브주소 사진있는'",
+            //     infoChoice: {
+            //         1: "6",
+            //         2: "8",
+            //         3: "10",
+            //         4: "12",
+            //     },
+            //     infoAnswer: "3",
+            //     infoDesc: "디스크 팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면 수는 10입니다."
+            // }
+        ];
+
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        let quizScore = 0;
+        // 문제 출력
+        const updateQuiz = () => {
+            const exam = [];
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                    <div class="quiz">
+                        <div class="quiz__header">
+                            <h2 class="quiz__title">${question.infoType} ${question.infoTime}</h2>
+                        </div>
+                        <div class="quiz__main">
+                            <div class="quiz__question"><em>${number+1}</em>. ${question.infoQuestion}</div>
+                            <div class="quiz__view">
+                                <div class="dog__wrap">
+                                    <div class="true">정답입니다!</div>
+                                    <div class="false">틀렸습니다!</div>
+                                    <div class="card-container">
+                                        <div class="dog">
+                                            <div class="head">
+                                                <div class="ears"></div>
+                                                <div class="face"></div>
+                                                <div class="eyes">
+                                                    <div class="teardrop"></div>
+                                                </div>
+                                                <div class="nose"></div>
+                                                <div class="mouth">
+                                                    <div class="tongue"></div>
+                                                </div>
+                                                <div class="chin"></div>
+                                            </div>
+                                            <div class="body">
+                                                <div class="tail"></div>
+                                                <div class="legs"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quiz__choice">
+                                <label for="choice1${number}">
+                                    <input type="radio" id="choice1${number}" name="choice${number}" value="1">
+                                    <span>${question.infoChoice[1]}</span>
+                                </label>
+                                <label for="choice2${number}">
+                                    <input type="radio" id="choice2${number}" name="choice${number}" value="2">
+                                    <span>${question.infoChoice[2]}</span>
+                                </label>
+                                <label for="choice3${number}">
+                                    <input type="radio" id="choice3${number}" name="choice${number}" value="3">
+                                    <span>${question.infoChoice[3]}</span>
+                                </label>
+                                <label for="choice4${number}">
+                                    <input type="radio" id="choice4${number}" name="choice${number}" value="4">
+                                    <span>${question.infoChoice[4]}</span>
+                                </label>
+                            </div>
+                            <div class="quiz__desc">정답은 <em>${question.infoAnswer}</em>번 입니다.<br>${question.infoDesc}</div>
+                        </div>
+                    </div>
+                `);
+            });
+            exam.push(`
+                <div class="quiz__info">??점</div>
+                <div class="quiz__check linear_gradient">정답 확인!</div>
+            `);
+            quizWrap.innerHTML = exam.join("🌳");
+
+            //설명 숨기기
+            document.querySelectorAll(".quiz__desc").forEach(el => el.style.display = "none");
+        }
+        updateQuiz();
+        // 정답 확인
+        const answerQuiz = () => {
+            const quizChoices = document.querySelectorAll(".quiz__choice");
+            //사용자가 체크한 정답 == 문제 정답
+            quizInfo.forEach((question, number) => {
+                const userSelector = `input[name=choice${number}]:checked`;
+                const quizSelectorWrap = quizChoices[number];
+                const userAnswer = (quizSelectorWrap.querySelector(userSelector) || {}).value;
+                const dogWrap = quizWrap.querySelectorAll(".dog__wrap");
+                if(userAnswer == question.infoAnswer){
+                    console.log("정답");
+                    dogWrap[number].classList.add("like");
+                    quizScore++;
+                } else {
+                    console.log("오답");
+                    dogWrap[number].classList.add("dislike");
+                    //
+                }
+            });
+            //설명 보이기
+            document.querySelectorAll(".quiz__desc").forEach(el => el.style.display = "block");
+
+            alert(quizScore + "개 맞았습니다.");
+
+            //점수보이기
+            doicument.querySelector(".quiz__info").innerHTML = Math.ceil((quizScore/quizInfo.length) * 100)  + "점";
+        }
+        // 정답 클릭
+        document.querySelector(".quiz__check").addEventListener("click", answerQuiz);
+
+    
+    </script>
+</body>
+</html>

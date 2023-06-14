@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .music-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.music-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.music-info {
+  text-align: center;
+}
+
+.music-title {
+  margin: 0;
+  font-size: 2rem;
+  color: #444;
+}
+
+.music-artist {
+  margin: 5px 0 0 0;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.music-progress {
+  width: 100%;
+  height: 8px;
+  background-color: #f2f
+}
+.music-buttons button:hover {
+  cursor: pointer;
+  background-color: #ff4f4f;
+}
+
+.music-buttons button:not(:last-child) {
+  margin-right: 20px;
+}
+
+.play-btn i:before {
+  content: "\f04b";
+}
+
+.pause-btn i:before {
+  content: "\f04c";
+}
+
+.prev-btn i:before {
+  content: "\f04a";
+}
+
+.next-btn i:before {
+  content: "\f04e";
+}
+
+.repeat-btn i:before {
+  content: "\f01e";
+}
+
+.repeat-one-btn i:before {
+  content: "\f111";
+}
+
+.shuffle-btn i:before {
+  content: "\f074";
+}
+
+.music-controls button:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .music-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .music-title {
+    font-size: 1.5rem;
+}
+.music-artist {
+  font-size: 1rem;
+}
+
+.music-buttons button {
+  font-size: 1.2rem;
+}
+}
+    </style>
+</head>
+<body>
+    <div class="music-player">
+        <div class="music-wrap">
+          <div class="music-details">
+            <img class="music-image" src="song1.jpg" alt="Song 1 Cover">
+            <div class="music-info">
+              <h3 class="music-title">Song Title</h3>
+              <p class="music-artist">Artist Name</p>
+            </div>
+          </div>
+          <audio id="main-audio" src="song1.mp3"></audio>
+          <div class="music-controls">
+            <div class="music-progress">
+              <div class="progress-bar"></div>
+            </div>
+            <div class="music-buttons">
+              <button id="control-prev" class="prev-btn"><i class="fas fa-backward"></i></button>
+              <button id="control-play" class="play-btn"><i class="fas fa-play"></i></button>
+              <button id="control-next" class="next-btn"><i class="fas fa-forward"></i></button>
+              <button id="control-repeat" class="repeat-btn"><i class="fas fa-redo-alt"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

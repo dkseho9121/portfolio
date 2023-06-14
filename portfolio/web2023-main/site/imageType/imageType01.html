@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像タイプ</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 800px;
+        }
+        .nexon {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 400;
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section__h2 {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .section__desc {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 70px;
+            font-weight: 300;
+        }
+        /* image__wrap */
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image__inner .image {
+            width: 570px;
+            height: 370px;
+            background-color: #ccc;
+            position: relative;
+        }
+        .image__body {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: #fff;
+            text-align: left;
+            padding: 30px;
+        }
+        .image__body .title {
+            font-size: 32px;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+        .image__body .desc {
+            margin-bottom: 15px;
+            line-height: 1.5;
+            padding-right: 20%;
+        }
+        .image__body .btn {
+            color: #fff;
+            background-color: rgba(85, 85, 85, 0.5);
+            padding: 10px 30px;
+            display: inline-block;
+            
+        }
+    </style>
+</head>
+<body>
+    <section class="image_wrap section nexon">
+        <div class="container">
+            <h2 class="section__h2">コーヒーのすべて</h2>
+            <p class="section__desc">コーヒーは世界中で最も人気のある飲み物の一つであり、多くの人々が楽しんでいる飲み物です。</p>
+            <div class="image__inner">
+                <article class="image">
+                    <figure class="image__header">
+                        <img src="../asset/img/imageType01_01.jpg" alt="コーヒーの効能">
+                    </figure>
+                    <div class="image__body">
+                        <h3 class="title">コーヒーの種類</h3>
+                        <p class="desc">コーヒーにはさまざまな種類とスタイルがあります。代表的なコーヒーの種類です。</p>
+                        <a href="#" class="btn">詳細を見る</a>
+                    </div>  
+                </article>
+                <article class="image">
+                    <figure class="image__header">
+                        <img src="../asset/img/imageType01_02.jpg" alt="コーヒーの副作用">
+                    </figure>
+                    <div class="image__body">
+                        <h3 class="title">コーヒーの歴史</h3>
+                        <p class="desc"> コーヒーには深い歴史があります。コーヒーの歴史について探ってみましょう。</p>
+                        <a href="#" class="btn">詳細を見る</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

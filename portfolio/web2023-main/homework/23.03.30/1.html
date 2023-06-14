@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 1200px;
+            height: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+        }
+        .container h2{
+            width: 1200px;
+            text-align: center;
+            color: rgb(41, 15, 241);
+        }
+        .image {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>마우스 오버하면 짱구가 움직여요!</h2>
+        <img src="img/1.jpg" class="image">
+    </div>
+    <script>
+        const cursor = document.querySelector(".container .image");
+        // const cursor = document.querySelector(".container");
+
+        cursor.addEventListener("mouseover", () => {
+            cursor.src="img/1.jpg"
+        });
+        cursor.addEventListener("mouseout", () => {
+            cursor.src="img/2.jpg"
+        });
+        
+        // document.querySelector(".active").addEventListener("mouseover", function(){
+        //     cursor.classList.add("active");
+        // });
+        // $img = document.querySelector(".container > img");
+
+        // $img.src = `change.img/pic-2.jpg`;
+    </script>
+</body>
+</html>

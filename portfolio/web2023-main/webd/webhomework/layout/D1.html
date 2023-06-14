@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #aside {
+            width: 200px;
+            height: 850px;
+            background-color: #ccc;
+        }
+        #aside h1 {
+            width: 100%;
+            height: 100px;
+            background-color: #b9fbc0;
+        }
+        #aside nav {
+            width: 100%;
+            height: 750px;
+            background-color: #98f5e1;
+        }
+        #main {
+            width: calc(100% - 200px);
+            height: 850px;
+            background-color: #8eecf5;
+        }
+        #slider {
+            width: 100%;
+            height: 400px;
+            background-color: #90dbf4;
+            position: relative;
+        }
+        #slider .link {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100px;
+            height: 300px;
+            background-color: #cfbaf0;
+        }
+        #banner{
+            width: 100%;
+            height: 200px;
+            background-color: #f1c0e8;
+        }
+        #contents {
+            width: 100%;
+            height: 250px;
+            background-color: #ffcfd2;
+        }
+        #footer {
+        width: 100%;
+        display: flex;
+        }
+        #footer .footer1 {
+            width: 20%;
+            height: 100px;
+            background-color: #fde4cf;
+        }
+        #footer .footer2 {
+            width: 57%;
+            height: 100px;
+            background-color: #b9fbc0;
+        }
+        #footer .footer3 {
+            width: 23%;
+            height: 100px;
+            background-color: #a3c4f3;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <aside id="aside">
+            <h1></h1>
+            <nav></nav>
+        </aside>
+        <main id="main">
+            <article id="slider">
+                <div class="link"></div>
+            </article>
+            <article id="banner"></article>
+            <article id="contents"></article>
+        </main>
+        <footer id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+        </footer>
+    </div>
+</body>
+</html>

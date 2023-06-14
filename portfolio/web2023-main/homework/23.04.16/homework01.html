@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inspiring Quotes</title>
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #f0f0f0;
+        }
+  
+        #image {
+          width: 500px;
+          height: 300px;
+          border-radius: 10%;
+          object-fit: cover;
+        }
+  
+        .result {
+          font-size: 24px;
+          font-weight: bold;
+          text-align: center;
+          margin: 20px 0;
+        }
+  
+        .quote {
+          font-size: 18px;
+          text-align: right;
+          margin-right: 20px;
+        }
+  
+        .button {
+          background-color: #333;
+          color: #fff;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+      </style>
+  </head>
+  <body>
+    <img id="image" />
+    <div class="result"></div>
+    <div class="quote"></div>
+    <button class="button">Stop</button>
+
+  </body>
+</html>
+<script>
+const img = document.getElementById("image");
+const result1 = document.querySelector(".result");
+const quote1 = document.querySelector(".quote");
+const stop = document.querySelector(".button");
+let number = 0;
+let interval;
+
+function fetchQuote() {
+    fetch("json/dummy01.json")
+    .then((res) => res.json())
+    .then((result) => {
+      number = Math.floor(Math.random() * 30 + 1);
+        result1.innerHTML = result.quotes[number].quote;
+        quote1.innerHTML = "- " + result.quotes[number].author;
+    });
+}
+
+function changeImage() {
+    img.src =
+    "https://source.unsplash.com/random/300x300/?rainbow&" +
+    new Date().getTime();
+}
+
+function changeBackgroundColor() {
+    document.body.style.backgroundColor = getRandomColor();
+}
+
+function getRandomColor() {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}
+
+interval = setInterval(() => {
+    changeImage();
+    changeBackgroundColor();
+    fetchQuote();
+}, 1000);
+
+stop.addEventListener("click", () => {
+    if (interval) {
+    clearInterval(interval);
+    interval = null;
+    } else {
+    interval = setInterval(() => {
+        changeImage();
+        changeBackgroundColor();
+        fetchQuote();
+    }, 1000);
+    }
+});
+</script>

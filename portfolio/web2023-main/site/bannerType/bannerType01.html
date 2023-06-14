@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: "NexonLv1Gothic";
+            font-weight: 400;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .banner__wrap {
+            background-image: url(../asset/img/banner.jpg);
+            width: 100%;
+            height: 100;
+            box-sizing: border-box;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+        .banner__inner{
+            color: #000000;
+            text-align: center;
+            padding: 50px;
+        }
+        .banner__inner h3{
+            font-size: 50px;
+            margin-bottom: 45px;
+            font-weight: 400;
+        }
+        .banner__inner p{
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 90px;
+        }
+        .banner__inner a{
+            color: #000000;
+            text-decoration: underline;
+        }
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <section class="banner__wrap nexon section">
+        <h2 class="blind">배너</h2>
+        <div class="banner__inner">
+            <h3>커피가 필요한 나른한 오후</h3>
+            <p>다양한 커피의 정보는<br>아래 링크에서 자세히 확인할 수 있습니다.</p>
+            <a href="#">dlscks0930.tistory.com</a>
+        </div>
+    </section>
+</body>
+</html>

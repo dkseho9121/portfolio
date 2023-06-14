@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript : 문자열 객체</title>
+    <style>
+        #top_btn{
+        position: fixed;
+        left: 0;
+        bottom: -50px;
+        display: inline-block;
+        background-color: #a6ff0099;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-weight: bold;
+        opacity: 0;
+        transition: 0.7s ease;
+        font-size: 19px;
+        z-index: 9999;
+        text-align: center;
+    }
+    
+        #top_btn.on{
+        opacity: 1;
+        cursor: pointer;
+        bottom: 0;
+    }
+        </style>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
+    <link rel="shortcut icon" href="assets/ico/javascript.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/javascript192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/ico/javascript192x192.png">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li class="active"><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="last">
+                <li><a href="javascript12.html">데이터 효과</a></li>
+                <li><a href="javascript13.html">검색 효과</a></li>
+                <li><a href="javascript14.html">퀴즈 효과</a></li>
+                <li><a href="javascript15.html">마우스 효과</a></li>
+                <li><a href="javascript16.html">슬라이드 효과</a></li>
+                <li><a href="javascript17.html">패럴랙스 효과</a></li>
+                <li><a href="javascript18.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#sample01">01. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.at()</strong>                메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 요소를 반환합니다.</a></li>
+                    <li><a href="#sample02">02. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.charAt()</strong>            메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 단일문자를 반환합니다.</a></li>
+                    <li><a href="#sample03">03. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.charCodeAt()</strong>        메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 유니코드 정수 값을 반환합니다.</a></li>
+                    <li><a href="#sample04">04. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.charPointAt()</strong>       메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 유니코드 포인트 정수 값을 반환합니다.</a></li>
+                    <li><a href="#sample05">05. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.concat()</strong>            메서드는 매개변수로 전달된 문자열을 받어, 결합된 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample06">06. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.includes()</strong>❤          메서드는 문자열 포함 여부를 검색하여, 불린(true, false)을 반환합니다.</a></li>
+                    <li><a href="#sample07">07. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.indexOf()</strong>❤           메서드는 문자열을 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환합니다.</a></li>
+                    <li><a href="#sample08">08. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.lastIndexOf()</strong>       메서드는 문자열을 역순으로 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환합니다.</a></li>
+                    <li><a href="#sample09">09. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.localeCompare()</strong>     메서드는 문자열과 문자열을 비교하여, 수치(음수, 양수, 0)을 반환합니다.</a></li>
+                    <li><a href="#sample10">10. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.match()</strong>❤             메서드는 문자열(정규식)을 검색하고, 문자열(배열)을 반환합니다. </a></li>
+                    <li><a href="#sample11">11. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.matchAll()</strong>          메서드는 문자열(정규식)을 검색하고, 일치하는 모든 문자열(배열)을 반환합니다. </a></li>
+                    <li><a href="#sample12">12. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.normalize()</strong>         메서드는 주어진 문자열을 정규화된 형태로 반환합니다.</a></li>
+                    <li><a href="#sample13">13. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.padEnd()</strong>            메서드는 주어진 길이에 맞게 뒤 문자열을 채우고, 새로운 문자열을 반환합니다. </a></li>
+                    <li><a href="#sample14">14. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.padStart()</strong>          메서드는 주어진 길이에 맞게 앞 문자열을 채우고, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample15">15. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.repeat()</strong>            메서드는 주어진 횟수만큼 반복 복사하여, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample16">16. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.replace()</strong>           메서드는 문자열에서 특정 문자열을 교체하여, 새로은 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample17">17. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.replaceAll()</strong>        메서드는 문자열에서 특정 문자열을 모두 교체하여, 새로은 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample18">18. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.search()</strong>❤            메서드는 문자열(정규식)을 검색하고, 위치값(숫자)을 반환합니다.</a></li>
+                    <li><a href="#sample19">19. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.slice()</strong>❤❤             메서드는 문자열에서 시작 위치에서 종료 위치 값을 추출하여, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample20">20. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.substring()</strong>❤         메서드는 문자열에서 시작 위치에서 종료 위치 값을 추출하여, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample21">19. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.substr()</strong>            메서드는 문자열에서 시작 위치에서 길이 값을 추출하여, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample22">20. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.split()</strong>❤❤❤             메서드는 문자열을 구분자로 구분하고, 여러 개의 문자열(배열)을 반환합니다.</a></li>
+                    <li><a href="#sample23">21. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.startsWith()</strong>        메서드는 시작하는 문자열에서 특정 문자열로 시작하는 확인하여, 그 결과를 불린(true, false)로 반환합니다.</a></li>
+                    <li><a href="#sample24">22. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.endsWith()</strong>          메서드는 끝나는 문자열에서 특정 문자열로 끝나는지 확인하여, 그 결과를 불린(true, false)로 반환합니다.</a></li>
+                    <li><a href="#sample25">23. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.toLocaleLowerCase()</strong> 메서드는 문자열을 소문자로 설정하고, 로케일 소문자 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample26">24. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.toLocaleUpperCase()</strong> 메서드는 문자열을 대문자로 설정하고, 로케일 대문자 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample27">25. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.toLowerCase()</strong>       메서드는 문자열을 소문자로 설정하고, 소문자 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample28">26. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.toUpperCase()</strong>       메서드는 문자열을 대문자로 설정하고, 대문자 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample29">27. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.toString()</strong>          메서드는 데이터를 문자열로 변환하고, 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample30">28. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.trim()</strong>❤              메서드는 문자열의 앞/뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample31">29. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.trimEnd()</strong>           메서드는 문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample32">30. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.trimStart()</strong>         메서드는 문자열의 앞 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
+                    <li><a href="#sample33">31. <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">string.prototype.valueOf()</strong>           메서드는 객체의 원시값을 반환합니다.</a></li>
+                </ul>
+            </div>
+            <div class="main__sample">
+                <div id="sample01" class="sample" style="padding-top: 40px;">
+                    <h3>01. at( )</h3>
+                    <div class="notice">"문자열".at(위치값)</div>
+                    <ul>
+                        <li>메서드는 지정한 숫자(index)를 받아, </li>
+                        <li>문자열에서 해당 되는 인덱스의 요소를 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const str = "Hello, World!";
+    console.log(str.at(0)); // "H"
+    console.log(str.at(6)); // ","
+    console.log(str.at(-1)); // "!"
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample01 -->
+                <div id="sample02" class="sample" style="padding-top: 40px;">
+                    <h3>02. charAt( )</h3>
+                    <div class="notice">"문자열".charAt(위치값)</div>
+                    <ul>
+                        <li>문자열에서 지정된 인덱스 위치에 해당하는 문자를 반환합니다.</li>
+                        <li>인덱스가 유효하지 않은 경우(음수이면서 문자열 길이보다 작은 경우 등), 빈 문자열("")을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const str = "Hello, world!";
+    console.log(str.charAt(0)); // "H"
+    console.log(str.charAt(6)); // ","
+    console.log(str.charAt(12)); // "!"
+}
+</code></pre>
+<pre><code class="Language-js">{
+    const str = "Hello, world!";
+    console.log(str.charAt(-1)); // ""
+    console.log(str.charAt(20)); // ""
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample02 -->
+                <div id="sample03" class="sample" style="padding-top: 40px;">
+                    <h3>03. charCodeAt( )</h3>
+                    <div class="notice">"문자열".charCodeAt(위치값)</div>
+                    <ul>
+                        <li>문자열에서 지정된 인덱스 위치에 해당하는 UTF-16 코드 유닛 값(0부터 65535 사이의 정수)을 반환합니다.</li>
+                        <li>인덱스가 유효하지 않은 경우(음수이면서 문자열 길이보다 작은 경우 등), NaN을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const str = "Hello, world!";
+    console.log(str.charCodeAt(0)); // 72
+    console.log(str.charCodeAt(6)); // 44
+    console.log(str.charCodeAt(12)); // 33
+}
+</code></pre>
+<pre><code class="Language-js">{
+    const str = "Hello, world!";
+    console.log(str.charCodeAt(-1)); // NaN
+    console.log(str.charCodeAt(20)); // NaN
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample03 -->
+                <div id="sample04" class="sample" style="padding-top: 40px;">
+                    <h3>04. charPointAt( )</h3>
+                    <div class="notice">"문자열".charPointAt(위치값)</div>
+                    <ul>
+                        <li>주어진 인덱스에 해당하는 문자의 유니코드 코드 포인트를 나타내는 정수 값을 반환합니다.</li>
+                        <li> 문자열이 빈 문자열인 경우, undefined를 반환합니다.</li>
+                        <li>index가 문자열의 범위를 벗어난 경우에도 undefined를 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const str = "Hello, 🌎!";
+    console.log(str.codePointAt(0)); // 72
+    console.log(str.codePointAt(7)); // 127757
+}
+</code></pre>
+<pre><code class="Language-js">{
+    const str = "😃👍🏻";
+    console.log(str.codePointAt(0)); // 128515
+    console.log(str.codePointAt(1)); // 128077
+    console.log(str.codePointAt(2)); // 127995
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample04 -->
+                <div id="sample05" class="sample" style="padding-top: 40px;">
+                    <h3>05. concat( )</h3>
+                    <div class="notice">"문자열".concat(string2, string3, ..., stringX)</div>
+                    <ul>
+                        <li>문자열 끝에 하나 이상의 문자열을 추가하여 새로운 문자열을 반환합니다.</li>
+                        <li>위 문법에서 str은 concat() 메서드를 호출할 문자열이며, string2, string3, ..., stringX는 str 문자열 뒤에 추가할 하나 이상의 문자열입니다.</li>
+                        <li>concat() 메서드는 문자열 파라미터를 순차적으로 연결하여 하나의 문자열로 만듭니다.</li>
+                        <li>concat() 메서드는 원본 문자열을 변경하지 않습니다. 대신, 새로운 문자열을 반환합니다.</li>
+                        <li>만약 concat() 메서드가 호출된 문자열이 빈 문자열이면, 새로운 문자열은 추가된 문자열들로만 구성됩니다.</li>
+                        <li>concat() 메서드는 + 연산자와 비슷한 역할을 합니다. 하지만, + 연산자는 자바스크립트에서 문자열 연결을 위한 권장 방법은 아닙니다.</li>
+                        <li>대신, concat() 메서드를 사용하여 문자열을 연결하는 것이 더욱 권장됩니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const str1 = "Hello";
+    const str2 = "World";
+    const str3 = "!";
+    const newStr = str1.concat(", ", str2, str3);
+    
+    console.log(str1);    // "Hello"
+    console.log(str2);    // "World"
+    console.log(str3);    // "!"
+    console.log(newStr);  // "Hello, World!"
+}
+</code></pre>
+<pre><code class="Language-js">{
+    const str1 = "";
+    const str2 = "JavaScript";
+    const newStr = str1.concat("Hello, ", str2, " World!");
+    
+    console.log(str1);    // ""
+    console.log(str2);    // "JavaScript"
+    console.log(newStr);  // "Hello, JavaScript World!"
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample05 -->
+                <div id="sample06" class="sample">
+                    <h3>06. includes()</h3>
+                    <div class="notice">"문자열".indexOf(검색값, [위치값])</div>
+                    <ul>
+                        <li>문자열 포함 여부를 검색하여, 불린(true, false)을 반환합니다.</li>
+                        <li>대소문자를 구별합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    "javascript reference".includes("javascript");  //true
+    "javascript reference".includes("j");  //true
+    "javascript reference".includes("J");  //false
+    "javascript reference".includes("a");  //true
+    "javascript reference".includes("reference");  //true
+    "javascript reference".includes("reference", 11);  //true
+    "javascript reference".includes("reference", 12);  //false 
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample06 -->
+                <div id="sample07" class="sample">
+                    <h3>07. indexOf()</h3>
+                    <div class="notice">"문자열".indexOf(검색값, [위치값])</div>
+                    <ul>
+                        <li>문자열을 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환합니다.</li>
+                        <li>문자열을 검색하여, 주어진 값과 일치하는 것이 없으면 -1을 반환합니다.</li>
+                        <li>대소문자를 구별합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    "javascript reference".indexOf("javascript");   //0
+    "javascript reference".indexOf("javascripts");   //-1
+    "javascript reference".indexOf("j");   // 0
+    "javascript reference".indexOf("J");   // -1
+    "javascript reference".indexOf("a");   // 1
+    "javascript reference".indexOf("ja");   // 0
+    "javascript reference".indexOf("jv");   // -1
+    "javascript reference".indexOf("reference");   // 11
+    "javascript reference".indexOf("r");   // 6
+    "javascript reference".indexOf("re");   // 11
+    "javascript reference".indexOf("javascript", 0);   // 0
+    "javascript reference".indexOf("javascript", 1);   // -1
+    "javascript reference".indexOf("reference", 0);   // 11
+    "javascript reference".indexOf("reference", 11);   // 11
+    "javascript reference".indexOf("reference", 12);   // -1
+    "javascript reference".indexOf("r", 7);   // 11
+    "javascript reference".indexOf("r", 12);   // 15  
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample07 -->
+                <div id="sample08" class="sample">
+                    <h3>08. lastIndexOf()</h3>
+                    <div class="notice">"문자열".lastIndexOf(검색값, [위치값])</div>
+                    <ul>
+                        <li>문자열을 역순으로 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환합니다.</li>
+                        <li>문자열을 역순으로 검색하여, 주어진 값과 일치하는 것이 없으면 -1을 반환합니다.</li>
+                        <li>대소문자를 구별합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    "javascript reference".lastIndexOf("javascript");   //0
+    "javascript reference".lastIndexOf("javascripts");   //-1
+    "javascript reference".lastIndexOf("j");   //0
+    "javascript reference".lastIndexOf("a");   //3
+    "javascript reference".lastIndexOf("jv");   //-1
+    "javascript reference".lastIndexOf("reference");   //11
+    "javascript reference".lastIndexOf("r");   //15
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample08 -->
+                <div id="sample09" class="sample" style="padding-top: 40px;">
+                    <h3>09. localeCompare( )</h3>
+                    <div class="notice">"문자열".localeCompare(compareString[, locales[, options]])</div>
+                    <ul>
+                        <li>JavaScript의 String 객체에 속하는 메서드로, 지정된 문자열과의 비교 결과를 반환합니다.</li>
+                        <li>이 메서드는 주어진 문자열을 대소문자와 악센트 등의 규칙에 따라 비교하며, 비교 결과에 따라 음수, 양수, 또는 0을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const str1 = "Hello";
+    const str2 = "World";
+    const str3 = "!";
+    const newStr = str1.concat(", ", str2, str3);
+    
+    console.log(str1);    // "Hello"
+    console.log(str2);    // "World"
+    console.log(str3);    // "!"
+    console.log(newStr);  // "Hello, World!"
+}
+</code></pre>
+<pre><code class="Language-js">{
+    const str1 = "";
+    const str2 = "JavaScript";
+    const newStr = str1.concat("Hello, ", str2, " World!");
+    
+    console.log(str1);    // ""
+    console.log(str2);    // "JavaScript"
+    console.log(newStr);  // "Hello, JavaScript World!"
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample09 -->
+                <div id="sample10" class="sample">
+                    <h3>10. match()</h3>
+                    <div class="notice">"문자열".match(검색값)<br>"문자열".match(정규식표현)</div>
+                    <ul>
+                        <li>문자열(정규식)을 검색하고, 문자열(배열)을 반환합니다.</li>
+                        <li>문자열을 검색하여, 주어진 값과 일치하는 것이 없으면 null을 반환합니다.</li>
+                        <li>대소문자를 구별합니다.</li>
+                        <li>match() 메서드는 문자값(배열)을 반환하고, search() 메서드는 위치값(숫자)를 반환하는 것이 다릅니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    "javascript reference".match("javascript");     //"javascript"
+    "javascript reference".match("reference");     //"reference"
+    "javascript reference".match("r");     //"r"
+    "javascript reference".match("R");     //null
+    "javascript reference".match(/reference/); //reference
+    "javascript reference".match(/Reference/); //null
+    "javascript reference".match(/Reference/i); //reference
+    "javascript reference".match(/Reference/g); //null
+    "javascript reference".match(/r/); //r
+    "javascript reference".match(/r/g); //r r r
+    "javascript reference".match(/w/g); //null
+    "javascript reference".match(/R/ig); //r r r
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample10 -->
+                <div id="sample12" class="sample">
+                    <h3>12. normalize()</h3>
+                    <div class="notice">"문자열".normalize([form])</div>
+                    <ul>
+                        <li>문자열에서 유니코드 정규화를 수행합니다.</li>
+                        <li>이 메서드는 다양한 유니코드 문자열이 있을 때, 이러한 문자열을 표준화하여 동일한 문자열로 인식할 수 있도록 합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const str1 = "\u1E9B\u0323";
+    const str2 = "ẛ̣";
+    
+    console.log(str1 === str2); // false
+    console.log(str1.length); // 2
+    console.log(str2.length); // 2
+    
+    console.log(str1.normalize() === str2.normalize()); // true
+    console.log(str1.normalize().length); // 1
+    console.log(str2.normalize().length); // 1
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample12 -->
+                <div id="sample13" class="sample">
+                    <h3>13. padEnd()</h3>
+                    <div class="notice">"문자열".padEnd(targetLength [, padString])</div>
+                    <ul>
+                        <li>주어진 길이보다 짧은 문자열의 끝에 지정된 문자열을 삽입하여, 문자열의 길이를 지정된 길이로 만드는 메서드입니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const str = "hello";
+    const padStr = " world";
+    
+    console.log(str.padEnd(10)); // "hello     "
+    console.log(str.padEnd(10, "-")); // "hello-----"
+    console.log(str.padEnd(10, padStr)); // "hello world"
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample13 -->
+                <div id="sample14" class="sample">
+                    <h3>14. padStart()</h3>
+                    <div class="notice">"문자열".padStart(targetLength [, padString])</div>
+                    <ul>
+                        <li>padEnd()와 마찬가지로, 문자열의 길이를 조절하는 메서드 중 하나입니다.</li>
+                        <li>다만, padStart()는 주어진 길이보다 짧은 문자열의 앞쪽에 지정된 문자열을 삽입하여 문자열의 길이를 지정된 길이로 만듭니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const str = "hello";
+    const padStr = " world";
+    
+    console.log(str.padStart(10)); // "     hello"
+    console.log(str.padStart(10, "-")); // "-----hello"
+    console.log(str.padStart(10, padStr)); // "hello world"
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample14 -->
+                <div id="sample15" class="sample">
+                    <h3>15. repeat()</h3>
+                    <div class="notice">"문자열".repeat(count)</div>
+                    <ul>
+                        <li>주어진 문자열을 지정된 횟수만큼 반복한 새로운 문자열을 반환합니다.</li>
+                        <li>이 메서드는 문자열의 길이를 조절하거나 문자열을 생성할 때 유용하게 사용할 수 있습니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const str = "hello";
+
+    console.log(str.repeat(3)); // "hellohellohello"
+    console.log(str.repeat(0)); // ""
+    console.log(str.repeat(2.5)); // ""
+    console.log(str.repeat(-1)); // RangeError
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample15 -->
+                <div id="sample18" class="sample">
+                    <h3>18. search()</h3>
+                    <div class="notice">"문자열".search(검색값)<br>"문자열".search(정규식표현)</div>
+                    <ul>
+                        <li>문자열(정규식)을 검색하고, 위치값(숫자)을 반환합니다.</li>
+                        <li>문자열을 검색하여, 주어진 값과 일치하는 것이 없으면 -1을 반환합니다.</li>
+                        <li>대소문자를 구별합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    "javascript reference".search("javascript");//0
+    "javascript reference".search("reference");//11
+    "javascript reference".search("r");//6
+    "javascript reference".search("a");//1
+    "javascript reference".search("jv");//-1
+    "javascript reference".search("J");//-1
+    "javascript reference".search(/reference/);//11(정규식 표현)
+    "javascript reference".search(/Reference/);//-1
+    "javascript reference".search(/Reference/i);//11(i는 소문자로 인식해줍니다.)
+    "javascript reference".search(/[a-z]/g);//0  
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample18 -->
+                <div id="sample19" class="sample">
+                    <h3>19. slice()</h3>
+                    <div class="notice">"문자열".slice(시작위치, [끝나는 위치])</div>
+                    <ul>
+                        <li>시작 위치에서 종료 위치 값을 추출하여 새로운 문자열을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    "javascript".slice(0);          //javascript
+    "javascript".slice(1);          //avascript
+    "javascript".slice(2);          //vascript
+    "javascript".slice(0, 1);       //j
+    "javascript".slice(1, 2);       //a
+    "javascript".slice(0, 2);       //ja
+    "javascript".slice(0, 3);       //jav
+    "javascript".slice(5, 10);      //cript
+    "javascript".slice(5, -1);      //crip
+    "javascript".slice(5, -2);      //cri
+    "javascript".slice(-1);         //t
+    "javascript".slice(-2);         //pt
+    "javascript".slice(-3);         //ipt
+    "javascript".slice(-3, -1);     //ip
+    "javascript".slice(-3, -2);     //i
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample19 -->
+                <div id="sample22" class="sample">
+                    <h3>22. split()</h3>
+                    <div class="notice">"문자열".split(구분자, [제한])</div>
+                    <ul>
+                        <li>구분자를 이용하여 여러 개의 문자열(배열)을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    "javascript".split("");             //['j','a','v','a','s','c','r','i','p','t']
+    "java script".split(" ");           //['java','script']
+    "java scr ipt".split(" ");          //['java','scr','ipt']
+
+    "javascript".split("", 1);          //['j']
+    "javascript".split("", 2);          //['j','a']
+    "javascript".split("", 3);          //['j','a','v']
+
+    "java script".split(" ", 1);        //['java']
+    "java script".split(" ", 2);        //['java','script']
+
+    "javascript".split("j");            //['', 'avascript']
+    "javascript".split("a");            //['j','v',script']
+    "javascript".split("e");            //['javascript']
+
+    "java/scr/ipt".split("/");          //['java','scr','ipt']
+    "java&scr!ipt".split("&")           //['java','scr!ipt']
+    "java&scr!ipt".split("!")           //['java&scr','ipt']
+    "java&scr!ipt".split(/&|\!/)        //['java','scr','ipt']
+
+    "javascript".split("").join()                   //j,a,v,a,s,c,r,i,p,t
+    "javascript".split("").join("*")                //j*a*v*a*s*c*r*i*p*t
+    "javascript".split("").reverse().join()         //t,p,i,r,c,s,a,v,a,j
+    "javascript".split("").reverse().join("/")      //t/p/i/r/c/s/a/v/a/j
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample30 -->
+                <div id="sample30" class="sample">
+                    <h3>30. trim()</h3>
+                    <div class="notice">"문자열".trim()</div>
+                    <ul>
+                        <li>문자열의 앞/뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    "javascript".trim("");          //javascript
+    "javascript ".trim("");         //javascript
+    " javascript ".trim("");        //javascript
+    " java script ".trim("");       //java script
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample30 -->
+                <div id="sample31" class="sample">
+                    <h3>31. trimEnd()</h3>
+                    <div class="notice">"문자열".trimEnd()</div>
+                    <ul>
+                        <li>문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    " javascript ".trimEnd("");       // javascript
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample31 -->
+                <div id="sample32" class="sample">
+                    <h3>32. trimStart()</h3>
+                    <div class="notice">"문자열".trimStart()</div>
+                    <ul>
+                        <li>문자열의 앞 공백을 제거하고, 새로운 문자열을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    " javascript ".trimStart("");       //javascript
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample32 -->
+            </div>
+        </div>
+        <div><a id="top_btn" class="">TOP</a></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="dlscks0930@gmail.com">dlscks0930@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script>
+            $(window).scroll(function(){
+        
+        if( $(this).scrollTop() > 100 ){
+        $("#top_btn").addClass("on");
+        }
+        else{
+        $("#top_btn").removeClass("on");
+        }
+        
+        });
+        
+        $("#top_btn").click(function(){
+        window.scrollTo({top : 0, behavior: 'smooth'}); 
+        });
+        
+            </script>
+
+
+
+</body>
+</html>

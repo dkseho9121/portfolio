@@ -1,0 +1,39 @@
+#bannerType {
+    width: 100%;
+    background-image: url(../img/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+}
+.banner__inner {
+    color: #000000;
+    text-align: center;
+}
+.banner__inner h3 {
+    font-size: 50px;
+    margin-bottom: 45px;
+}
+.banner__inner p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 90px;
+}
+.banner__inner a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+@media (max-width: 960px){
+    .banner__inner h3 {
+        font-size: 40px;
+
+    }
+}
+@media (max-width: 600px){
+    .banner__inner h3 {
+        font-size: 30px;
+    }
+    .banner__inner p {
+        margin-bottom: 50px;
+    }
+}

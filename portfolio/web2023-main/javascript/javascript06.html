@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript : 배열 객체</title>
+    <style>
+        #top_btn{
+        position: fixed;
+        left: 0;
+        bottom: -50px;
+        display: inline-block;
+        background-color: #a6ff0099;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-weight: bold;
+        opacity: 0;
+        transition: 0.7s ease;
+        font-size: 19px;
+        z-index: 9999;
+        text-align: center;
+    }
+    
+        #top_btn.on{
+        opacity: 1;
+        cursor: pointer;
+        bottom: 0;
+    }
+        </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
+    <link rel="shortcut icon" href="assets/ico/javascript.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/javascript192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/ico/javascript192x192.png">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li class="active"><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="last">
+                <li><a href="javascript12.html">데이터 효과</a></li>
+                <li><a href="javascript13.html">검색 효과</a></li>
+                <li><a href="javascript14.html">퀴즈 효과</a></li>
+                <li><a href="javascript15.html">마우스 효과</a></li>
+                <li><a href="javascript16.html">슬라이드 효과</a></li>
+                <li><a href="javascript17.html">패럴랙스 효과</a></li>
+                <li><a href="javascript18.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#sample01"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">01. array.prototype.at()</strong>                메서드는 지정한 숫자(index)를 받아, 배열에서 해당 되는 인덱스의 요소를 반환합니다.</a></li>
+                    <li><a href="#sample02"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">02. array.prototype.concat()</strong>            메서드는 둘 이상의 배열을 결합하여, 새로운 배열을 반환합니다.</a></li>
+                    <li><a href="#sample03"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">03. array.prototype.copyWithin()</strong>        메서드는 배열의 일부를 얕게 복사한 뒤, 동일한 배열의 다른 위치에 덮어쓰고 그 배열을 반환합니다</a></li>
+                    <li><a href="#sample04"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">04. array.prototype.entries()</strong>           메서드는 배열의 각 인덱스에 대한 속성 값을 반환합니다</a></li>
+                    <li><a href="#sample05"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">05. array.prototype.keys()</strong>              메서드는 배열의 각 인덱스에 대한 키 값을 반환합니다.</a></li>
+                    <li><a href="#sample06"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">06. array.prototype.fill()</strong>              메서드는 배열의 시작 인덱스부터 끝 인덱스까지 하나의 값으로 반환합니다.</a></li>
+                    <li><a href="#sample07"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">07. array.prototype.find()</strong>:하트2:             메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 반환합니다</a></li>
+                    <li><a href="#sample08"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">08. array.prototype.findIndex()</strong>         메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 인덱스로 반환합니다</a></li>
+                    <li><a href="#sample09"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">09. array.prototype.findLast()</strong>          메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 역순으로 반환합니다</a></li>
+                    <li><a href="#sample10"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">10. array.prototype.findLastIndex()</strong>     메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 역순 인덱스로 반환합니다</a></li>
+                    <li><a href="#sample11"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">11. array.prototype.flat()</strong>              메서드는 중첩된 배열을 하나의 배열로 반환합니다.</a></li>
+                    <li><a href="#sample12"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">12. array.prototype.flatMap()</strong>           메서드는 먼저 매핑함수를 사용해 각 엘리먼트에 대해 map 수행 후, 결과를 새로운 배열로 평탄화합니다.</a></li>
+                    <li><a href="#sample13"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">13. array.prototype.forEach()</strong>:하트2::하트2::하트2:      메서드는 주어진 함수 조건을 배열 요소 각각에 대해 실행하고, 그 결과를 반환합니다.</a></li>
+                    <li><a href="#sample14"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">14. array.prototype.filter()</strong>            메서드는 주어진 함수 조건에 맞는 모든 요소를 새로운 배열로 반환합니다.</a></li>
+                    <li><a href="#sample15"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">15. array.prototype.every()</strong>             메서드는 주어진 함수를 모두 통과하는지 확인하고, 불린(true, false)로 반환합니다.</a></li>
+                    <li><a href="#sample16"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">16. array.prototype.map()</strong>:하트2::하트2::하트2:          메서드는 주어진 함수를 호출하고, 그 결과를 모아서 만든 새로운 배열을 반환합니다.</a></li>
+                    <li><a href="#sample17"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">17. array.prototype.some()</strong>              메서드는 주어진 판별 함수를 통과하는지 테스트하여, 그 그결과를 불린(true, false)로 반환합니다.</a></li>
+                    <li><a href="#sample18"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">18. array.prototype.includes()</strong>          메서드는 배열 포함 여부를 검색하여, 불린(true, false)을 반환합니다.</a></li>
+                    <li><a href="#sample19"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">19. array.prototype.indexOf()</strong>:하트2:          메서드는 배열을 검색하고, 위치값(숫자)을 반환합니다.</a></li>
+                    <li><a href="#sample20"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">20. array.prototype.lastIndexOf()</strong>       메서드는 역순으로 배열을 검색하고, 위치값(숫자)을 반환합니다.</a></li>
+                    <li><a href="#sample21"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">21. array.prototype.join()</strong>:하트2:            메서드는 배열의 요소를 추가하여, 하나의 문자열로 반환합니다.</a></li>
+                    <li><a href="#sample22"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">22. array.prototype.pop()</strong>               메서드는 배열 마지막 요소를 제거하고, 제거한 요소를 반환합니다.</a></li>
+                    <li><a href="#sample23"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">23. array.prototype.push()</strong>:하트2:             메서드는 배열 끝에 요소를 추가하고, 배열의 새로운 길이값을 반환합니다.</a></li>
+                    <li><a href="#sample24"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">24. array.prototype.reduce()</strong>            메서드는 배열의 각 요소를 실행하고, 하나의 결과값을 반환합니다.</a></li>
+                    <li><a href="#sample25"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">25. array.prototype.reduceRight()</strong>       메서드는 배열의 각 요소를 마지막부터 실행하고, 하나의 결과값을 반환합니다.</a></li>
+                    <li><a href="#sample26"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">26. array.prototype.reverse()</strong>           메서드는 배열 요소의 순서를 반대로 하고, 반대로 된 배열을 반환합니다.</a></li>
+                    <li><a href="#sample27"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">27. array.prototype.shift()</strong>             메서드는 배열 처음 요소를 제거하고, 제거한 요소를 반환합니다.</a></li>
+                    <li><a href="#sample28"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">28. array.prototype.unshift()</strong>           메서드는 배열 앞에 요소를 추가하고, 배열의 새로운 길이 값을 반환합니다.</a></li>
+                    <li><a href="#sample29"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">29. array.prototype.slice()</strong>:하트2:           메서드는 배열 시작 위치에서 종료 위치 값을 추출하여, 새로운 배열을 반환합니다.</a></li>
+                    <li><a href="#sample30"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">30. array.prototype.splice()</strong>:하트2:          메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.</a></li>
+                    <li><a href="#sample31"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">31. array.prototype.sort()</strong>:하트2:            메서드는 배열의 요소를 적절한 위치에 정렬한 후, 그 배열을 반환합니다    </a></li>
+                    <li><a href="#sample32"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">32. array.prototype.toLocaleString()</strong>    메서드는 배열의 요소를 문자열로 반환합니다.</a></li>
+                    <li><a href="#sample33"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">33. array.prototype.toString()</strong>          메서드는 데이터를 배열로 변환하고, 새로운 배열을 반환합니다.</a></li>
+                    <li><a href="#sample34"><strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">34. array.prototype.values()</strong>            메서드는 배열 각 인덱스에 대한 값을 객체로 반환합니다.</a></li>
+                </ul>
+            </div>
+            <div class="main__sample">
+                <!-- sample29 -->
+                <div id="sample29" class="sample" style="padding-top: 40px;">
+                    <h3>29. slice()</h3>
+                    <div class="notice">"배열".slice(시작위치, [끝나는 위치])</div>
+                    <ul>
+                        <li>시작 위치에서 종료 위치 값을 추출하여 새로운 배열을 반환합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    ['j','a','v','a','s','c','r','i','p','t'];                      //['j','a','v','a','s','c','r','i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(1);             //['a','v','a','s','c','r','i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(2);             //['v','a','s','c','r','i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0, 1);          //['j']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(1, 2);          //['a']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0, 2);          //['j','a']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(0, 3);          //['j','a','v']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(5, 10);         //['c','r','i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(5, -1);         //['c','r','i','p']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(5, -2);         //['c','r','i']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-1);            //['t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-2);            //['p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-3);            //['i','p','t']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-3, -1);        //['i','p']
+    ['j','a','v','a','s','c','r','i','p','t'].slice(-3, -2);        //['i']
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample29 -->
+                <!-- sample30 -->
+                <div id="sample30" class="sample">
+                    <h3>30. splice()</h3>
+                    <div class="notice">"배열".slice(시작위치, [삭제 갯수], [요소])</div>
+                    <ul>
+                        <li>배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.</li>
+                    </ul>
+                    <div class="script">
+<pre><code class="Language-js">{
+    const arrNum1 = [100, 200, 300, 400, 500];
+    const result1 = arrNum1.splice(1);
+
+    console.log(result1);        //[200, 300, 400, 500]
+    console.log(arrNum1);        //[100]
+
+    const arrNum2 = [100, 200, 300, 400, 500];
+    const result2 = arrNum2.splice(1, 2);
+
+    console.log(result2);       //[200, 300]
+    console.log(arrNum2);       //[100, 400, 500]
+
+    const arrNum3 = [100, 200, 300, 400, 500];
+    const result3 = arrNum3.splice(1, 4);
+
+    console.log(result3);       //[200, 300, 400, 500]
+    console.log(arrNum3);       //[100]
+
+    const arrNum4 = [100, 200, 300, 400, 500];
+    const result4 = arrNum4.splice(1, 2, "javascript");
+
+    console.log(result4);       //[200, 300]
+    console.log(arrNum4);       //[100, "javascript", 400, 500]
+
+    const arrNum5 = [100, 200, 300, 400, 500];
+    const result5 = arrNum5.splice(1, 0, "javascript");
+
+    console.log(result5);       //[]
+    console.log(arrNum5);       //[100, "javascript", 200, 300, 400, 500]
+
+    const arrNum6 = [100, 200, 300, 400, 500];
+    const result6 = arrNum6.splice(0, 4, "javascript");
+
+    console.log(result6);       //[100, 200, 300, 400]
+    console.log(arrNum6);       //["javascript", 500]
+
+    const arrNum7 = [100, 200, 300, 400, 500];
+    const result7 = arrNum7.splice(2, 2, "javascript", "react");
+
+    console.log(result7);       //[300, 400]
+    console.log(arrNum7);       //[100, 200, "javascript", "react", 500]
+
+    const arrNum8 = [100, 200, 300, 400, 500];
+    const result8 = arrNum8.splice(-2, 2, "javascript");
+
+    console.log(result8);       //[400, 500]
+    console.log(arrNum8);       //[100, 200, 300, "javascript"]
+
+    //result는 삭제된 요소
+    //arrNum은 나머지 + 추가된 요소
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- sample30 -->
+            </div>
+        </div>
+        <div><a id="top_btn" class="">TOP</a></div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:dlscks0930@gmail.com">dlscks0930@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(window).scroll(function(){
+    
+    if( $(this).scrollTop() > 100 ){
+    $("#top_btn").addClass("on");
+    }
+    else{
+    $("#top_btn").removeClass("on");
+    }
+    
+    });
+    
+    $("#top_btn").click(function(){
+    window.scrollTo({top : 0, behavior: 'smooth'}); 
+    });
+    
+        </script>
+</html>

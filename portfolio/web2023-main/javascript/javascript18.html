@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript : 게임효과</title>
+    <style>
+        #top_btn{
+        position: fixed;
+        left: 0;
+        bottom: -50px;
+        display: inline-block;
+        background-color: #a6ff0099;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-weight: bold;
+        opacity: 0;
+        transition: 0.7s ease;
+        font-size: 19px;
+        z-index: 9999;
+        text-align: center;
+    }
+    
+        #top_btn.on{
+        opacity: 1;
+        cursor: pointer;
+        bottom: 0;
+    }
+        </style>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/ico/javascript.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/javascript192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/ico/javascript192x192.png">
+</head>
+<body>
+    <header id="header">
+    <h1><a href="index.html">javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 개체</a></li>
+                <li><a href="javascript08.html">숫자 개체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="last">
+                <li><a href="javascript12.html">데이터 효과</a></li>
+                <li><a href="javascript13.html">검색 효과</a></li>
+                <li><a href="javascript14.html">퀴즈 효과</a></li>
+                <li><a href="javascript15.html">마우스 효과</a></li>
+                <li><a href="javascript16.html">슬라이드 효과</a></li>
+                <li><a href="javascript17.html">패럴랙스 객체</a></li>
+                <li class="active"><a href="javascript18.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="container">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#">01. 변수 : 데이터 저장</a></li>
+                    <li><a href="#">01. 상수 : 데이터 저장</a></li>
+                    <li><a href="#">01. 배열 : 데이터 저장</a></li>
+                    <li><a href="#">01. 객체 : 데이터 저장</a></li>
+                </ul>
+            </div>
+        </div>
+        <div><a id="top_btn" class="">TOP</a></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+    </footer>
+    <!-- //footer -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(window).scroll(function(){
+    
+    if( $(this).scrollTop() > 100 ){
+    $("#top_btn").addClass("on");
+    }
+    else{
+    $("#top_btn").removeClass("on");
+    }
+    
+    });
+    
+    $("#top_btn").click(function(){
+    window.scrollTo({top : 0, behavior: 'smooth'}); 
+    });
+    
+        </script>
+
+    <body>
+    <footer id="footer">
+            <a href="mailto:dlscks0930@naver.com">dlscks0930@naver.com</a>
+    </footer>
+        <!-- //footer -->
+
+    </body>
+
+</html>

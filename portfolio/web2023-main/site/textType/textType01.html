@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textType01</title>
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+        img {
+            vertical-align: top;
+            width: 100%;
+        }
+        .mt10 {margin-top: 10px !important}
+        .mt20 {margin-top: 20px !important}
+        .mt30 {margin-top: 30px !important}
+        .mt40 {margin-top: 40px !important}
+        .mt50 {margin-top: 50px !important}
+        .mt60 {margin-top: 60px !important}
+        .mt70 {margin-top: 70px !important}
+        .mb10 {margin-bottom: 10px !important}
+        .mb20 {margin-bottom: 20px !important}
+        .mb30 {margin-bottom: 30px !important}
+        .mb40 {margin-bottom: 40px !important}
+        .mb50 {margin-bottom: 50px !important}
+        .mb60 {margin-bottom: 60px !important}
+        .mb70 {margin-bottom: 70px !important}
+        /* commmon */
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* background-color: rgba(0, 0, 0, 0.1); */
+        }
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section__small {
+            font-size: 14px;
+            padding: 1px 23px;
+            border-radius: 10px;
+            background-color: #055A5B;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .section.center {
+            text-align: center;
+        }
+        .section__h2 {
+            font-size: 50px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .section__desc {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 70px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+        /* text__wrap */
+        .text__wrap {}
+        .text__inner {
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .text__inner .text {
+            width: 32.333333%;
+            border: 1px solid #F5F5F5;
+            padding: 90px 20px 20px 20px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        .text__inner .text::before {
+            content: '';
+            width: 60px;
+            height: 60px;
+            background-color: #055A5B;
+            background-image: url(../asset/img/textType__icon01.svg);
+            background-repeat: no-repeat;
+            background-position:  center;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            border-radius: 50%;
+        }
+        .text__inner .text.t1::before{
+            background-image: url(../asset/img/textType01_01.svg);
+            background-color: #FFEB33;
+        }
+        .text__inner .text.t2::before{
+            background-image: url(../asset/img/textType01_02.svg);
+            background-color: #5BF6BF;
+        }
+        .text__inner .text.t3::before{
+            background-image: url(../asset/img/textType01_03.svg);
+            background-color: #D96C08;
+        }
+        .text__inner .text.t4::before{
+            background-image: url(../asset/img/textType01_04.svg);
+            background-color: #90E8A8;
+        }
+        .text__inner .text.t5::before{
+            background-image: url(../asset/img/textType01_05.svg);
+            background-color: #98A2F9;
+        }
+        .text__inner .text.t6::before{
+            background-image: url(../asset/img/textType01_06.svg);
+            background-color: #FDBDF6;
+        }
+        .text__inner .text:hover {
+            background-color: #F5F5F5;
+        }
+        .text__title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .text__desc {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .text__btn {
+            float: right;
+            position: relative;
+            padding-right: 20px;
+        }
+        .text__btn:hover::before {
+            transform: rotate(360deg);
+        }
+        .text__btn::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background-image: url(../asset/img/icon_plus.svg);
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <section class="text__wrap section center nexon">
+        <div class="container">
+            <span class="section__small">notice</span>
+            <h2 class="section__h2 mb70">대표적인 커피의 종류</h2>
+            <div class="text__inner">
+                <div class="text t1">
+                    <h3 class="text__title">Espresso</h3>
+                    <p class="text__desc">에스프레소 (Espresso)는 이탈리아에서 탄생한 커피 음료로, 작고 진한 맛이 특징인 커피입니다. 에스프레소를 만들기 위해서는 에스프레소 기계라는 전용 기계를 사용합니다. 이 기계는 높...</p>
+                    <a href="#" class="text__btn">더보기</a>
+                </div>
+                <div class="text t2">
+                    <h3 class="text__title">Americano</h3>
+                    <p class="text__desc">아메리카노 (Americano)는 에스프레소에 물을 추가하여 만든 커피 음료입니다. 원래는 이탈리아에서 미군이 이용하는 커피 가게에서 물을 추가해 커피를 연하게 마시기 시작한 것이 유래입니..
+                    </p>
+                    <a href="#" class="text__btn">더보기</a>
+                </div>
+                <div class="text t3">
+                    <h3 class="text__title">Latte</h3>
+                    <p class="text__desc">라떼(Latte)는 에스프레소와 스팀밀크를 혼합한 커피 음료입니다. 에스프레소와 스팀밀크의 비율은 일반적으로 1:3에서 1:5 정도로 섞이며, 에스프레소의 쓴 맛과 스팀밀크의 부드러운 맛이...</p>
+                    <a href="#" class="text__btn">더보기</a>
+                </div>
+                <div class="text t4">
+                    <h3 class="text__title">Cappuccino</h3>
+                    <p class="text__desc">카푸치노(Cappuccino)는 에스프레소, 스팀밀크, 그리고 밀크 폼으로 만들어지는 이탈리아의 전통적인 커피 음료입니다. 카푸치노는 일반적으로 1:1:1의 비율로 만들어지며, 에스프레소에...</p>
+                    <a href="#" class="text__btn">더보기</a>
+                </div>
+                <div class="text t5">
+                    <h3 class="text__title">Mocha</h3>
+                    <p class="text__desc">모카(Mocha)는 에스프레소, 스팀밀크, 초콜릿 시럽이나 분말, 그리고 얇게 갈은 초콜릿으로 만들어지는 커피 음료입니다. 모카는 일반적으로 달콤하고 부드러운 맛이 특징입니다. 초콜...</p>
+                    <a href="#" class="text__btn">더보기</a>
+                </div>
+                <div class="text t6">
+                    <h3 class="text__title">Cold Braw</h3>
+                    <p class="text__desc">콜드 브루(Cold Brew)는 차가운 물에 갈아낸 커피를 오랫동안 저온에서 우려내는 방식으로 만들어지는 커피 음료입니다. 일반적으로 12~24시간 동안 차가운 물에 커피를 우려내고, 필터...</p>
+                    <a href="#" class="text__btn">더보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

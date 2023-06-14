@@ -1,0 +1,305 @@
+:root {
+        --unit: 1vmin;
+        --land: hsl(40, 40%, 40%);
+        --dirt: hsl(40, 40%, 70%);
+        --green: hsl(100, 40%, 50%);
+        --green--two: hsl(100, 40%, 40%);
+        --green--three: hsl(100, 40%, 30%);
+        --road--one: hsl(0, 0%, 40%);
+        --road--two: hsl(0, 0%, 50%);
+        --bear--one: hsl(30, 80%, 25%);
+        --bear--two: hsl(30, 80%, 20%);
+        --cap-peak--one: hsl(10, 100%, 50%);
+        --cap-peak--two: hsl(10, 80%, 36%);
+        --cap-body--one: hsl(0, 0%, 15%);
+        --cap-body--two: hsl(0, 0%, 30%);
+        --car--one: hsl(0, 60%, 50%);
+        --car--two: hsl(0, 60%, 40%);
+        --car--three: hsl(40, 80%, 50%);
+        --car--four: hsl(0, 0%, 96%);
+        --car--five: hsl(0, 0%, 65%);
+        --car--six: hsl(0, 0%, 45%);
+        --car--seven: hsl(0, 0%, 15%);
+        --tyre--one: hsl(0, 0%, 5%);
+        --tyre--two: hsl(0, 0%, 15%);
+        --tyre--three: hsl(0, 0%, 50%);
+        --rock--one: hsl(30, 30%, 50%);
+        --rock--two: hsl(30, 30%, 30%);
+        --burm: hsl(10, 80%, 50%);
+        --cloud: hsl(0, 0%, 100%);
+      }
+      
+      html {
+        font-size: var(--unit);
+      }
+      
+      body {
+        --landscape: linear-gradient(var(--green), var(--green)) 0 100% / 100% 57.25%;
+        --hill: radial-gradient(var(--green--two) 0 69%, transparent 70% 100%) 20% 45% / 30em 30em;
+        --hill--two: radial-gradient(var(--green--three) 0 69%, transparent 70% 100%) 10% 45% / 40em 40em;
+        --cloud--one: radial-gradient(var(--cloud) 0 69%, transparent 70% 100%) calc(100% - 50em) 15% / 20em 20em;
+        --cloud--two: radial-gradient(var(--cloud) 0 69%, transparent 70% 100%) calc(100% - 40em) 12% / 20em 20em;
+        --cloud--three: radial-gradient(var(--cloud) 0 69%, transparent 70% 100%) calc(100% - 60em) 15% / 20em 20em;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        background:
+          var(--landscape),
+          var(--hill),
+          var(--hill--two),
+          var(--cloud--one),
+          var(--cloud--two),
+          var(--cloud--three);
+        background-repeat: no-repeat;
+        background-color: hsl(190, 50%, 90%);
+        min-height: 100vh;
+        perspective: 70vh;
+        transform-style: preserve-3d;
+        overflow: hidden;
+      }
+      
+      body:before {
+        --road-burm--left: linear-gradient(white 0 20%, var(--burm) 21% 40%, white 41% 60%, var(--burm) 61% 80%, white 81% 100%) 50% 50% / 36em 32em no-repeat;
+        --road-markings: linear-gradient(white 0 49%, transparent 51% 100%) 50% 0 / 1em 5em repeat-y;
+        --road-edges: linear-gradient(90deg, white 0 2%, transparent 3% 97%, white 98% 100%) 50% 0 / 30em 100% no-repeat;
+        --road: linear-gradient(0deg, var(--road--one) 0 49%, var(--road--two) 50% 100%) 50% 0 / 30em 10em repeat-y;
+        --stone--one: linear-gradient(var(--rock--one) 0 60%, var(--rock--two) 61% 100%) 36% 20% / 4em 4em no-repeat;
+        --stone--two: linear-gradient(hsl(90, 80%, 40%) 0 60%, hsl(100, 50%, 40%) 61% 100%) 26% 60% / 4em 4em no-repeat;
+        --stone--three: linear-gradient(var(--rock--one) 0 60%, var(--rock--two) 61% 100%) 66% 50% / 4em 4em no-repeat;
+        --stone--four: linear-gradient(hsl(110, 50%, 30%) 0 60%, hsl(110, 40%, 50%) 61% 100%) 78% 40% / 4em 4em no-repeat;
+        --stone--five: linear-gradient(var(--rock--one) 0 60%, var(--rock--two) 61% 100%) 48% 45% / 4em 4em no-repeat;
+        --stone--six: linear-gradient(var(--rock--one) 0 60%, var(--rock--two) 61% 100%) 68% 48% / 4em 4em no-repeat;
+        --stone--seven: linear-gradient(var(--rock--one) 0 60%, var(--rock--two) 61% 100%) 48% 78% / 4em 4em no-repeat;
+        --stone--eight: linear-gradient(var(--rock--one) 0 60%, var(--rock--two) 61% 100%) 65% 88% / 4em 4em no-repeat;
+        --stone--nine: linear-gradient(var(--rock--one) 0 60%, var(--rock--two) 61% 100%) 60% 10% / 4em 4em no-repeat;
+        --stone--ten: linear-gradient(var(--rock--one) 0 60%, var(--rock--two) 61% 100%) 35% 30% / 4em 4em no-repeat;
+        --curb: linear-gradient(var(--dirt), var(--dirt)) 50% 0 / 50em 100% no-repeat;
+        --grass: linear-gradient(var(--green), var(--green)) 0% 0% / 100% 100%;
+        content: '';
+        position: absolute;
+        height: 200vh;
+        width: 100vw;
+        top: 50%;
+        left: 50%;
+        background:
+          var(--road-markings),
+          var(--road-edges),
+          var(--road),
+          var(--road-burm--left),
+          var(--stone--one),
+          var(--stone--two),
+          var(--stone--three),
+          var(--stone--four),
+          var(--stone--five),
+          var(--stone--six),
+          var(--stone--seven),
+          var(--stone--eight),
+          var(--stone--nine),
+          var(--stone--ten),
+          var(--curb),
+          var(--grass);
+        animation: roll 4s infinite linear;
+        transform-origin: 50% 50%;
+        transform: translate(-50%, -50%) rotateX(80deg) translate(0, 0%);
+      }
+      
+      @keyframes roll {
+        from {
+          background-position:
+            50% 0%,
+            50% 0%,
+            50% 0%,
+            50% -50%,
+            36% -80%,
+            26% -40%,
+            66% -50%,
+            78% -60%,
+            48% -35%,
+            68% -52%,
+            40% -30%,
+            65% -20%,
+            60% -90%,
+            35% -70%,
+            50% 0,
+            0 0;
+        }
+        to {
+          background-position:
+            50% 100%,
+            50% 0%,
+            50% 100%,
+            50% 150%,
+            36% 120%,
+            26% 160%,
+            66% 150%,
+            78% 140%,
+            48% 165%,
+            60% 148%,
+            40% 170%,
+            65% 180%,
+            60% 110%,
+            35% 130%,
+            50% 0,
+            0 0;
+        }
+      }
+      
+      body:after {
+        --cap--button: linear-gradient(var(--cap-peak--one), var(--cap-peak--one)) 50% 0 / 4em 2em;
+        --peak--one: linear-gradient(var(--cap-peak--one), var(--cap-peak--one)) 50% 12em / 12em 10em;
+        --peak--two: linear-gradient(var(--cap-peak--one), var(--cap-peak--one)) 50% 12em / 16em 8em;
+        --peak--three: linear-gradient(var(--cap-peak--one), var(--cap-peak--one)) 50% 10em / 20em 6em;
+        --cap--one: linear-gradient(var(--cap-body--one), var(--cap-body--one)) 50% 2em / 12em 20em;
+        --cap--two: linear-gradient(var(--cap-body--one), var(--cap-body--one)) 50% 4em / 16em 16em;
+        --cap--three: linear-gradient(var(--cap-body--one), var(--cap-body--one)) 50% 6em / 20em 10em;
+        --cap--four: linear-gradient(var(--cap-body--one), var(--cap-body--one)) 50% 8em / 16em 4em;
+        --head--one: linear-gradient(var(--bear--one), var(--bear--one)) 50% 8em / 20em 26em;
+        --head--two: linear-gradient(var(--bear--one), var(--bear--one)) 50% 6em / 28em 16em;
+        --head--three: linear-gradient(var(--bear--one), var(--bear--one)) 50% 6em / 36em 6em;
+        --head--four: linear-gradient(var(--bear--one), var(--bear--one)) 12em 4em / 6em 10em;
+        --head--five: linear-gradient(var(--bear--one), var(--bear--one)) 38em 4em / 6em 10em;
+        --head--six: linear-gradient(var(--bear--one), var(--bear--one)) 50% 20em / 24em 6em;
+        --shoulder--one: linear-gradient(var(--bear--one), var(--bear--one)) 50% 28em / 24em 6em;
+        --shoulder--two: linear-gradient(var(--bear--one), var(--bear--one)) 50% 30em / 28em 6em;
+        --shoulder--three: linear-gradient(var(--bear--one), var(--bear--one)) 50% 32em / 32em 6em;
+        --seat--one: linear-gradient(var(--car--seven), var(--car--seven)) 50% 28em / 16em 10em;
+        --seat--two: linear-gradient(var(--car--seven), var(--car--seven)) 50% 32em / 20em 10em;
+        --seat--three: linear-gradient(var(--car--two), var(--car--two)) 50% 32em / 12em 4em;
+        --seat--four: linear-gradient(var(--car--one), var(--car--one)) 50% 34em / 20em 4em;
+        --seat--five: linear-gradient(var(--car--five), var(--car--five)) 50% 36em / 24em 12em;
+        --seat--six: linear-gradient(var(--car--six), var(--car--six)) 50% 34em / 32em 4em;
+        --seat--seven: linear-gradient(var(--car--four), var(--car--four)) 12em 36em / 4em 4em;
+        --seat--eight: linear-gradient(var(--car--four), var(--car--four)) 40em 36em / 4em 4em;
+        --seat--nine: linear-gradient(var(--car--six), var(--car--six)) 50% 38em / 28em 10em;
+        --seat--ten: linear-gradient(var(--car--seven), var(--car--seven)) 50% 38em / 20em 10em;
+        --seat--eleven: linear-gradient(var(--car--four), var(--car--four)) 50% 40em / 20em 2em;
+        --seat--twelve: linear-gradient(var(--car--one), var(--car--one)) 50% 42em / 16em 2em;
+        --seat--thirteen: linear-gradient(var(--car--four), var(--car--four)) 50% 44em / 16em 2em;
+        --seat--fourteen: linear-gradient(var(--car--two), var(--car--two)) 50% 46em / 12em 2em;
+        --seat--fifteen: linear-gradient(var(--car--three), var(--car--three)) 50% 46em / 16em 2em;
+        --seat--sixteen: linear-gradient(var(--car--one), var(--car--one)) 50% 46em / 28em 6em;
+        --seat--seventeen: linear-gradient(black, black) 50% 50em / 28em 2em;
+        --seat--eighteen: linear-gradient(var(--car--five), var(--car--five)) 50% 48em / 16em 3em;
+        --seat--nineteen: linear-gradient(var(--car--five), var(--car--five)) 50% 42em / 24em 6em;
+        --seat--twenty: linear-gradient(var(--car--five), var(--car--five)) 50% 44em / 28em 2em;
+        --seat--twentyone: linear-gradient(var(--car--three), var(--car--three)) 50% 44em / 28em 4em;
+        --wheel--main: linear-gradient(var(--tyre--one), var(--tyre--one)) 50% 40em / 56em 10em;
+        --wheel--left: linear-gradient(var(--tyre--one), var(--tyre--one)) 2em 38em / 10em 20em;
+        --shine--left-one: linear-gradient(var(--tyre--three), var(--tyre--three)) 2em 40em / 10em 4em;
+        --shine--left-two: linear-gradient(var(--tyre--two), var(--tyre--two)) 2em 42em / 10em 3em;
+        --shine--right-one: linear-gradient(var(--tyre--three), var(--tyre--three)) 44em 40em / 10em 4em;
+        --shine--right-two: linear-gradient(var(--tyre--two), var(--tyre--two)) 44em 42em / 10em 3em;
+        --wheel--right: linear-gradient(var(--tyre--one), var(--tyre--one)) 44em 38em / 10em 20em;
+        --wheel--top-main: linear-gradient(var(--tyre--one), var(--tyre--one)) 50% 34em / 40em 8em;
+        --wheel--top-bottom: linear-gradient(var(--tyre--one), var(--tyre--one)) 50% 36em / 44em 8em;
+        --wheel--top-body: linear-gradient(var(--tyre--three), var(--tyre--three)) 50% 36em / 40em 8em;
+        --shade--one: linear-gradient(var(--cap-body--two), var(--cap-body--two)) 22em 2em / 2em 2em;
+        --shade--two: linear-gradient(var(--cap-body--two), var(--cap-body--two)) 20em 4em / 2em 2em;
+        --shade--three: linear-gradient(var(--cap-body--two), var(--cap-body--two)) 18em 6em / 2em 4em;
+        --shade--four: linear-gradient(var(--bear--two), var(--bear--two)) 12em 4em / 6em 2em;
+        --shade--five: linear-gradient(var(--bear--two), var(--bear--two)) 10em 6em / 2em 6em;
+        --shade--six: linear-gradient(var(--bear--two), var(--bear--two)) 12em 12em / 2em 2em;
+        --shade--seven: linear-gradient(var(--bear--two), var(--bear--two)) 14em 14em / 2em 8em;
+        --shade--eight: linear-gradient(var(--bear--two), var(--bear--two)) 16em 22em / 2em 4em;
+        --shade--nine: linear-gradient(var(--bear--two), var(--bear--two)) 18em 26em / 2em 2em;
+        --shade--ten: linear-gradient(var(--bear--two), var(--bear--two)) 16em 28em / 2em 2em;
+        --shade--eleven: linear-gradient(var(--bear--two), var(--bear--two)) 14em 30em / 2em 2em;
+        --shade--twelve: linear-gradient(var(--bear--two), var(--bear--two)) 12em 32em / 2em 2em;
+        --shade--thirteen: linear-gradient(var(--cap-peak--two), var(--cap-peak--two)) 18em 10em / 2em 6em;
+        --shade--fourteen: linear-gradient(var(--cap-peak--two), var(--cap-peak--two)) 20em 16em / 2em 4em;
+        --shade--fifteen: linear-gradient(var(--cap-peak--two), var(--cap-peak--two)) 22em 20em / 12em 2em;
+      
+        /* --peak */
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: 50% 50%;
+        transform: translate3d(-50%, -100%, 0) scale(0.12) translate3d(0, 500%, 50em);
+        background:
+          var(--shade--one),
+          var(--shade--two),
+          var(--shade--three),
+          var(--shade--four),
+          var(--shade--five),
+          var(--shade--six),
+          var(--shade--seven),
+          var(--shade--eight),
+          var(--shade--nine),
+          var(--shade--ten),
+          var(--shade--eleven),
+          var(--shade--twelve),
+          var(--shade--thirteen),
+          var(--shade--fourteen),
+          var(--shade--fifteen),
+          var(--cap--button),
+          var(--cap--four),
+          var(--peak--one),
+          var(--peak--two),
+          var(--peak--three),
+          var(--cap--one),
+          var(--cap--two),
+          var(--cap--three),
+          var(--seat--seventeen),
+          var(--seat--eighteen),
+          var(--seat--fourteen),
+          var(--seat--fifteen),
+          var(--seat--thirteen),
+          var(--seat--twelve),
+          var(--seat--eleven),
+          var(--seat--ten),
+          var(--seat--twenty),
+          var(--seat--nineteen),
+          var(--seat--twentyone),
+          var(--seat--nine),
+          var(--seat--five),
+          var(--seat--four),
+          var(--seat--eight),
+          var(--seat--seven),
+          var(--seat--three),
+          var(--seat--sixteen),
+          var(--seat--one),
+          var(--seat--two),
+          var(--seat--six),
+          var(--head--one),
+          var(--head--two),
+          var(--head--three),
+          var(--head--four),
+          var(--head--five),
+          var(--head--six),
+          var(--shoulder--one),
+          var(--shoulder--two),
+          var(--shoulder--three),
+          var(--shine--right-two),
+          var(--shine--right-one),
+          var(--wheel--right),
+          var(--shine--left-two),
+          var(--shine--left-one),
+          var(--wheel--main),
+          var(--wheel--left),
+          var(--wheel--top-body),
+          var(--wheel--top-main),
+          var(--wheel--top-bottom);
+        background-repeat: no-repeat;
+        height: 52em;
+        width: 56em;
+        animation: rock .1s infinite linear, sway 2s infinite alternate;
+        z-index: -1;
+      }
+      
+      @keyframes rock {
+        50% {
+          transform: translate3d(-50%, -100%, 0) scale(0.12) translate3d(0, 500%, 50em) translate(0, -1.2em);
+        }
+      }
+      
+      @keyframes sway {
+        from {
+          margin-left: -4em;
+        }
+        to {
+          margin-left: 4em;
+        }
+      }
+      
+      

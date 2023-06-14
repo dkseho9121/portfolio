@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃17 - flex 유형 - 반응형</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #E8F5E9;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            background-color: #C8E6C9;
+        }
+        #nav {
+            height: 100px;
+            background-color: #A5D6A7;
+        }
+        #main {            
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .article1 {
+            width: 30%;
+            height: 780px;
+            background-color: #81C784;
+        }
+        .article2 {
+            width: 40%;
+            height: 780px;
+            background-color: #66BB6A;
+        }
+        .article3 {
+            width: 30%;
+            height: 780px;
+            background-color: #4CAF50;
+        }
+        #footer {
+            height: 100px;
+            background-color: #43A047;
+        }
+        @media (max-width: 1220px){
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media (max-width: 768px){
+            #wrap {
+                width: 100%;
+            }
+            .article1 {
+                height: 630px;
+            }
+            .article2 {
+                width: 70%;
+                height: 630px;
+            }
+            .article3 {
+                width: 100%;
+                height: 150px;
+            }
+        }
+        @media (max-width: 480px){
+            .article1 {
+                width: 100%;
+                height: 200px;
+            }
+            .article2 {
+                width: 100%;
+                height: 430px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <article class="article1"></article>
+            <article class="article2"></article>
+            <article class="article3"></article>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

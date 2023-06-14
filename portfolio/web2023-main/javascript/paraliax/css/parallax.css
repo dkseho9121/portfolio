@@ -1,0 +1,234 @@
+#header {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+#header h1 {
+    margin-bottom: 0.3em;
+}
+#header ul {
+    margin-top: 0.6em;
+}
+#header li {
+    display: inline-block;
+}
+#header li a {
+    color: #fff;
+    border: 1px solid #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+}
+#header li.active a {
+    background-color: #fff;
+    color: #000;
+}
+/* footer */
+#footer {
+    text-align: center;
+    padding: 100px 0;
+}
+#footer a {
+    color: #fff;
+    font-size: 14px;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+/* parallax__nav */
+.parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+}
+.parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+.parallax__nav li a {
+    display: inline-block;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+}
+.parallax__nav li.active a {
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+/* parallax__wrap */
+.parallax__wrap {
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.parallax__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    margin-right: 0;
+    position: relative;
+    padding-top: 8vw;
+}
+.parallax__item:nth-child(even){
+    margin-left: 0;
+    text-align: right;
+}
+.parallax__item__num {
+    font-size: 35vw;
+    font-weight: 300;
+    font-family: lato;
+    position: absolute;
+    left: -5vw;
+    top: -16vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+.parallax__item:nth-child(even) .parallax__item__num {
+    left: auto;
+    right: -5vw;
+}
+.parallax__item__title {
+    font-weight: blod;
+}
+.parallax__item__imgWrap {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: #000;
+    position: relative;
+    z-index: -1;
+}
+.parallax__item__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../img/mouseEffect01-min.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    filter: saturate(0%);
+    transition: all 1s;
+}
+.parallax__item:nth-child(1) .parallax__item__img {
+    background-image: url(../img/mouseEffect01-min.jpg);
+}
+.parallax__item:nth-child(2) .parallax__item__img {
+    background-image: url(../img/mouseEffect02-min.jpg);
+}
+.parallax__item:nth-child(3) .parallax__item__img {
+    background-image: url(../img/mouseEffect03-min.jpg);
+}
+.parallax__item:nth-child(4) .parallax__item__img {
+    background-image: url(../img/mouseEffect04-min.jpg);
+}
+.parallax__item:nth-child(5) .parallax__item__img {
+    background-image: url(../img/mouseEffect05-min.jpg);
+}
+.parallax__item:nth-child(6) .parallax__item__img {
+    background-image: url(../img/mouseEffect06-min.jpg);
+}
+.parallax__item:nth-child(7) .parallax__item__img {
+    background-image: url(../img/mouseEffect07-min.jpg);
+}
+.parallax__item:nth-child(8) .parallax__item__img {
+    background-image: url(../img/mouseEffect08-min.jpg);
+}
+.parallax__item:nth-child(9) .parallax__item__img {
+    background-image: url(../img/mouseEffect09-min.jpg);
+}
+.parallax__item__desc {
+    font-size: 3vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+.parallax__item:nth-child(even) .parallax__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+.parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.parallax__dot {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 10px;
+    border-radius: 30px;
+}
+.parallax__dot li{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 12px 8px;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+    text-indent: -9999px;
+    transition: box-shadow .2s ease;
+}
+.parallax__dot li a {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    transition: transform .2s ease;
+}
+.parallax__dot li.active {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
+    
+}
+.parallax__dot li.active a {
+    transform: scale(0.4);
+}
+
+
+@media (max-width: 1200px){
+    .parallax__nav {
+        font-size: 10px;
+        background-color: rgba(0, 0, 0, 0.9);
+        right: 10px;
+        left: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .parallax__nav li {
+        margin: 2px;
+    }
+    .parallax__nav li a {
+        font-size: 12px;
+        padding: 0px 14px;
+    }
+}
+::-webkit-scrollbar {width: 8px; height:8px;}
+::-webkit-scrollbar-button {display:none;}
+::-webkit-scrollbar-track {background:none;}
+::-webkit-scrollbar-thumb {border-radius:50px; background:#c2c2c2;}
+::-webkit-scrollbar-thumb:hover {background:#404040;}

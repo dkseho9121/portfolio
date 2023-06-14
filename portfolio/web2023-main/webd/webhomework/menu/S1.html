@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="js/S-2.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #wrap 
+        #top {
+            width: 100%;
+            height: calc(100vh - 100px);
+            background-color: #5e6ee7;
+            display: flex;
+        }
+        #aside {
+            width: 200px;
+            height: inherit;
+        }
+        #aside .logo {
+            width: 200px;
+            height: 10%;
+            background-color: #366e46;
+
+        }
+        #aside .nav {
+            width: 200px;
+            height: 90%;
+            background-color: #98a89c;
+
+        }
+        #aside2 {
+            width: 400px;
+            height: inherit;
+            background-color: #16d01f;
+
+        }
+        #aside2 .a1 {
+            height: 15%;
+            background-color: #eea2a2;
+        }
+        #aside2 .a2 {
+            height: 30%;
+            background-color: #e98888;
+        }
+        #aside2 .a3 {
+            height: 30%;
+            background-color: #ca5858;
+        }
+        #aside2 .a4 {
+            height: 25%;
+            background-color: #c83939;
+        }
+        #main {
+            width: calc(100% - 600px);
+            background-color: #993636;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            display: flex;
+        }
+        #footer .foo1 {
+            background-color: #1118ce;
+            width: 200px;
+        }
+        #footer .foo2 {
+            width: calc(100% - 200px);
+        }
+        .foo2 .foo2-1 {
+            width: 100%;
+            height: 50px;
+            background-color: #ce0edb;
+        }
+        .foo2 .foo2-2 {
+            width: 100%;
+            background-color: #88106c;
+            height: 50px;
+        }
+
+        img {
+            width: 100%;
+
+        }
+        /* slider__wrap */
+        .slider__wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider__img { /*이미지가 보이는 영역*/
+            position: relative;
+            width: 800px;
+            height: 450px;
+            overflow: hidden;
+            margin: 0 auto;
+            top: 10%;
+        }
+        .slider__inner { /*전체 이미지를 감싸고 있는 부모 : 움직이는 영역*/
+            display: flex;
+            flex-wrap: wrap;
+            width: 4000px;
+            height: 450px;
+        }
+        .slider { /*개별적인 이미지*/
+            position: relative;
+            width: 800px;
+            height: 450px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="top">
+            <div id="aside">
+                <div class="logo"></div>
+                <div class="nav"></div>
+            </div>
+            <div id="aside2">
+                <div class="a1"></div>
+                <div class="a2"></div>
+                <div class="a3"></div>
+                <div class="a4"></div>
+            </div>
+            <div id="main">
+                <div class="slider__img">
+                    <div class="slider__inner">
+                        <div class="slider"><img src="../img/imgslider01-min.jpg.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="../img/imgslider02-min.jpg.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="../img/imgslider03-min.jpg.jpg" alt="이미지3"></div>
+                        <div class="slider"><img src="../img/imgslider04-min.jpg.jpg" alt="이미지4"></div>
+                        <div class="slider"><img src="../img/imgslider05-min.jpg.jpg" alt="이미지5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="foo1"></div>
+            <div class="foo2">
+                <div class="foo2-1"></div>
+                <div class="foo2-2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

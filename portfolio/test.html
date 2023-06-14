@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>일본어 시계</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script>
+    window.onload = function() {
+      let clock = document.getElementById("clock");
+
+      setInterval(function () {
+        const currentTime = moment().format('A hh:mm:ss');
+        clock.innerHTML = currentTime;
+      }, 1000);
+
+      $(function () {
+        var $container = $('#container'),
+          filters = {};
+
+        $container.isotope({
+          itemSelector: '.color-shape',
+          masonry: {
+            columnWidth: 57
+          }
+        });
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>일본어 시계</h1>
+  <span id="clock"></span>
+  </div>
+</body>
+</html>

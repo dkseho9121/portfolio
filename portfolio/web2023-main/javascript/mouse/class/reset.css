@@ -1,0 +1,73 @@
+@import url('https://webfontworld.github.io/TheJamsil/TheJamsil.css');
+@import url('https://webfontworld.github.io/Cafe24Classictype/Cafe24ClassicType.css');
+@import url('https://webfontworld.github.io/BMJua/BMJua.css');
+@import url('https://webfontworld.github.io/PyeongChang/PyeongChang.css');
+@import url('https://webfontworld.github.io/NexonMabinogi/MabinogiClassic.css');
+@import url('https://webfontworld.github.io/BMDoHyeon/BMDoHyeon.css');
+@import url('https://webfontworld.github.io/Jalpullineun/JalpullineunOneul.css');
+@import url('https://webfontworld.github.io/Jalpullineun/JalpullineunHaru.css');
+@import url('https://webfontworld.github.io/baskinrobbins/BaskinRobbins.css');
+@import url('https://webfontworld.github.io/armynuri/ROKA.css');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+*,*::before, *::after {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+li, ul, ol {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+    width: 100%;
+}
+em {
+    font-style: normal;
+}
+/* header */
+#header {
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#header h1 {
+    margin-bottom: 10px;
+}
+#header a {
+    color: #fff;
+}
+#header p {
+    display: inline-block;
+}
+#header li {
+    display: inline-block;
+}
+#header li a {
+    width: 0px;
+    height: 0px;
+    border-bottom: 28px solid ;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+  }
+/* footer */
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+}
+#footer a{
+    color: #fff;
+}

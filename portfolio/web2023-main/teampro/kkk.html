@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영양많닭 로그인</title>
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/resets.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "NexonLv1Gothic";
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #modal {
+            width: 500px;
+            height: 700px;
+            text-align: center;
+            background-color: #fff;
+            border: 3px solid #FFA96B;
+            border-radius: 30px;
+            margin: 0 auto;
+            margin-top: 70px;
+            position: relative;
+        }
+        #modal .img1 img {
+            position: absolute;
+            right: 43px;
+            top: 38px;
+            width: 15px;
+            z-index: 1;
+        }
+        #modal .img2 img {
+            width: 130px;
+            margin: 30px 0 20px 0;
+        }
+        #modal .img1::after {
+            content: '';
+            position: absolute;
+            background-color: #FFA96B;
+            right: 33px;
+            top: 27px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+        #modal h2 {
+            font-size: 30px;
+            color: #FFA96B;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        #modal .Termsup__form .Term__box {
+            display: flex;
+            border: 2px solid #FF8F3F;
+            width: 298px;
+            height: 355px;
+            margin: 0 auto;
+            font-size: 12px;
+            overflow: auto;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        #modal .Termsup__form .Term__box::-webkit-scrollbar {
+            width: 10px;
+        }
+        #modal .Termsup__form .Term__box::-webkit-scrollbar-thumb {
+            height: 10%;
+            background-color: #FFA96B;
+            border-radius: 5px;
+        }
+        .item {
+            font-size: 12px;
+            width: 200px;
+            margin-left: 100px;
+            text-align: left;
+        }
+        .item input {
+            width: 300px;
+            height: 35px;
+            margin-bottom: 10px;
+            border: 1px solid #FFA96B;
+        }
+        .Termsup__form label {
+            text-align: left;
+            margin-bottom: 5px;
+            color: #FF8F3F;
+        }
+        .Termsup__form button {
+            font-size: 30px;
+            font-weight: bold;
+            width: 300px;
+            height: 50px;
+            border-radius: 30px;
+            color: #fff;
+            background-color: #FFA96B;
+            margin-top: 20px;
+        }
+        .check input[type="checkbox"] {
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            outline: none !important;
+            border: 1px solid #9999;
+            vertical-align: middle;
+        }
+        .check input[type="checkbox"]::before {
+            content: "\2713";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            overflow: hidden;
+            transform: scale(0) translate(-50%, -50%);
+            line-height: 1;
+        }
+        .check input[type="checkbox"]:checked {
+            background-color: #FFA96B;
+            border-color: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        .check input[type="checkbox"]:checked::before {
+            border-radius: 4px;
+            transform: scale(1) translate(-50%, -50%)
+        }
+        @media (max-width: 1200px) {
+    #modal {
+        width: 450px;
+        height: 600px;
+    }
+    #modal .img2 img {
+        width: 110px;
+    }
+    #modal h2 {
+        font-size: 26px;
+    }
+    #modal .Termsup__form .Term__box {
+        width: 270px;
+        height: 320px;
+    }
+    .item {
+        width: 260px;
+    }
+    .item input {
+        width: 260px;
+        height: 32px;
+    }
+    .Termsup__form button {
+        font-size: 26px;
+        width: 260px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    #modal {
+        width: 300px;
+        height: 550px;
+    }
+    #modal .img2 img {
+        width: 90px;
+    }
+    #modal h2 {
+        font-size: 22px;
+    }
+    #modal .Termsup__form .Term__box {
+        width: 220px;
+        height: 280px;
+    }
+    .item {
+        width: 220px;
+        margin-left: 40px;
+    }
+    .item input {
+        width: 220px;
+        height: 30px;
+    }
+    .Termsup__form button {
+        font-size: 22px;
+        width: 220px;
+        height: 40px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="modal">
+            <div class="img1">
+                <img src="../assets/img/Ximg.svg" alt="닫기">
+            </div>
+            <div class="img2">
+                <img src="../assets/img/logo.svg" alt="로고">
+            </div>
+            <div class="Termsup__form">
+                <form action="Termsup.php" name="Termsup" method="post">
+                    <fieldset>
+                        <legend class="blind">회원가입 영역</legend>
+                        <div class="item">
+                            <div>
+                                <label for="youID">아이디</label><br>
+                                <input type="text" id="youID" class="inputStyle" name="youID" placeholder="아이디를 적어주세요!" required>
+                            </div>
+                            <div>
+                                <label for="youPass" class="required">비밀번호</label><br>
+                                <input type="password" id="youPass" class="inputStyle"  name="youPass" placeholder="비밀번호를 적어주세요!" required>
+                            </div>
+                            <div>
+                                <label for="youPassC" class="required">비밀번호 확인</label><br>
+                                <input type="password" id="youPassC" class="inputStyle"  name="youPassC" placeholder="다시 비밀번호를 적어주세요!" required>
+                            </div>
+                            <div>
+                                <label for="youName" class="required">이름</label><br>
+                                <input type="text" id="youName" class="inputStyle" name="youName" placeholder="이름을 적어주세요!" required>
+                            </div>
+                            <div>
+                                <label for="youGender" class="required">성별</label><br>
+                                <input type="text" id="youGender" class="inputStyle" name="youGender" placeholder="이메일을 적어주세요!" required>
+                            </div>
+                            <div>
+                                <label for="youEmail" class="required">이메일</label><br>
+                                <input type="text" id="youEmail" class="inputStyle" name="youEmail" placeholder="이메일을 적어주세요!" required>
+                            </div>
+                            <div>
+                                <label for="youPhone" class="required">연락처</label><br>
+                                <input type="text" id="youPhone" class="inputStyle"  name="youPhone" placeholder="연락처를 적어주세요!" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="button">가입하기</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

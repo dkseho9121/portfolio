@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디기</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+        li {
+            list-style: none;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+        }
+        #wrap {
+            display: flex;
+        }
+        #nav {
+            padding: 20px;
+            display: flex;
+        }
+        #nav li a {
+            border: 1px solid #ccc;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin-bottom: 5px;
+            text-align: center;
+            line-height: 50px;
+            margin-right: 5px;
+        }
+        #nav li a:hover {
+            background-color: #b6f7ff;
+        }
+        #main {
+            margin: 20px;
+            margin-left: 0;
+            border: 1px solid #ccc;
+            width: calc(100% - 40px);
+        }
+        .active {
+            background-color: #b6f7ff;
+            margin-bottom: 6px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <nav id="nav">
+            <ul>
+                <li class="active"><a href="layout/A1.html">A-1</a></li>
+                <li><a href="layout/A2.html">A-2</a></li>
+                <li><a href="layout/A3.html">A-3</a></li>
+                <li><a href="layout/A4.html">A-4</a></li>
+                <li><a href="layout/B1.html">B-1</a></li>
+                <li><a href="layout/B2.html">B-2</a></li>
+                <li><a href="layout/B3.html">B-3</a></li>
+                <li><a href="layout/B4.html">B-4</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout/C1.html">C-1</a></li>
+                <li><a href="layout/C2.html">C-2</a></li>
+                <li><a href="layout/C3.html">C-3</a></li>
+                <li><a href="layout/C4.html">C-4</a></li>
+                <li><a href="layout/D1.html">D-1</a></li>
+                <li><a href="layout/D2.html">D-2</a></li>
+                <li><a href="layout/D3.html">D-3</a></li>
+                <li><a href="layout/D4.html">D-4</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout/E1.html">E-1</a></li>
+                <li><a href="layout/E2.html">E-2</a></li>
+                <li><a href="layout/E3.html">E-3</a></li>
+                <li><a href="layout/E4.html">E-4</a></li>
+                <li><a href="menu/m1.html">M-1</a></li>
+                <li><a href="menu/m2.html">M-2</a></li>
+                <li><a href="menu/s1.html">S-1</a></li>
+                <li><a href="menu/s2.html">S-2</a></li>
+            </ul>
+        </nav>
+        <main id="main">
+            <iframe src="layout/A1.html" frameborder="0"></iframe>
+        </main>
+    </div>
+</body>
+</html>
+<script>
+document.querySelectorAll("li").forEach((e)=>{
+    e.addEventListener("click", (event)=>{
+        event.preventDefault(); 
+        let url = event.target.getAttribute('href'); 
+        document.querySelector("iframe").src = url;
+
+        document.querySelector(".active").classList.remove("active");
+        e.classList.add("active");
+    });
+});
+</script>
+

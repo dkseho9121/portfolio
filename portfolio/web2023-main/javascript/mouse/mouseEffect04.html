@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03. 마우스 이펙트</title>
+    <link rel="stylesheet" href="class/reset.css">
+    <link rel="stylesheet" href="class/mouse.css">
+    <style>
+        #header {
+            z-index: 100;
+        }
+        .mouse__wrap {
+
+        }
+        .mouse__img {
+            width: 100%;
+            height: 100vh;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .mouse__img figure {
+            width: 50vw;
+            height: 50vh;
+            position: relative;
+            overflow: hidden;
+            background: red;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            transition: transform 500ms ease;
+            cursor: none;
+        }
+        .mouse__img figure:hover {
+            transform: scale(1.025);
+        }
+        .mouse__img figure img {
+            position: absolute;
+            left: -5%;
+            top: -5%;
+            width: 110%;
+            height: 110%;
+            object-fit: cover;
+            filter: sepia(60%) saturate(200%);
+        }
+        .mouse__img figure figcaption {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+            user-select: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="img08 bg067 ROKA" >
+    <header id="header">
+        <h1>Javascript Mouse Effect03</h1>
+        <p>마우스 이펙트 - 마우스 따라다니는 조명 효과입니다.</p>
+        <ul>
+            <li><a href="mouseEffect01.html">1</a></li>
+            <li><a href="mouseEffect02.html">2</a></li>
+            <li><a href="mouseEffect03.html">3</a></li>
+            <li class="active"><a href="mouseEffect01.html">4</a></li>
+            <li><a href="mouseEffect01.html">5</a></li>
+            <li><a href="mouseEffect01.html">6</a></li>
+
+        </ul>
+    </header>
+    <!-- //haeder-->
+    <main id="main">
+        <div class="mouse_wrap">
+            <div class="mouse__cursor"></div>
+            <div class="mouse__img">
+                <figure>
+                    <img src="img/mouseEffect04-min.jpg" alt="이미지">
+                    <figcaption>
+                        <p>I never dreamed about success, I worked for it</p>
+                        <p>나는 결코 성공에 대해 꿈꾸지 않았다. 나를 꿈을 위해 행동했다.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </main>
+    <!-- //main-->
+    <footer id="footer">
+        <a href="dlscks0930@naver.com">dlscks0930@naver.com</a>
+    </footer>
+    <!-- //footer-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script>
+        document.querySelector(".mouse__img figure").addEventListener("mousemove", e=> {
+            gsap.to(".mouse__cursor", {
+                duration: .2,
+                left: e.pageX,
+                top: e.pageY
+            });
+            //마우스 좌표 값
+            let mousePageX = e.pageX;
+            let mousePageY = e.pageY;
+
+            //전체 화면 가로값
+            window.innerWidth //1920 브라우저 크기
+            window.outerWidth //1920 브라우저 크기(스크롤 바 포함)
+            window.screen.width //1920 화면 크기
+
+            //마우스 좌표값 기준점 가운데로 설정
+            let centerPageX = window.innerWidth / 2 - mousePageX;
+            let centerPageY = window.innerHeight / 2 - mousePageY;
+
+            //이미지 움직이기
+            const imgMove = document.querySelector(".mouse__img figure img");
+            imgMove.style.transform = "translate("+centerPageX/20+"px, "+centerPageY/20+"px)";
+        });
+        // gsap.to(".mouse__img figure img", {
+        //     duration: .2,
+        //     left: -25+centerPageX/30,
+        //     top: centerPageY/20
+        // });
+        // })
+    </script>
+</body>
+</html>

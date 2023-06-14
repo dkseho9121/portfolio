@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'PP Neue World';
+    src: url('PPNeueWorld-Regular.woff2') format('woff2'),
+        url('PPNeueWorld-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue World Extended';
+    src: url('PPNeueWorld-ExtendedThin.woff2') format('woff2'),
+        url('PPNeueWorld-ExtendedThin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue World Condensed';
+    src: url('PPNeueWorld-CondensedRegular.woff2') format('woff2'),
+        url('PPNeueWorld-CondensedRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue World Semi Cond Ulbold';
+    src: url('PPNeueWorld-SemiCondensedUltrabold.woff2') format('woff2'),
+        url('PPNeueWorld-SemiCondensedUltrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue World Super Cond';
+    src: url('PPNeueWorld-SuperCondensedLight.woff2') format('woff2'),
+        url('PPNeueWorld-SuperCondensedLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue World';
+    src: url('PPNeueWorld-Thin.woff2') format('woff2'),
+        url('PPNeueWorld-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue World Semi Extd';
+    src: url('PPNeueWorld-SemiExtendedBlack.woff2') format('woff2'),
+        url('PPNeueWorld-SemiExtendedBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+

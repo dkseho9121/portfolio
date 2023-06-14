@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            margin: 0 auto;
+            width: 800px;
+            height: 300px;
+        }
+        .box {
+            padding: 100px;
+            padding-left: 300px;
+            padding-top: 100px ;
+            width: 200px;
+            height: 200px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+            color: black;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+        .numbers1 {
+            padding: 100px 0 0 20px;
+            font-size: 50px;
+        }
+        .lotto {
+            background-image: url(/assets/homework/img/lotto.jpg);
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="lotto">
+            <h1>로또 번호 생성기</h1>
+            <div class="box"><button>클릭 하세요</button></div>
+            <div class="numbers1">번호가 나타납니다.</div>
+        </div>
+    </div>
+</body>
+</html>
+<script>        
+    let numbers = [];
+    let clickBox = document.querySelector(".box")
+    let lottery = document.querySelector(".numbers1")
+
+    clickBox.addEventListener("click", () => {
+        let numberSet = new Set();
+
+        while (numberSet.size < 6) {
+            let number = Math.floor(Math.random() * 45 + 1);
+            numberSet.add(number);
+        }
+
+        numbers = Array.from(numberSet);
+        lottery.innerHTML = numbers.join(",");
+    });
+
+</script>

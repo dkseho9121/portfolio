@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트07</title>
+
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/ico/javascript.ico"/>  
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/javascript.ico"/>
+    <link rel="apple-touch-icon" href="../assets/ico/javascript.ico"/>
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../javascript14.html">Quiz</a> <em>객관식 CBT 유형</em></h1>
+        <ul>
+            <li><a href="quizEffect01.html">1</a></li>
+            <li><a href="quizEffect02.html">2</a></li>
+            <li><a href="quizEffect03.html">3</a></li>
+            <li><a href="quizEffect04.html">4</a></li>
+            <li><a href="quizEffect05.html">5</a></li>
+            <li><a href="quizEffect06.html">6</a></li>
+            <li class="active"><a href="quizEffect07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        
+        <div class="quiz__wrap__cbt">
+            <div class="cbt__header">
+                <h2>2020년 1회 정보처리기능사 기출문제</h2>
+            </div>
+            <div class="cbt__conts">
+                <div class="cbt__quiz">
+                    <div class="cbt good">
+                        <div class="cbt__question"><span>1. </span>객체지향 프로그램에서 데이터를 추상화하는 단위는 ?</div>
+                        <div class="cbt__question__img"><img src="img/gineungsaJC2023_01_01.jpg" alt="기능사"></div>
+                        <div class="cbt__selects">
+                            <input type="radio" id="select1">
+                            <label for="select1"><span>클래스</span></label>
+                            <input type="radio" id="select2">
+                            <label for="select2"><span>메서드</span></label>
+                            <input type="radio" id="select3">
+                            <label for="select3"><span>상속</span></label>
+                            <input type="radio" id="select4">
+                            <label for="select4"><span>메시지</span></label>
+                        </div>
+                        <div class="cbt__desc">객체지향 언어는 ___입니다.</div>
+                        <div class="cbt__keyword">객체지향언어</div>
+                    </div>
+                    <div class="cbt bad">
+                        <div class="cbt__question"><span>2. </span>다음 빈칸을 채우시오.</div>
+                        <div class="cbt__question__desc">객체지향 언어는 ____ 입니다.객체지향 언어는 ____ 입니다.객체지향 언어는 ____ 입니다.객체지향 언어는 ____ 입니다.객체지향 언어는 ____ 입니다.</div>
+                        <div class="cbt__selects">
+                            <input type="radio" id="select1">
+                            <label for="select1"><span>클래스</span></label>
+                            <input type="radio" id="select2">
+                            <label for="select2"><span>메서드</span></label>
+                            <input type="radio" id="select3">
+                            <label for="select3"><span>상속</span></label>
+                            <input type="radio" id="select4">
+                            <label for="select4"><span>메시지</span></label>
+                        </div>
+                        <div class="cbt__desc">객체지향 언어는 ___입니다.</div>
+                        <div class="cbt__keyword">객체지향언어</div>
+                    </div>
+                </div>
+            </div>
+            <!-- cbt__conts -->
+            
+            <div class="cbt__aside">
+                <div>
+                <div class="cbt__info">
+                    <div>
+                        <div class="cbt__title">수험자 : <em class="cbt__name">황인찬</em></div>
+                        <div class="cbt__score">
+                            <span>전체 문항 : <em class="cbt__length">0</em> 문항</span>
+                            <span>남은 문항 : <em class="cbt__rest"">0</em> 문항</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- cbt__info -->
+                <div class="cbt__omr">
+                    <!-- <div class="omr">
+                        <strong>1</strong>
+                        <input type="radio" id="omr0_1">
+                        <label for="omr0_1">
+                            <span class="label-inner">1</span>
+                        </label>
+                        <input type="radio" id="omr0_2">
+                        <label for="omr0_2">
+                            <span class="label-inner">2</span>
+                        </label>
+                        <input type="radio" id="omr0_3">
+                        <label for="omr0_3">
+                            <span class="label-inner">3</span>
+                        </label>
+                        <input type="radio" id="omr0_4">
+                        <label for="omr0_4">
+                            <span class="label-inner">4</span>
+                        </label>
+                    </div> -->
+                </div>
+                <!-- cbt__omr -->
+            </div>
+            <!-- cbt__aside -->
+            <div>
+                <div class="cbt__time">59분 10초</div>
+                <div class="cbt__submit">제출하기</div>
+            </div>
+        </div>
+        <!-- quiz__wrap__cbt -->
+    
+    </main>
+    <!-- //main -->
+
+    <!-- <footer id="footer">
+        <a href="mailto:dlscks0930@naver.com">dlscks0930@naver.com</a>
+    </footer> -->
+    <!-- //footer -->
+    <script>
+// let questionAll = [];   //모든 퀴즈 정보
+// const dataQuestion = () => {
+//     fetch("json/EngineerJC2023_01.json")                            // 이 파일을 가져올거야
+//     .then(res => res.json())                                        // 내 파일은 제이슨이야. (형식설정)
+//     .then(items => {                                                // 제이슨 파일을 내가 쓰기 편하게 변수에 넣어줄거야 (이름을 만들어 줘야 해서 아이템스라고 만듬)
+//         // console.log(item);
+//         questionAll = items.map((item, index) => {                  //안에 아이템이 여러개가 있으니 map을 씀(foreach대신, 왜냐 map은 배열에 저장하기 떄문)
+//             const formattedQuestion = {                             //객체로 만듬.
+//                 question: item.question,                            //퀘스쳔이라는 키 값을 만들었음.
+//                 num: index + 1,                                     //숫자 넣기
+//             }
+//             console.log(formattedQuestion);
+//             const answerChoices = [...item.incorrect_answers];      //(오답) answerChoices에는 틀린 답을 불러오게 변수선언함. 그리고 안에 있는 요소를 각 한개씩 따로 가져올 것이기 때문에 item.하고 불러올 값을 씀.
+//             formattedQuestion.answer = Math.floor(Math.random() * answerChoices.length) + 1         //(정답) 정답 랜덤으로 불러오기
+//             answerChoices.splice(formattedQuestion.answer -1, 0, item.incorrect_answers);           //정답, 오답 합치기 (위의 두개)
+//             answerChoices.forEach((choice, index) => {
+//                 formattedQuestion["choice" + (index + 1)] = choice;
+//             });
+//         });
+//     });
+// }
+// dataQuestion();
+    const cbt = document.querySelector(".cbt")
+    const cbtQuiz = document.querySelector(".cbt__quiz");
+    const cbtOmr = document.querySelector(".cbt__omr");
+    const cbtSubmit = document.querySelector(".cbt__submit");
+    const cbtRest = document.querySelector(".cbt__rest");
+    const cbtLength = document.querySelector(".cbt__length");
+
+        let questionAll = [];   //questionAll이라는 배열을 생성합니다.
+        let questionLength = 0; //전체 문제수
+        let questionRest = 100; //나머지
+        //데이터 가져오기
+        const dataQuestion = () => {
+            fetch("https://dkseho9121.github.io/web2023/javascript/quiz/json/gineungsaWD2005_02.json")
+            .then(res => res.json())
+            .then(items => {
+                questionAll = items.map((item, index) => {
+                    const formattedQuestion = {
+                        question: item.question,
+                        number: index + 1
+                    }
+                    const answerChoices = [...item.incorrect_answers];  //오답 불러오기
+                    formattedQuestion.answer = Math.round(Math.random() * answerChoices.length) + 1;
+                    answerChoices.splice(formattedQuestion.answer - 1, 0, item.correct_answer);
+                    //보기를 추가
+                    answerChoices.forEach((choice, index) => {
+                        formattedQuestion["choice" + (index+1)] = choice;
+                    });
+                    //문제에 대한 해설이 있으면 출력
+                    if(item.hasOwnProperty("question_desc")){
+                        formattedQuestion.questionDesc = item.question_desc;
+                    }
+                    //문제에 대한 이미지가 있으면 출력
+                    if(item.hasOwnProperty("question_img")){
+                        formattedQuestion.questionImg = item.question_img;
+                    }
+                    //해설이 있으면 출력
+                    if(item.hasOwnProperty("desc")){
+                        formattedQuestion.desc = item.desc;
+                    }
+                    //console.log(formattedQuestion);
+                    return formattedQuestion;
+                });
+                newQuestion();  //문제 만들기
+
+                //전체 문제수
+                questionLength = questionAll.length;
+                cbtLength.innerHTML = questionLength;
+                cbtRest.innerHTML = questionLength;
+            })
+            .catch((err) => console.log(err));
+        }
+
+        //문제 만들기
+        const updateQuiz = (index) => {
+            let questionnumTag = `
+                ${cbtQuiz.length}문제중에 ${cbtQuiz.length - index}문제 남았습니다 
+            `;
+        }
+        const newQuestion = () => {
+            const exam = [];
+            const omr = [];
+            questionAll.forEach((question, number) => {
+                exam.push(`
+                    <div class="cbt">
+                        <div class="cbt__question"><span>${question.number}</span>. ${question.question}</div>
+                        <div class="cbt__question__img"></div>
+                        <div class="cbt__selects">
+                            <input type="radio" id="select${number}_1" name="select${number}" value="${number}_1" onclick="answerSelect2(this)">
+                            <label for="select${number}_1"><span>${question.choice1}</span></label>
+                            <input type="radio" id="select${number}_2" name="select${number}" value="${number}_2" onclick="answerSelect2(this)">
+                            <label for="select${number}_2"><span>${question.choice2}</span></label>
+                            <input type="radio" id="select${number}_3" name="select${number}" value="${number}_3" onclick="answerSelect2(this)">
+                            <label for="select${number}_3"><span>${question.choice3}</span></label>
+                            <input type="radio" id="select${number}_4" name="select${number}" value="${number}_4" onclick="answerSelect2(this)">
+                            <label for="select${number}_4"><span>${question.choice4}</span></label>
+                        </div>
+                        <div class="cbt__desc hide">${question.desc}</div>
+                    </div>
+                `);
+                omr.push(`
+                    <div class="omr">
+                        <strong>${question.number}</strong>
+                        <input type="radio" name="omr${number}" id="omr${number}_1" value="${number}_1" onclick="answerSelect(this)">
+                        <label for="omr${number}_1"><span class="label-inner">1</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_2" value="${number}_2" onclick="answerSelect(this)">
+                        <label for="omr${number}_2"><span class="label-inner">2</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_3" value="${number}_3" onclick="answerSelect(this)">
+                        <label for="omr${number}_3"><span class="label-inner">3</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_4" value="${number}_4" onclick="answerSelect(this)">
+                        <label for="omr${number}_4"><span class="label-inner">4</span></label>
+                    </div>
+                `)
+            });
+            cbtQuiz.innerHTML = exam.join('');
+            cbtOmr.innerHTML = omr.join('');
+        }
+
+        //정답 확인
+        const answerQuiz = () => {
+            const cbtSelects = document.querySelectorAll(".cbt__selects");
+
+            questionAll.forEach((question, number) => {
+                const quizSelectsWrap = cbtSelects[number];
+                const userSelector = `input[name=select${number}]:checked`;
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;
+                const numberAnswer = userAnswer ? userAnswer.slice(-1) : undefined;
+                if(numberAnswer == question.answer){
+                    console.log("정답입니다.");
+                    cbtSelects[number].parentElement.classList.add("good");
+                } else {
+                    console.log("오답입니다.")
+                    cbtSelects[number].parentElement.classList.add("bad");
+
+                    //오답 일 경우 정답 표시
+                    const label = cbtSelects[number].querySelectorAll("label");
+                    label[question.answer-1].classList.add("corrent");
+                }
+
+                const quizDesc = document.querySelectorAll(".cbt__desc");
+
+                if(quizDesc[number].innerText == "undefined"){
+                    quizDesc[number].classList.add("hide");
+                } else {
+                    quizDesc[number].classList.remove("hide");
+                }
+            });
+        }
+
+        //보기 체크
+        const answerSelect2 = (elem) => {
+            const answer = elem.value;
+            const answerNum = answer.split("_");
+            
+            const select = document.querySelectorAll(".cbt__omr .omr");   //전체 문항 수 100문제
+            const label = select[answerNum[0]].querySelectorAll("input");   //보기 4개
+            label[answerNum[1]-1].checked = true;
+
+            const answerInputs = document.querySelectorAll(".cbt__selects input:checked")
+            cbtRest.innerHTML = questionLength - answerInputs.length;
+        };
+
+        //보기 체크2
+        const answerSelect = (elem) => {
+            const answer = elem.value;
+            const answerNum = answer.split("_");
+            
+            const select = document.querySelectorAll(".cbt__quiz .cbt");   //전체 문항 수 100문제
+            const label = select[answerNum[0]].querySelectorAll("input");   //보기 4개
+            label[answerNum[1]-1].checked = true;
+
+            const answerInputs = document.querySelectorAll(".cbt__selects input:checked")
+            cbtRest.innerHTML = questionLength - answerInputs.length;
+        };
+
+        cbtSubmit.addEventListener("click", answerQuiz)
+        dataQuestion();
+
+    </script>
+</body>
+</html>
+
+

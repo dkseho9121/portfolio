@@ -1,0 +1,29 @@
+.login__inner {
+    max-width: 500px;
+    width: 100%;
+    padding: 100px 0;
+    text-align: center;
+    margin: 0 auto;
+}
+.login__inner > h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+.login__inner > p {
+    font-size: 20px;
+    font-weight: 300;
+}
+.login__form {
+    text-align: center;
+}
+.login__form input {
+    margin-bottom: 10px;
+}
+.login__footer {
+    text-align: left;
+    font-weight: 300;
+}
+.login__footer a {
+    text-decoration: underline;
+    text-underline-position: under;
+}

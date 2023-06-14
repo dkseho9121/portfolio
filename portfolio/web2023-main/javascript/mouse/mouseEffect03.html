@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03. 마우스 이펙트</title>
+    <link rel="stylesheet" href="class/reset.css">
+    <link rel="stylesheet" href="class/mouse.css">
+    <style>
+        #header {
+            z-index: 100;
+        }
+        .mouse__wrap {
+            cursor: none;
+        }
+        .mouse__text {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            z-index: 0;
+        }
+        .mouse__text p {
+            font-size: 3vw;
+            line-height: 1.9;;
+        }.mouse__cursor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            background-color: #ffffff3d;
+            background-image: url(img/mouseEffect07-min.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        #header li.active a{
+        color: rgb(247, 92, 92);
+        }
+    </style>
+</head>
+<body class="img07 bg02 ROKA" >
+    <header id="header">
+        <h1>Javascript Mouse Effect03</h1>
+        <p>마우스 이펙트 - 마우스 따라다니는 조명 효과입니다.</p>
+        <ul>
+            <li><a href="mouseEffect01.html">1</a></li>
+            <li><a href="mouseEffect02.html">2</a></li>
+            <li class="active"><a href="mouseEffect03.html">3</a></li>
+            <li><a href="mouseEffect01.html">4</a></li>
+            <li><a href="mouseEffect01.html">5</a></li>
+            <li><a href="mouseEffect01.html">6</a></li>
+
+        </ul>
+    </header>
+    <!-- //haeder-->
+    <main id="main">
+        <div class="mouse_wrap">
+            <div class="mouse__cursor"></div>
+            <div class="mouse__text">
+                <p>Look up at the stars, nor down at your feet.</p>
+                <p>고개를 숙인 채 당신의 발을 보지 말고, 마우스를 움직여 하늘의 별을 보아라</span></p>
+            </div>
+        </div>
+    </main>
+    <!-- //main-->
+    <footer id="footer">
+        <a href="dlscks0930@naver.com">dlscks0930@naver.com</a>
+    </footer>
+    <!-- //footer-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script>
+        //선택자
+        const cursor = document.querySelector(".mouse__cursor");
+
+        console.log(cursor.clientWidth);    //190
+        console.log(cursor.clientHeight);   //190
+        console.log(cursor.offsetWidth);    //200
+        console.log(cursor.offsetHeight);   //200
+
+        console.log(cursor.getBoundingClientRect());
+
+        const circle =  cursor.getBoundingClientRect(); 
+        
+       //{
+       //    bottom : 200,
+       //    height : 200,
+       //    left : 0,
+       //    right : 200,
+       //    top : 0,
+       //    width : 200,
+       //    x : 0,
+       //    y : 0
+       //}
+
+        //console.log(DOMRect.width)
+
+
+        window.addEventListener("mousemove", e => {
+            gsap.to(cursor, {
+                duration: 0.5,
+                left: e.pageX - cursor.clientWidth/2,
+                top: e.pageY - cursor.clientHeight/2
+            });
+        });
+    </script>
+</body>
+</html>

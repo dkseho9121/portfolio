@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        #top_btn{
+        position: fixed;
+        left: 0;
+        bottom: -50px;
+        display: inline-block;
+        background-color: #a6ff0099;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-weight: bold;
+        opacity: 0;
+        transition: 0.7s ease;
+        font-size: 19px;
+        z-index: 9999;
+        text-align: center;
+    }
+    
+        #top_btn.on{
+        opacity: 1;
+        cursor: pointer;
+        bottom: 0;
+    }
+        </style>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/ico/javascript.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/javascript192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/ico/javascript192x192.png">
+</head>
+<body>
+    <header id="header">
+      <h1><a href="index.html">javascript</a></h1>
+     <nav>
+        <ul>
+            <li><a href="javascript01.html">데이터 저장하기</a></li>
+            <li><a href="javascript02.html">데이터 불러오기</a></li>
+            <li><a href="javascript03.html">데이터 실행하기</a></li>
+            <li><a href="javascript04.html">데이터 제어하기</a></li>
+        </ul>
+        <ul>
+            <li><a href="javascript05.html">문자열 객체</a></li>
+            <li><a href="javascript06.html">배열 객체</a></li>
+            <li><a href="javascript07.html">수학 개체</a></li>
+            <li><a href="javascript08.html">숫자 개체</a></li>
+            <li><a href="javascript09.html">브라우저 객체</a></li>
+            <li><a href="javascript10.html">요소 객체</a></li>
+            <li class="active"><a href="javascript11.html">이벤트 객체</a></li>
+        </ul>
+        <ul class="last">
+            <li><a href="javascript12.html">데이터 효과</a></li>
+            <li><a href="javascript13.html">검색 효과</a></li>
+            <li><a href="javascript14.html">퀴즈 효과</a></li>
+            <li><a href="javascript15.html">마우스 효과</a></li>
+            <li><a href="javascript16.html">슬라이드 효과</a></li>
+            <li><a href="javascript17.html">패럴랙스 객체</a></li>
+            <li><a href="javascript18.html">게임 효과</a></li>
+        </ul>
+    </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="container">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("click")</strong> : 클릭했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("dblclick")</strong> : 더블클릭했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("load")</strong> : 문서 로딩이 끝났을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("error")</strong> : 문서가 정확히 로딩되지 않았을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("scroll")</strong> : 스크롤했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("resize")</strong> : 브라우저 사이즈가 변경 됐을 떄</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("selectstart")</strong> : 텍스트 선택을 시작했을때</a></li>
+                </ul>
+                <br>
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("mousedown")</strong> : 마우스 버튼을 클릭했을때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("mouseup")</strong> : 마우스 버튼을 떼는 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("mousemove")</strong> : 마우스를 움직이는 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("mousesenter")</strong> : 요소 위에 포인터 요소 위치가 있을때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("mouseleave")</strong> : 요소 위에 포인터 요소 위치가 벗어 났을때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("mouseover")</strong> : 요소 밖에 포인터 요소 위치가 있을때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("mouseout")</strong> : 요소 위에 포인터 요소 위치가 벗어 났을때</a></li>
+                </ul>
+                <br>
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("blur")</strong> : 폼 요소에 포커스를 잃었을 떄</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("change")</strong> : 목록이나 체크 상태 등이 변경되었을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("focus")</strong> : 폼 요소에 포커스를 놓았을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("reset")</strong> : 폼이 리셋되었을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("submit")</strong> : 폼에 있는 버튼을 클릭했을 때</a></li>
+                </ul>
+                <br>
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("drag")</strong> : 드래그 중인 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("dragstart")</strong> : 드래그를 시작했을 떄</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("dragend")</strong> : 드래그 끝났을때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("dragenter")</strong> : 요소의 위치에 드래그 했을때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("dragover")</strong> : 요소의 위치 위에 있을때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("dragleave")</strong> : 요소의 위치 위에서 벗어 났을 떄</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("drop")</strong> : 요소의 위치에 드롭했을때</a></li>
+                </ul>
+                <br>
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("keydown")</strong> : 키 눌렀을 때 (한번만 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("keypress")</strong> : 키 눌렀을 때 (누르고 있으면 계속 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("keyup")</strong> : 키누르고 뗏을때</a></li>
+                </ul>
+                <br>
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("touchstart")</strong> : 터치가 시작 됐을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("touchmove")</strong> :터치가 움직이고 있을때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">addEventListener("touchend")</strong> : 터치가 끝났을 때</a></li>
+                </ul>
+                <br>
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">preventDefault()</strong> : 이벤트 작동 해지</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">dispatchDefault()</strong> :이벤트 작동 해지</a></li>
+                </ul>
+                <br>
+                <ul>
+                    <li><a href="#">01. 이벤트 속성 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">clientX</strong> : X축 좌표값 : 브라우저 기준</a></li>
+                    <li><a href="#">01. 이벤트 속성 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">clientY</strong> : Y축 좌표값 : 브라우저 기준/a></li>
+                    <li><a href="#">01. 이벤트 속성 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">offsetX</strong> : X축 좌표값 : 요소 기준</a></li>
+                    <li><a href="#">01. 이벤트 속성 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">offsetY</strong> : Y축 좌표값 : 요소 기준</a></li>
+                    <li><a href="#">01. 이벤트 속성 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">pageX</strong> : X축 좌표값 : 페이지 기준</a></li>
+                    <li><a href="#">01. 이벤트 속성 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">pageY</strong> : Y축 좌표값 : 페이지 기준</a></li>
+                    <li><a href="#">01. 이벤트 속성 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">screenX</strong> : X축 좌표값 : 디바이스 기준</a></li>
+                    <li><a href="#">01. 이벤트 속성 : <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">screenY</strong> : Y축 좌표값 : 디바이스 기준</a></li>
+                </ul>
+                <br>
+                <ul>
+                    <li><a href="#">01. 요소 속성 : 크기 및 위치 :  <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">element.clientWidth</strong> : 요소의 가로값(마진/보더 미포함)</a></li>
+                    <li><a href="#">01. 요소 속성 : 크기 및 위치 :  <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">element.clientHight</strong> : 요소의 세로값(마진/보더 미포함)</a></li>
+                    <li><a href="#">01. 요소 속성 : 크기 및 위치 :  <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">element.clientTop</strong> : 요소의 Y축 값(부모 기준)</a></li>
+                    <li><a href="#">01. 요소 속성 : 크기 및 위치 :  <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">element.clientLeft</strong> : 요소의 X축 값(부모 기준)</a></li>
+
+                    <li><a href="#">01. 요소 속성 : 크기 및 위치 :  <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">element.offsetWidth</strong> : 요소의 가로값(보더/패딩 포함)</a></li>
+                    <li><a href="#">01. 요소 속성 : 크기 및 위치 :  <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">element.offsetHeight</strong> : 요소의 세로값(보더/패딩 포함)</a></li>
+                    <li><a href="#">01. 요소 속성 : 크기 및 위치 :  <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">element.offsetTop</strong> : 요소의 Y축 값(문서 기준)</a></li>
+                    <li><a href="#">01. 요소 속성 : 크기 및 위치 :  <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">element.offsetLeft</strong> : 요소의 X축 값(문서 기준)</a></li>
+                    <li><a href="#">01. 요소 메서드 : 크기 및 위치 :  <strong style="background: linear-gradient(to top, #bfffa1 40%, transparent 40%);">element.getBoundingClinetRect()</strong> : 요소의 크기 및 위치 값을 설정</a></li>
+                </ul>
+             </div>
+        </div>
+    </main>
+    <div><a id="top_btn" class="">TOP</a></div>
+    <!-- //main -->
+
+    <footer id="footer">
+    </footer>
+    <!-- //footer -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(window).scroll(function(){
+    
+    if( $(this).scrollTop() > 100 ){
+    $("#top_btn").addClass("on");
+    }
+    else{
+    $("#top_btn").removeClass("on");
+    }
+    
+    });
+    
+    $("#top_btn").click(function(){
+    window.scrollTo({top : 0, behavior: 'smooth'}); 
+    });
+    
+        </script>
+
+    <body>
+    <footer id="footer">
+            <a href="mailto:dlscks0930@naver.com">dlscks0930@naver.com</a>
+    </footer>
+        <!-- //footer -->
+
+    </body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME Effect</title>
+    <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/people/peo-1/peo4.ani), url(https://cur.cursors-4u.net/people/peo-1/peo4.png), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2005/04/21/peo4-10.html" target="_blank" title="Mario Walking"><img src="" border="0" alt="Mario Walking" style="position:absolute; top: 0px; right: 0px;" /></a>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/bg.css"> -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="css/title.css">
+</head>
+    <body>
+        <!-- <div class="cursor">
+            <img src="img/game_mouse01.png" alt>
+        </div> -->
+        
+        <header id="header">
+                <h1>Inchan's World</h1>
+                <h1>Inchan's World</h1>
+                <h1>Inchan's World</h1>
+            <div class="time">2023년 4월 24일 09시 30분 15초</div>
+        </header>
+        <main>
+            <div class="icon__box">
+                <div class="icon1">
+                    <img src="img/game_icon1.png" alt="뮤직">
+                    <span>뮤직 듣기</span>
+                </div>
+                <div class="icon2">
+                    <img src="img/game_icon2.png" alt="뮤직">
+                    <span>뮤직 듣기</span>
+                </div>
+                <div class="icon3">
+                    <img src="img/game_icon3.png" alt="뮤직">
+                    <span>뮤직 듣기</span>
+                </div>
+                <div class="icon4">
+                    <img src="img/game_icon4.png" alt="뮤직">
+                    <span>뮤직 듣기</span>
+                </div>
+            </div>
+            <!-- 뮤직 플레이어 -->
+            <div class="music__wrap">
+                <div class="music__inner">
+                    <div class="music__header">
+                        <span class="left"></span>
+                        <h2>HWANG's music player</h2>
+                        <span class="right"></span>
+                    </div>
+                    <div class="music__contents">
+                        <div class="music__view">
+                            <div class="image">
+                                <img src="img/music_view01.png" alt="음악">
+                            </div>
+                        </div>
+                        <div class="music__control">
+                            <div class="title">
+                                <h3>Redmoon</h3>
+                                <p>inchan</p>
+                            </div>
+                            <div class="progress">
+                                <div class="bar">
+                                    <audio id="main-audio"src="audio/music_audio01.mp3"></audio>
+                                </div>
+                                <div class="timer">
+                                    <span class="current">0:00</span>
+                                    <span class="duration">3:55</span>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <span>
+                                    <!-- <i class="repeat" id="control-repeat" title="전체 반복"></i> -->
+                                    <i class="repeat_one" id="control-repeat" title="한곡 반복"></i>
+                                    <!-- <i class="shuffle" id="control-repeat" title="랜덤 반복"></i> -->
+                                </span>
+                                <span>
+                                    <i class="prev" id="control-prev" title="이전곡 재생"></i></span>
+                                <span>
+                                    <i class="play" id="control-play" title="재생"></i></span>
+                                </span>
+                                <span>
+                                    <i class="next" id="control-next" title="다음곡 재생"></i></span>
+                                </span>
+                                <span>
+                                    <i class="list" id="control-list" title="재생 목록"></i></span>
+                                </span>
+                                <!-- <span class="repeat_one">한곡 반복</span>
+                                <span class="shuffle">랜덤 반복</span>
+                                <span class="stop">정지 반복</span> -->
+                            </div>
+                        </div>
+                        <div class="music__list">
+                            <h3>뮤직 리스트<a href="#" class="close"></a></h3>
+                            <ul>
+                                <!-- <li>
+                                    <span class="img">
+                                        <img class="img" src="img/music_view01.png" alt="">
+                                    </span>
+                                    <span class="title">
+                                        <strong>1. 저리가라</strong>
+                                        <em>DJ Freedom</em>
+                                    </span>
+                                    <span class="time">3:04</span>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //뮤직 플레이어 -->
+        </main>
+        <footer id="footer">
+            <div class="info"></div>
+        </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="js/music.js"></script>
+    <script>
+        $(".icon1").draggable({
+            containment: ".icon__box", scroll: false,
+            start: function() {
+                // $("#header").css("background-color","red");
+            },
+        });
+        $(".icon2").draggable({
+            containment: ".icon__box", scroll: false,
+            start: function() {
+                // $("#header").css("background-color","blue");
+            },
+        });
+        $(".icon3").draggable({
+            containment: ".icon__box", scroll: false,
+            start: function() {
+                // $("#header").css("background-color","green");
+            },
+        });
+        $(".icon4").draggable({
+            containment: ".icon__box", scroll: false,
+            start: function() {
+                // $("#header").css("background-color","yellow");
+            },
+        });
+        function displayCurrentDateTime() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1; // getMonth()는 0부터 11까지의 값을 반환하므로 1을 더해줍니다.
+        const date = now.getDate();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+        const dateTimeString = `${year}년 ${month}월 ${date}일 ${hours}시 ${minutes}분 ${seconds}초`;
+        document.getElementById("header").innerHTML = dateTimeString;
+      }
+      // 페이지가 로드될 때마다 1초마다 현재 날짜와 시간을 업데이트합니다.
+      setInterval(displayCurrentDateTime, 1000);
+        window.onload = function(){
+            window.addEventListener("mousemove", e => {
+                gsap.to(".cursor", {
+                    duration: 0,
+                    left: e.pageX - 5,
+                    top: e.pageY -10
+                })
+            });
+            printTime();    // 오른쪽 상단 시간
+            printAgent();    // 하단 중앙
+        }
+        function printAgent(){
+            let os = navigator.userAgent.toLowerCase();
+            let sw = screen.width;
+            let sh = screen.height;
+            let info = document.querySelector("#footer .info");
+            if (os.indexOf("windows") >= 0) {
+                info.innerHTML = "현재 윈도우를 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+            } else if (os.indexOf("macintosh") >= 0) {
+                info.innerHTML = "현재 맥을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+            } else if (os.indexOf("iphone") >= 0) {
+                info.innerHTML = "현재 아이폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+            } else if (os.indexOf("android") >= 0) {
+                info.innerHTML = "현재 안드로이드 폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+            }
+        }
+        printAgent();       // 하단 중앙 모니터 정보
+    </script>
+</body>
+</html>

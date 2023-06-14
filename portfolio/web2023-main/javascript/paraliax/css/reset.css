@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #222;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+li, ul, ol {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+    width: 100%;
+}
+em {
+    font-style: normal;
+}
+.font01 {
+    font-family: NanumSquareNeo;
+    font-weight: 300;
+}
+.font02 {
+    font-family: CookieRun;
+    font-weight: 300;
+}
+.font03 {
+    font-family: Ansungtangmyun;
+    font-weight: 300;
+}
+.font04 {
+    font-family: EF_Hyunygothic;
+    font-weight: 300;
+}
+.font05 {
+    font-family: PyeongChang;
+    font-weight: 300;
+}
+.font06 {
+    font-family: JSDongkang;
+    font-weight: 300;
+}
+.font07 {
+    font-family: EF_Macho;
+    font-weight: 300;
+}
+.font08 {
+    font-family: 116watermelon;
+    font-weight: 300;
+}
+.font09 {
+    font-family: Rebecca;
+    font-weight: 300;
+}
+.font10 {
+    font-family: NexonMaplestory;
+    font-weight: 300;
+}
+body {
+    background-color: #232121;
+}

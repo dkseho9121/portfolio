@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../2023-04-14/css/style.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1><img src="img/logo.jpg" alt="cookit"></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">COOKIT소개</a></li>
+                    <li><a href="#">COOKIT메뉴</a></li>
+                    <li><a href="#">리뷰</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">MY쿡킷</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        <main>
+            <div class="slider__wrap">
+            <div class="slider__img">
+                <div class="slider__inner">
+                    <div class="slider"><img src="img/banner01.jpg" alt="런칭기념이벤트"></div>
+                    <div class="slider"><img src="img/banner01.jpg" alt="런칭기념이벤트"></div>
+                </div>
+            </div>
+        </div>
+            <!-- <section id="banner">
+                <div class="slider"><img src="img/banner01.jpg" alt="런칭기념이벤트"></div>
+                <div class="slider"><img src="img/banner01.jpg" alt="런칭기념이벤트"></div>
+            </section> -->
+            <section id="notice">
+                <div class="not1">
+                    <h3>우리집도 COOKIT 배송이 되나요?</h3>
+                    배송이 가능한지 알려드려요.<br>
+                    <br>
+                    <a href="#" class="more"></a>
+                    <a href="#" class="moretext"><strong>배송지검색</strong></a>
+                    <a href="#" class="bg1"></a>
+                </div>
+                <div class="not2">
+                    <h3>7월 30일(화)에 받을 수 있어요</h3>
+                    오전 7시까지 주문하시면 다음날 배송됩니다.<br>
+                    <br>
+                    <a href="#" class="more2"></a>
+                    <a href="#" class="moretext2"><strong>63:28:32</strong></a>
+                    <a href="#" class="moretext3">남은시간</a>
+                    <a href="#" class="bg2"></a>
+                </div>
+            </section>
+            <section id="card">
+                <h2>실시간 베스트 | <font color="#888">생생한 리뷰</font></h2><br>
+                <div class="card-inner">
+                    <div>
+                        <img src="img/best1.jpg" alt="어묵쟁반">
+                        <strong>평양식 어묵쟁반</strong><br>
+                        <strong>33,800원</strong>/3인분
+                    </div>
+                    <div>
+                        <img src="img/best2.jpg" alt="새우쭈꾸미삼겹살">
+                        <strong>새우쭈꾸미삼겹살</strong><br>
+                        <strong>29,800원</strong>/3인분
+                    </div>
+                    <div>
+                        <img src="img/best3.jpg" alt="아귀찜">
+                        <strong>방풍나물 아귀찜</strong><br>
+                        <strong>32,800원</strong>/3인분
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <a href="#" class="more3"></a>
+            <strong>이용약관 | 개인정보처리방침 | 법적고지 | 사업자정보확인 </strong>
+            <address>
+                씨제이제일제당(주) | 대표자: 신현재<br>
+                주소:서울 중구 동호로 330 CJ제일제당 센터(우) 04560 | 사업자등록번호: 104-86-09535<br>
+                통신판매업신고 중구 제 07767호 | 개인정보보호책임자: 류화정
+            </address>
+        </footer>
+    </div>
+    <script>
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = document.querySelector(".slider__img");       //보여지는 영역
+        const sliderInner = sliderWrap.querySelector(".slider__inner"); //움직이는 영역
+        const slider = sliderWrap.querySelectorAll(".slider");          //개별 이미지
+
+        let currentIndex = 0;               //현재 보이는 이미지
+        let sliderCount = slider.length;    //전체 이미지 갯수
+        let sliderInterval = 3000;           //이미지 변경되는 시간&간격
+
+        sliderInner.style.transition = "all 0.6s"
+        setInterval (() => {
+            currentIndex = (currentIndex + 1) % sliderCount;    //1 2 3 4 0 1 2 3 4 5
+
+            sliderInner.style.transform = "translateY("+ -400 * currentIndex + "px)";
+        }, sliderInterval);
+    </script>
+</body>
+</html>

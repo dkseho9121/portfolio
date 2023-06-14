@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 효과</title>
+    <link href="https://webfontworld.github.io/miryang/MYHaemalgeunSangsang.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MYHaemalgeunSangsang";
+        }
+        body {
+            
+            background-color: #E0E4DD;
+        }
+        .scrollTop {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            z-index: 1000;
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            line-height: 40px;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .fixed {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            display: flex;
+        }
+        .s1-text1 {
+            font-size: 10vw;
+            width: 100%;
+        }
+        .s1-img1 {
+            width: 30vw;
+            height: 100vh;
+        }
+        .s1-img1 > div {
+            height: 20vh;
+            display: flex;
+            justify-content: space-between;
+        }
+        .s1-img1 > div > div:first-child {
+            width: 20vh;
+            background-position: center;
+            background-size: cover;
+        }
+        .s1-img1 > div > div:last-child {
+            width: 20vh;
+            background-position: center;
+            background-size: cover;
+        }
+        .s1-img1 {
+            width: 200vw;
+            height: 100vh;
+        }
+
+        .s1-img1 > div {
+            height: 20vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .s1-img1 > div > div {
+            width: 19vh;
+            height: 19vh;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            /* filter: saturate(0%); */
+        }
+        .s1-img1-1 > div:first-child {background-image: url(https://siyoenkim.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-1 > div:last-child {background-image: url(https://seolhee313.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-2 > div:first-child {background-image: url(https://kebab000.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-2 > div:last-child {background-image: url(https://dkseho9121.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-3 > div:first-child {background-image: url(https://jinyongjang.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-3 > div:last-child {background-image: url(https://chohena.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-4 > div:first-child {background-image: url(https://kimdohyun2002.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-4 > div:last-child {background-image: url(https://jhwangwoo.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-5 > div:first-child {background-image: url(https://yeodaseul4355.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-5 > div:last-child {background-image: url(https://hyejeong3283.github.io/web2023/assets/ico/icon%2001.jpg);}
+        .s1-img1-6 > div:first-child {background-image: url(https://dkdlelw.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-6 > div:last-child {background-image: url(https://lee3ll.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-7 > div:first-child {background-image: url(https://jo0132.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-7 > div:last-child {background-image: url(https://dlgnsrb227.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-8 > div:first-child {background-image: url(https://dongjin6539.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-8 > div:last-child {background-image: url(https://hyeonbeen97.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-9 > div:first-child {background-image: url(https://younajeong.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-9 > div:last-child {background-image: url(https://ehcjswo.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-10 > div:first-child {background-image: url(https://fitalux.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-10 > div:last-child {background-image: url(https://xlsak5.github.io/testAnGyonam/assets/ico/icon.jpg);}
+        .s1-img1-11 > div:first-child {background-image: url(https://hyunmijin.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-11 > div:last-child {background-image: url(https://daanbi1345.github.io/web2023/assets/ico/icon11.jpg);}
+        .s1-img1-12 > div:first-child {background-image: url(https://ture403.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-12 > div:last-child {background-image: url(https://leeyanggoo.github.io/web2023/assets/ico/icon1.jpg);}
+        .s1-img1-13 > div:first-child {background-image: url(https://aimeekwon.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-13 > div:last-child {background-image: url(https://aimeekwon.github.io/web2023/assets/ico/icon.jpg);}
+        .s1-img1-14 > div:first-child {background-image: url(https://getgrovy.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-14 > div:last-child {background-image: url(https://leeyouna21.github.io/web2023/assets/ico/icon01.jpg);}
+        .s1-img1-15 > div:last-child {background-image: url(img/IMG_3624.jpg);}
+
+        /* redhood */
+        body {
+            background: #ffffff;
+            height: 20000px;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .running-girl {
+            top: 50%;
+            float: left;
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/39373/game-girl-walking.png),
+                0 0 repeat;
+            background-size: 4000px 218px;
+            background-position: 0px 0px;
+            position: fixed;
+            display: block;
+            left: 50%;
+            margin: -104px 0 0 -104px;
+            width: 200px;
+            height: 218px;
+        }
+
+        .background {
+            position: fixed;
+            top: 50%;
+            margin-top: -525px;
+            z-index: -1;
+            width: 100%;
+            height: 800px;
+            background: url(img/game-bg2.png), 0 0 repeat-y;
+        }
+        .hi {
+            width: 100vh;
+            height: 90vh;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 20%;
+            /* filter: saturate(0%); */
+        }
+        .s1-text12 {
+            width: 100%;
+            text-align: center;
+            font-size: 0vw;
+            line-height: 1;
+            padding-top: 8vw;
+            z-index: 1000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="scrollTop"></div>
+    <section id="section1">
+        <div class="s1-text1 fixed"
+            data-500="opacity: 0"
+            data-1500="opacity: 1"
+            data-2500="opacity: 0">
+            Students of WebStoryboy</div>
+
+            <div class="s1-img1 fixed"
+            data-1000="width: 200vw; opacity: 0"
+            data-2000="width: 30vw; opacity: 1"
+            data-3000="width: 200vw; opacity: 1"
+            data-4500="width: 30vw; opacity: 1"
+            data-5000="width: 200vw; opacity: 0"
+            >
+        <div class="s1-img1-1">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-2">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-3">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-4">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-5">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-6">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-7">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-8">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-9">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-10">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-11">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-12">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-13">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="s1-img1-14">
+            <div></div>
+            <div></div>
+        </div>
+        </div>
+        <div class="s1-text12 fixed"
+            data-5500="font-size: 0vw; transform: translate(-50%, -50%) rotate(0deg); opacity: 1;"
+            data-6000="font-size: 11vw; transform: translate(-50%, -50%) rotate(360deg); opacity: 1;"
+            data-6500="font-size: 11vw; transform: translate(-50%, -50%) rotate(360deg); opacity: 1;"
+            data-8000="font-size: 12vw; transform: translate(-50%, -50%) rotate(360deg); opacity: 0;">
+            시작은 미약했으나 그끝은 창대하리라</div>
+        <div class="s1-img1-15 fixed"
+            data-5000="left:-50; opacity: 0"
+            data-6000="left:-50; opacity: 1"
+            data-7000="left:-50; opacity: 1"
+            data-10000="left:-50; opacity: 0"
+            >
+                <div class="hi"></div>
+        </div>
+        <!-- redHood -->
+        <div id="redRidingHood"
+        class="skrollable running-girl"
+        data-1000="background-position-x[frames]:0px; right:-0%;"
+        data-10000="background-position-x[frames]:200px; right:0%;"></div>
+
+        <div 
+        class="background skrollable" 
+        data-1000="background-position-x: 0px; right:-0%;" 
+        data-10000="background-position-x:-3000px; right:0%;"></div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script type="text/javascript">
+        // let s = skrollr.init();
+        // window.addEventListener("scroll", () => {
+        //     let scrollTop = window.pageYOffset || window.scrollY;
+        //     document.querySelector(".scrollTop").innerText = parseInt(scrollTop);
+        // });
+    </script>
+    <script>
+        var s = skrollr.init({ 
+        easing: {
+        frames: function(p) {
+            return Math.round(Math.sin(p) * 1000);
+        }
+    }
+});
+    </script>
+</body>
+</html>

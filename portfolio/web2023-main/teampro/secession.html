@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영양많닭 회원탈퇴</title>
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+    .login__inner {
+        max-width: 500px;
+        width: 100%;
+        padding: 100px 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .login__inner > h2 {
+        font-size: 34px;
+        margin-bottom: 30px;
+    }
+    .login__inner > p {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .login__form {
+        text-align: center;
+    }
+    .login__form input {
+        margin-bottom: 10px;
+    }
+    .login__footer {
+        text-align: left;
+        font-weight: 300;
+    }
+    .login__footer a {
+        text-decoration: underline;
+        text-underline-position: under;
+    }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "NexonLv1Gothic";
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #modal {
+            width: 500px;
+            height: 700px;
+            text-align: center;
+            background-color: #fff;
+            border: 3px solid #FFA96B;
+            border-radius: 30px;
+            margin: 0 auto;
+            margin-top: 70px;
+            position: relative;
+        }
+        #modal .img1 img {
+            position: absolute;
+            right: 43px;
+            top: 38px;
+            width: 15px;
+            z-index: 1;
+        }
+        #modal .img1::after {
+            content: '';
+            position: absolute;
+            background-color: #FFA96B;
+            right: 33px;
+            top: 27px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+        #modal .guide {
+            width: 390px;
+            margin-left: 46px;
+        }
+        #modal h2 {
+            font-size: 30px;
+            color: #FFA96B;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        #modal h3 {
+            font-size: 25px;
+            color: #FFA96B;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: left;
+        }
+        #modal p {
+            font-size: 15px;
+            color: #FFA96B;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .login__form {
+            align-items: center;
+        }
+        div.user-box {
+            position: relative;
+            width: 394px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 46px;
+        }
+        div.user-box input {
+            width: 394px;
+            padding: 10px 0;
+            font-size: 16px;
+            margin-bottom: 10px;
+            outline: none;
+            background: transparent;
+            border: 1px solid #FFA96B;
+        }
+        .user-box label {
+            font-weight: bold;
+            color: #FFA96B;
+        }
+        .login__form button {
+            font-size: 30px;
+            font-weight: bold;
+            width: 179px;
+            height: 50px;
+            border-radius: 30px;
+            color: #fff;
+            background-color: #FFA96B;
+            margin-top: 15px;
+        }
+        @media screen and (max-width: 1280px) {
+    #wrap {
+        width: 100%;
+    }
+    #modal {
+        width: 80%;
+        margin-top: 50px;
+    }
+    .login__inner {
+        padding: 50px 0;
+    }
+    .login__inner > h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .login__inner > p {
+        font-size: 18px;
+    }
+    #modal .guide {
+        width: 80%;
+        margin-left: 10%;
+    }
+    div.user-box {
+        width: 80%;
+        margin: 0 auto;
+    }
+    div.user-box input {
+        width: 100%;
+    }
+    .login__form button {
+        font-size: 25px;
+        width: 150px;
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #wrap {
+        width: 90%;
+    }
+    #modal {
+        width: 90%;
+        height: auto;
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 20px;
+    }
+    #modal .img1 img {
+        right: 30px;
+        top: 22px;
+    }
+    #modal .img1::after {
+        right: 20px;
+        top: 12px;
+    }
+    #modal .guide {
+        width: 87%;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    div.user-box {
+        width: 85%;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    div.user-box input {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="modal">
+            <div class="img1">
+                <img src="img/Ximg.svg" alt="닫기">
+            </div>
+            <h2>회원탈퇴</h2>
+            <div class="guide">
+            <h3>회원탈퇴 안내</h3>
+            <p>고객님께서 회원탈퇴를 원하신다니 저희 영양많닭의 서비스가 많이 부족하고 미흡했나 봅니다. 
+                불편하셨던 점이나 불만사항을 알려주시면 적극 반영해서 <br>
+                고객님의 불편함을 해결해 드리도록 노력하겠습니다.<br>
+                
+            <p style="color:red">아울러 회원탈퇴시의 아래 사항을 숙지하시기 바랍니다.</p>
+                
+            <p>회원탈퇴 시 고객님의 정보는 소비자 보호에 관한 법률에 의거한 고객정보 보호정 책에따라 관리 됩니다.</p>
+            </div>
+            <div class="login__form">
+                <form action="loginSave.php" name="loginSave" method="post">
+                    <fieldset>
+                        <legend class="blind">로그인 영역</legend>
+                        <div class="user-box">
+                            <label for="youID" class="required">비밀번호 입력</label>
+                            <input type="password" id="youPass" name="youPass" class="inputStyle" placeholder="현재 비밀번호를 입력해주세요." required>
+                        </div>
+                        <div  class="user-box">
+                            <label for="youPass"  class="required">무엇이 불편하셨나요?</label>
+                            <input type="text" id="text" name="text" class="inputStyle" placeholder="무엇이 불편하셨나요?" required>
+                        </div>
+                        <button type="submit" class="button">탈퇴하기</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
