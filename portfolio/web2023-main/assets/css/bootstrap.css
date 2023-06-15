@@ -329,7 +329,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family:'S-CoreDream-3Light',Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 16px;
   line-height: 1.9;
   color: #333;
@@ -4106,7 +4106,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: #333; font-family: Abel; font-size: 20px;
+  color: #333; font-family: 'Noto Sans JP', sans-serif; font-size: 20px;
+  font-weight: bold;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
