@@ -2,6 +2,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
 }
 a {
     text-decoration: none;
@@ -19,10 +21,6 @@ img {
     margin: 0 auto;
     padding: 0 20px;
     height: 800px;
-}
-.nexon {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 400;
 }
 .section {
     padding: 120px 0;

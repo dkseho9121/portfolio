@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja-JP,en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사이트 만들기1</title>
+    <title>Completed web page</title>
 
     <!-- SEO -->
-    <meta name="author" content="황인찬">
-    <meta name="descripton" content="황인찬과 함께 하는 사이트제작 튜토리얼입니다.">
-    <meta name="descripton" content="황인찬, 사이트, 사이트만들기, 튜토리얼, 강의, 사이트제작">
+    <meta name="author" content="HWANGINCHAN">
+    <meta name="descripton" content="This is a site production tutorial with Hwang In-chan.">
+    <meta name="descripton" content="HWANGINCHAN, site, createwebpage, tutorial, lecture, Siteproduction">
     <meta name="robots" content="all">
 
-    <!-- 파비콘 -->
+    <!-- favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/ico/favicon.png"/>  
     <link rel="apple-touch-icon" sizes="114x114" href="hassets/ico/favicon.png"/>
     <link rel="apple-touch-icon" href="assets/ico/favicon.png"/>
@@ -24,17 +24,21 @@
     <link rel="stylesheet" href="assets/css/swiper.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="skip">
-        <a href="#">헤더 영역 바로가기</a>
-        <a href="#">슬라이드 영역 바로가기</a>
-        <a href="#">이미지 영역 바로가기</a>
-        <a href="#">이미지/텍스트 영역 바로가기</a>
-        <a href="#">카드 영역 바로가기</a>
-        <a href="#">배너 영역 바로가기</a>
-        <a href="#">텍스트 영역 바로가기</a>
-        <a href="#">푸터 영역 바로가기</a>
+        <a href="#">Header Type</a>
+        <a href="#">Slide Type</a>
+        <a href="#">Image Type</a>
+        <a href="#">Image text Type</a>
+        <a href="#">Card Type</a>
+        <a href="#">Banner Type</a>
+        <a href="#">Text Type</a>
+        <a href="#">Footer Type</a>
     </div>
     <!-- //skip -->
 
@@ -43,16 +47,16 @@
             <h1 class="header__logo">COFFEE</h1>
             <nav class="header__menu">
                 <ul>
-                    <li><a href="#">커피의 모든것</a></li>
-                    <li><a href="#">원두에 대해서</a></li>
-                    <li><a href="#">대표적인 커피</a></li>
-                    <li><a href="#">원두</a></li>
-                    <li><a href="#">영양</a></li>
-                    <li><a href="#">이슈</a></li>
+                    <li><a href="#">コーヒーのすべて</a></li>
+                    <li><a href="#">豆について</a></li>
+                    <li><a href="#">代表的なコーヒー</a></li>
+                    <li><a href="#">コーヒー豆</a></li>
+                    <li><a href="#">栄養</a></li>
+                    <li><a href="#">問題</a></li>
                 </ul>
             </nav>
             <div class="header__member">
-                <a href="#">로그인</a>
+                <a href="#">ログイン</a>
             </div>
         </div>
     </header>
@@ -60,7 +64,7 @@
 
     <main id="mainType">
         <section id="sliderType" class="nexon">
-            <h2 class="blind">메인 슬라이드 영역</h2>
+            <h2 class="blind">slide type</h2>
             <div class="slider__inner">
                     <div class="swiper">
                         <div class="swiper-wrapper">
@@ -68,15 +72,11 @@
                                 <div class="slider img1">
                                     <div class="slider__info container">
                                         <span class="small">event</span>
-                                        <h1 class="title">커피 원두에 대한 모든것</h1>
-                                        <p class="desc">커피 원두는 커피나무에서 열매가 익어 수확한 후, 내부의 씨앗을 건조시킨 것을 말합니다.
-                                            이러한 원두는 다양한 원산지와 종류, 로스팅 방식에 따라 맛과 향이 다양하게 나타납니다.
-                                            커피 원두는 크게 아라비카(Arabica)와 로부스타(Robusta)로 구분됩니다. 
-                                            아라비카 원두는 부드러운 맛과 향, 그리고 적은 양의 카페인 함량을 가지고 있어 많이 선호됩니다.
-                                            </p>
+                                        <h1 class="title">コーヒー豆とは何ですか</h1>
+                                        <p class="desc">コーヒー豆とは、コーヒーツリーで実が熟し収穫された後、内部の種子が乾燥させられたものを指します。 このような豆は、さまざまな産地、種類、ロースティング方法によってさまざまな味と香りが表れます。 コーヒー豆は主にアラビカ種とロブスタ種に分類されます。 アラビカ豆はマイルドな味と香り、そして少量のカフェインを含んでいるため、よく好まれます。一方、ロブスタ豆はアラビカ豆に比べてカフェイン含有量が高く、より強い味と香りを持っています。</p>
                                 <div class="btn">
-                                    <a href="#">자세히 보기</a>
-                                    <a href="#">상담 신청</a>
+                                    <a href="#">詳細を見る</a>
+                                    <a href="#">相談申し込み</a>
                                 </div>
                             </div>
                         </div>
@@ -86,15 +86,11 @@
                             <div class="slider img2">
                                 <div class="slider__info container">
                                     <span class="small">event</span>
-                                    <h1 class="title">커피 원두에 대한 모든것</h1>
-                                    <p class="desc">커피 원두는 커피나무에서 열매가 익어 수확한 후, 내부의 씨앗을 건조시킨 것을 말합니다.
-                                        이러한 원두는 다양한 원산지와 종류, 로스팅 방식에 따라 맛과 향이 다양하게 나타납니다.
-                                        커피 원두는 크게 아라비카(Arabica)와 로부스타(Robusta)로 구분됩니다. 
-                                        아라비카 원두는 부드러운 맛과 향, 그리고 적은 양의 카페인 함량을 가지고 있어 많이 선호됩니다.
-                                        </p>
+                                    <h1 class="title">コーヒーの効能と副作用</h1>
+                                    <p class="desc">コーヒーには多くの化学成分が含まれています。その中で最もよく知られている成分はカフェインです。カフェインは中枢神経刺激薬として働き、覚醒作用や注意力の向上、疲労感の軽減などの効果があります。また、カフェインは脳内のアデノシン受容体をブロックすることにより眠気を抑制する効果もあります。詳しい情報は以下のボタンをクリックしてください</p>
                             <div class="btn">
-                                <a href="#">자세히 보기</a>
-                                <a href="#">상담 신청</a>
+                                <a href="#">詳細を見る</a>
+                                <a href="#">相談申し込み</a>
                             </div>
                         </div>
                     </div>
@@ -105,15 +101,11 @@
                             <div class="slider img3">
                                 <div class="slider__info container">
                                     <span class="small">event</span>
-                                    <h1 class="title">커피 원두에 대한 모든것</h1>
-                                    <p class="desc">커피 원두는 커피나무에서 열매가 익어 수확한 후, 내부의 씨앗을 건조시킨 것을 말합니다.
-                                        이러한 원두는 다양한 원산지와 종류, 로스팅 방식에 따라 맛과 향이 다양하게 나타납니다.
-                                        커피 원두는 크게 아라비카(Arabica)와 로부스타(Robusta)로 구분됩니다. 
-                                        아라비카 원두는 부드러운 맛과 향, 그리고 적은 양의 카페인 함량을 가지고 있어 많이 선호됩니다.
-                                        </p>
+                                    <h1 class="title">コーヒーの種類</h1>
+                                    <p class="desc">世界中には、さまざまな種類のコーヒーが存在する理由は、地理的、気候的、文化的な要素などが大きな役割を果たしています。 異なる地域の土壌や気候は、特定の種類のコーヒー栽培に適した状況を作り出すためです。アラビカ(Arabica)とロブスタ(Robusta)は、最も広く栽培されている2つの主要なコーヒーの種類です。 アラビカは酸味があり、ロブスタは苦味が強いです。これらの違いは、それぞれの生態環境によって生じたものです。</p>
                             <div class="btn">
-                                <a href="#">자세히 보기</a>
-                                <a href="#">상담 신청</a>
+                                <a href="#">詳細を見る</a>
+                                <a href="#">相談申し込み</a>
                             </div>
                         </div>
                     </div>
@@ -128,91 +120,64 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
-                <!-- <div class="slider">
-                    <div class="slider__info container">
-                        <span class="small">event</span>
-                        <h1 class="title">커피 원두에 대한 모든것</h1>
-                        <p class="desc">커피 원두는 커피나무에서 열매가 익어 수확한 후, 내부의 씨앗을 건조시킨 것을 말합니다.
-                            이러한 원두는 다양한 원산지와 종류, 로스팅 방식에 따라 맛과 향이 다양하게 나타납니다.
-                            커피 원두는 크게 아라비카(Arabica)와 로부스타(Robusta)로 구분됩니다. 
-                            아라비카 원두는 부드러운 맛과 향, 그리고 적은 양의 카페인 함량을 가지고 있어 많이 선호됩니다.
-                            </p>
-                        <div class="btn">
-                            <a href="#">자세히 보기</a>
-                            <a href="#">상담 신청</a>
-                        </div>
-                    </div>
-                    <div class="slider__arrow">
-                        <a href="#"><span class="blind">이전 이미지</span></a>
-                        <a href="#"><span class="blind">다음 이미지</span></a>
-                    </div>
-                    <div class="slider__dot">
-                        <a href="#" class="dot active"><span class="blind">첫번째 이미지</span></a>
-                        <a href="#" class="dot"><span class="blind">두번째 이미지</span></a>
-                        <a href="#" class="dot"><span class="blind">세번째 이미지</span></a>
-                        <a href="#" class="play"><span class="blind">플레이</span></a>
-                        <a href="#" class="stop"><span class="blind">정지</span></a>
-                    </div>
-                </div> -->
             </div>
         </section>
         <!-- //sliderType -->
         <section id="imageType" class="nexon section center">
-            <h2 class="section__h2">커피의 모든것</h2>
-            <p class="section__desc">커피는 전 세계에서 가장 인기 있는 음료 중 하나로, 수많은 사람들이 즐기는 음료입니다.</p>
+            <h2 class="section__h2">コーヒーのすべて</h2>
+            <p class="section__desc">コーヒーは世界中で最も人気のある飲み物の一つであり、多くの人々が楽しんでいる飲み物です。</p>
 
             <div class="image__inner container">
                 <div class="image__inner">
                     <article class="image">
                         <figure class="image__header">
-                            <img src="assets/img/imageType01_01.jpg" alt="커피의 효능">
+                            <img src="assets/img/imageType01_01.jpg" alt="コーヒーの効能">
                         </figure>
                         <div class="image__body">
-                            <h3 class="title">커피의 종류</h3>
-                            <p class="desc">커피는 다양한 종류와 스타일이 있습니다. 대표적인 커피의 종류입니다.</p>
-                            <a href="#" class="btn">자세히 보기</a>   
+                            <h3 class="title">コーヒーの種類</h3>
+                            <p class="desc">コーヒーにはさまざまな種類とスタイルがあります。代表的なコーヒーの種類です。</p>
+                            <a href="#" class="btn">詳細を見る</a>   
                         </div> 
                     </article>
                     <article class="image">
                         <figure class="image__header">
-                            <img src="assets/img/imageType01_02.jpg" alt="커피의 부작용">
+                            <img src="assets/img/imageType01_02.jpg" alt="コーヒーの副作用">
                         </figure>
                         <div class="image__body">
-                            <h3 class="title">커피의 역사</h3>
-                            <p class="desc">커피에는 깊은 역사가 있습니다.
-                                커피의 역사에대해 알아봅시다</p>
-                            <a href="#" class="btn">자세히 보기</a> 
+                            <h3 class="title">コーヒーの歴史</h3>
+                            <p class="desc">コーヒーには深い歴史があります。コーヒーの歴史について探ってみましょう。</p>
+                            <a href="#" class="btn">詳細を見る</a> 
                         </div>
                     </article>
                 </div>
         </section>
         <!-- //imageType -->
         <section id="imgTextType" class="nexon section gray">
-            <h2 class="blind">다양한 커피의 종류</h2>
+            <h2 class="blind">さまざまな種類のコーヒー</h2>
             <div class="container">
                 <div class="imgText__inner">
                     <article class="text">
                         <span>NOTICE</span>
-                        <h3>다양한 커피의 종류</h3>
-                        <p>세계적으로 수천가지 이상의 커피의 종류가 있습니다. <br>일부 인기 있는 커피의 종류는 다음과 같습니다.</p>
+                        <h3>さまざまな種類のコーヒー</h3>
+                        <p>世界中には数千種類以上のコーヒーの種類があります。人気のある一部のコーヒーの種類は以下の通りです。</p>
                         <ul>
-                            <li><a href="#">에스프레소(Espresso)</a></li>
-                            <li><a href="#">아메리카노(Americano)</a></li>
-                            <li><a href="#">라떼 (Latte)</a></li>
-                            <li><a href="#">카푸치노 (Cappuccino)</a></li>
-                            <li><a href="#">모카 (Mocha)</a></li>
-                            <li><a href="#">콜드 브루 (Cold Brew)</a></li>
-                            <li><a href="#">프렌치 프레스 (French Press)</a></li>
-                            <li><a href="#">터키 커피 (Turkish Coffee)</a></li>
-                            <li><a href="#">카페 모카 (Caffe Mocha)</a></li>
-                            <li><a href="#">아이스 커피 (Iced Coffee)</a></li>
+                            <li><a href="#">エスプレッソ(Espresso)</a></li>
+                            <li><a href="#">アメリカーノ(Americano)</a></li>
+                            <li><a href="#">ラテ (Latte)</a></li>
+                            <li><a href="#">カプチーノ (Cappuccino)</a></li>
+                            <li><a href="#">モカ (Mocha)</a></li>
+                            <li><a href="#">コールドブリュー (Cold Brew)</a></li>
+                            <li><a href="#">フレンチプレス (French Press)</a></li>
+                            <li><a href="#">トルココーヒー (Turkish Coffee)</a></li>
+                            <li><a href="#">カフェモカ (Caffe Mocha)</a></li>
+                            <li><a href="#">アイスコーヒー (Iced Coffee)</a></li>
                         </ul>
                     </article>
                     <article class="img i1">
-                        <a href="#">맛있는 커피</a>
+                        <a href="#">甘いコーヒー</a>
                     </article>
                     <article class="img i2">
-                        <a href="#">커피의 효능</a>
+                        <a href="#">苦味コーヒー</a>
                     </article>
                 </div>
             </div>
@@ -220,38 +185,37 @@
         <!-- //imgTextType -->
         <section id="cardType" class="nexon section">
             <div class="container">
-                <h2 class="section__h2">커피원두에 대해서</h2>
-                <p class="section__desc">커피 원두의 향과 맛은 생산지역, 생산 방법, 로스팅(원두를 구워 볶는 과정) 등에 따라 다양합니다.
-                    원두의 로스팅 정도에 따라 라이트 로스팅, 미디엄 로스팅, 다크 로스팅 등으로 나눌 수 있습니다.</p>
+                <h2 class="section__h2">コーヒー豆について</h2>
+                <p class="section__desc">コーヒー豆の香りや味は、生産地域、生産方法、ロースティング（豆を焙煎する過程）などによって多様です。豆のロースティングの程度によって、ライトロースト、ミディアムロースト、ダークローストなどに分けることができます。 (こーひーまめのかおりやあじは、せいさんちいき、せいさんほうほう、ろーすてぃんぐ</p>
                 <div class="card__inner">
                     <article class="card">
                         <figure class="card__header">
-                            <img src="assets/img/cardType01_01.jpg" alt="입양하기">
+                            <img src="assets/img/cardType01_01.jpg" alt="ライトロースト">
                         </figure>
                         <div class="card__body">
-                            <h3 class="title">라이트 로스팅</h3>
-                            <p class="desc">라이트 로스팅은 커피 원두를 상대적으로 짧은 시간동안 가볍게 볶는 로스팅 방법입니다. 일반적으로 로스팅 시간은 8분 미만이며, 원두의 색깔이 밝고, 향과 산미가 강한 커피를 만들어....</p>
-                            <a href="#" class="btn">자세히 보기</a>
+                            <h3 class="title">ライトロースト</h3>
+                            <p class="desc">ライトローストはコーヒー豆を比較的短い時間で軽く焙煎する方法です。一般的には8分未満のロースティング時間であり、豆の色は明るく、香りと酸味が強いコーヒーが作...</p>
+                            <a href="#" class="btn">詳細を見る</a>
                         </div>
                     </article>
                     <article class="card">
                         <figure class="card__header">
-                            <img src="assets/img/cardType01_02.jpg" alt="입양하기">
+                            <img src="assets/img/cardType01_02.jpg" alt="ミディアムロースト">
                         </figure>
                         <div class="card__body">
-                            <h3 class="title">미디엄 로스팅</h3>
-                            <p class="desc">미디엄 로스팅은 커피 원두를 상대적으로 중간 정도로 볶는 로스팅 방법입니다. 일반적으로 로스팅 시간은 10분 정도이며, 원두의 색깔이 밝으면서도, 다소 진한 갈색으로 변합니다. 미디...</p>
-                            <a href="#" class="btn">자세히 보기</a>
+                            <h3 class="title">ミディアムロースト</h3>
+                            <p class="desc">ミディアムローストはコーヒー豆を比較的中間程度まで焙煎する方法です。一般的には焙煎時間は約10分で、豆の色は明るめでありながら、やや濃い褐色に変化します。ミディ...</p>
+                            <a href="#" class="btn">詳細を見る</a>
                         </div>
                     </article>
                     <article class="card">
                         <figure class="card__header">
-                            <img src="assets/img/cardType01_03.jpg" alt="입양하기">
+                            <img src="assets/img/cardType01_03.jpg" alt="ダークロースト">
                         </figure>
                         <div class="card__body">
-                            <h3 class="title">다크 로스팅</h3>
-                            <p class="desc">다크 로스팅은 커피 원두를 상대적으로 오랫동안 강하게 볶는 로스팅 방법입니다. 일반적으로 로스팅 시간은 12분 이상이며, 원두의 색깔이 매우 진하고, 향과 쓴맛이 강한 커피를 만들어...</p>
-                            <a href="#" class="btn">자세히 보기</a>
+                            <h3 class="title">ダークロースト</h3>
+                            <p class="desc">ダークローストはコーヒー豆を相対的に長い時間、強く焙煎する方法です。一般的には焙煎時間は12分以上であり、豆の色は非常に濃く、香りと苦味が強いコーヒーが作られま...</p>
+                            <a href="#" class="btn">詳細を見る</a>
                         </div>
                     </article>
                     </div>
@@ -259,10 +223,11 @@
         </section> 
         <!-- //cardType -->
         <section id="bannerType" class="nexon section center">
-            <h2 class="blind">배너</h2>
+            <h2 class="blind">bannerType</h2>
             <div class="banner__inner">
-                <h3>커피가 필요한 나른한 오후</h3>
-                <p>다양한 커피의 정보는<br>아래 링크에서 자세히 확인할 수 있습니다.</p>
+                <h3>コーヒーが必要なだるい午後</h3>
+                <p>様々なコーヒーの情報は、<br>
+                    以下のリンクから詳しくご確認いただけます。</p>
                 <a href="#">dlscks0930.tistory.com</a>
             </div>
         </section> 
@@ -270,38 +235,37 @@
         <section id="textType" class="nexon section center">
             <div class="container">
                 <span class="section__small">notice</span>
-                <h2 class="section__h2 mb70">대표적인 커피의 종류</h2>
+                <h2 class="section__h2 mb70">代表的なコーヒーの種類</h2>
                 <div class="text__inner">
                     <div class="text t1">
                         <h3 class="text__title">Espresso</h3>
-                        <p class="text__desc">에스프레소 (Espresso)는 이탈리아에서 탄생한 커피 음료로, 작고 진한 맛이 특징인 커피입니다. 에스프레소를 만들기 위해서는 에스프레소 기계라는 전용 기계를 사용합니다. 이 기계는 높... </p>
-                        <a href="#" class="text__btn">더보기</a>
+                        <p class="text__desc">エスプレッソ（Espresso）はイタリアで生まれたコーヒー飲料であり、小さく濃い味が特徴のコーヒーです。エスプレッソを作るためには、エスプレッソマシンという専用の機....</p>
+                        <a href="#" class="text__btn">もっと見る</a>
                     </div>
                     <div class="text t2">
                         <h3 class="text__title">Americano</h3>
-                        <p class="text__desc">아메리카노 (Americano)는 에스프레소에 물을 추가하여 만든 커피 음료입니다. 원래는 이탈리아에서 미군이 이용하는 커피 가게에서 물을 추가해 커피를 연하게 마시기 시작한 것이 유래입니..</p>
-                        <a href="#" class="text__btn">더보기</a>
+                        <p class="text__desc">アメリカーノ（Americano）はエスプレッソに水を加えて作られるコーヒー飲料です。もともとはイタリアでアメリカ軍が利用するコーヒーショップで、水を加えてコーヒーを...</p>
+                        <a href="#" class="text__btn">もっと見る</a>
                     </div>
                     <div class="text t3">
                         <h3 class="text__title">Latte</h3>
-                        <p class="text__desc">라떼(Latte)는 에스프레소와 스팀밀크를 혼합한 커피 음료입니다. 에스프레소와 스팀밀크의 비율은 일반적으로 1:3에서 1:5 정도로 섞이며, 에스프레소의 쓴 맛과 스팀밀크의 부드러운 맛이...</p>
-                        <a href="#" class="text__btn">더보기</a>
+                        <p class="text__desc">ラテ（Latte）はエスプレッソとスチームミルクを混合したコーヒー飲料です。エスプレッソとスチームミルクの比率は一般的には1:3から1:5程度で混ぜられ、エスプレッソの苦...</p>
+                        <a href="#" class="text__btn">もっと見る</a>
                     </div>
                     <div class="text t4">
                         <h3 class="text__title">Cappuccino</h3>
-                        <p class="text__desc">카푸치노(Cappuccino)는 에스프레소, 스팀밀크, 그리고 밀크 폼으로 만들어지는 이탈리아의 전통적인 커피 음료입니다. 카푸치노는 일반적으로 1:1:1의 비율로 만들어지며, 에스프레소에...
-                            </p>
-                        <a href="#" class="text__btn">더보기</a>
+                        <p class="text__desc">カプチーノ（Cappuccino）はエスプレッソ、スチームミルク、ミルクフォームを組み合わせて作られるイタリアの伝統的なコーヒー飲料です。カプチーノは一般的には1:1:1の比...</p>
+                        <a href="#" class="text__btn">もっと見る</a>
                     </div>
                     <div class="text t5">
                         <h3 class="text__title">Mocha</h3>
-                        <p class="text__desc">모카(Mocha)는 에스프레소, 스팀밀크, 초콜릿 시럽이나 분말, 그리고 얇게 갈은 초콜릿으로 만들어지는 커피 음료입니다. 모카는 일반적으로 달콤하고 부드러운 맛이 특징입니다. 초콜...</p>
-                        <a href="#" class="text__btn">더보기</a>
+                        <p class="text__desc">モカ（Mocha）はエスプレッソ、スチームミルク、チョコレートシロップまたはパウダー、そして細かく挽いたチョコレートで作られるコーヒー飲料です。モカは一般的に甘く...</p>
+                        <a href="#" class="text__btn">もっと見る</a>
                     </div>
                     <div class="text t6">
                         <h3 class="text__title">Cold Braw</h3>
-                        <p class="text__desc">콜드 브루(Cold Brew)는 차가운 물에 갈아낸 커피를 오랫동안 저온에서 우려내는 방식으로 만들어지는 커피 음료입니다. 일반적으로 12~24시간 동안 차가운 물에 커피를 우려내고, 필터...</p>
-                        <a href="#" class="text__btn">더보기</a>
+                        <p class="text__desc">コールドブリュー（Cold Brew）は冷たい水で挽いたコーヒーを長時間低温で抽出する方法で作られるコーヒー飲料です。一般的には12〜24時間程度、冷たい水にコーヒーを浸...</p>
+                        <a href="#" class="text__btn">もっと見る</a>
                     </div>
                 </div>
             </div>
@@ -312,66 +276,66 @@
 
     <footer id="footerType" class="nexon section gray">
         <div class="container">
-            <h2 class="blind">푸터</h2>
+            <h2 class="blind">footerType</h2>
             <div class="footer__inner">
                 <div class="footer__menu">
                     <div>
-                        <h3>커피 사이트</h3>
+                        <h3>ホームページ</h3>
                     <ul>
-                        <li><a href="#">소개하기</a></li>
-                        <li><a href="#">커피 이야기</a></li>
-                        <li><a href="#">커피의 효능</a></li>
-                        <li><a href="#">커피의부작용</a></li>
+                        <li><a href="#">紹介する</a></li>
+                        <li><a href="#">の話</a></li>
+                        <li><a href="#">効能</a></li>
+                        <li><a href="#">副作用</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>커피 콩의 종류</h3>
+                    <h3>コーヒー豆の種類</h3>
                     <ul>
-                        <li><a href="#">소개하기</a></li>
-                        <li><a href="#">커피 이야기</a></li>
-                        <li><a href="#">커피의 효능</a></li>
-                        <li><a href="#">커피의부작용</a></li>
+                        <li><a href="#">紹介する</a></li>
+                        <li><a href="#">の話</a></li>
+                        <li><a href="#">効能</a></li>
+                        <li><a href="#">副作用</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>커피의 장점</h3>
+                    <h3>コーヒーの長所</h3>
                     <ul>
-                        <li><a href="#">소개하기</a></li>
-                        <li><a href="#">커피 이야기</a></li>
-                        <li><a href="#">커피의 효능</a></li>
-                        <li><a href="#">커피의부작용</a></li>
+                        <li><a href="#">紹介する</a></li>
+                        <li><a href="#">の話</a></li>
+                        <li><a href="#">効能</a></li>
+                        <li><a href="#">副作用</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>커피의 단점</h3>
+                    <h3>コーヒーの短所</h3>
                     <ul>
-                        <li><a href="#">소개하기</a></li>
-                        <li><a href="#">커피 이야기</a></li>
-                        <li><a href="#">커피의 효능</a></li>
-                        <li><a href="#">커피의부작용</a></li>
+                        <li><a href="#">紹介する</a></li>
+                        <li><a href="#">の話</a></li>
+                        <li><a href="#">効能</a></li>
+                        <li><a href="#">副作用</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>커피의 종류</h3>
+                    <h3>コーヒーの短所</h3>
                     <ul>
-                        <li><a href="#">소개하기</a></li>
-                        <li><a href="#">커피 이야기</a></li>
-                        <li><a href="#">커피의 효능</a></li>
-                        <li><a href="#">커피의부작용</a></li>
+                        <li><a href="#">紹介する</a></li>
+                        <li><a href="#">の話</a></li>
+                        <li><a href="#">効能</a></li>
+                        <li><a href="#">副作用</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>원두로스팅 방법</h3>
+                    <h3>コーヒー豆焙煎方法</h3>
                     <ul>
-                        <li><a href="#">소개하기</a></li>
-                        <li><a href="#">커피 이야기</a></li>
-                        <li><a href="#">커피의 효능</a></li>
-                        <li><a href="#">커피의부작용</a></li>
+                        <li><a href="#">紹介する</a></li>
+                        <li><a href="#">の話</a></li>
+                        <li><a href="#">効能</a></li>
+                        <li><a href="#">副作用</a></li>
                     </ul>
                 </div>
                 </div>
                 <address class="footer__right">
-                    2023 황인찬 커피 제작 사이트 Portfolio is Power<br>
+                    2024 黃仁燦  Portfolio is Power<br>
                     All Right Reserved
                 </address>
             </div>

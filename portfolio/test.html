@@ -1,35 +1,367 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>일본어 시계</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-  <script>
-    window.onload = function() {
-      let clock = document.getElementById("clock");
-
-      setInterval(function () {
-        const currentTime = moment().format('A hh:mm:ss');
-        clock.innerHTML = currentTime;
-      }, 1000);
-
-      $(function () {
-        var $container = $('#container'),
-          filters = {};
-
-        $container.isotope({
-          itemSelector: '.color-shape',
-          masonry: {
-            columnWidth: 57
-          }
-        });
-      });
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .slider__inner .slider {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+.slider__inner .slider::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(224, 217, 88, 0.1);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.slider__inner .slider.img1 {
+    background-image: url(../img/sliderType01_01.jpg);
+}
+.slider__inner .slider.img2 {
+    background-image: url(../img/sliderType01_02.jpg);
+}
+.slider__inner .slider.img3 {
+    background-image: url(../img/sliderType01_03.jpg);
+}
+.slider__info {
+    padding: 100px 0;
+}
+.slider__info .small {
+    display: inline-block;
+    padding: 1px 30px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.slider__info .title {
+    font-size: 80px;
+    color: #fff;
+    margin-bottom: 40px;
+    margin-left: -5px;
+}
+.slider__info .desc {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+    width: 50%;
+    word-break: keep-all;
+}
+.slider__info .btn {
+    margin-top: 100px;
+}
+.slider__info .btn a {
+    width: 180px;
+    background: #fff;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    padding: 12px 0;
+    margin-right: 4px;
+}
+.slider__info .btn a:last-child {
+    background-color: #000;
+    color: #fff;
+}
+.slider__arrow a {
+    position: absolute;
+    top: 50%;
+    background-image: url(../img/icon_main.svg);
+    background-size: 500px;
+    width: 30px;
+    height: 56px;
+    display: block;
+    margin-top: -28px;
+}
+.slider__arrow a:first-child {   
+    left: 20px;
+}
+.slider__arrow a:last-child {
+    right: 20px;
+    background-position: -52px 0;
+}
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
+.slider__dot a {
+   width: 16px;
+   height: 16px;
+   display: inline-block;
+   background-image: url(../img/icon_main.svg);
+   background-size: 500px;
+   margin: 0 3px;   
+}
+.slider__dot a.dot {
+    background-position: -101px -1px;
+}
+.slider__dot a.active {
+    background-position: -121px -1px;
+}
+.slider__dot a.play {
+    background-position: -141px -1px;
+}
+.slider__dot a.stop {
+    background-position: -161px -1px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 2dppx) {
+        .slider__inner .slider {
+            background-image: url(../img/slideType_01_01@2x.jpg);
+        }   
+}
+/* swiper */
+.swiper-button-prev,
+.swiper-button-next {
+    width: 30px;
+    height: 56px;
+    background-image: url(../img/icon_main.svg);
+    background-size: 500px;
+}
+.swiper-button-next {
+    background-position: -52px 0;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 0;
+}
+.swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/icon_main.svg);
+    background-size: 500px;
+    background-position: -101px -1px;
+    opacity: 1;
+    background-color: transparent;
+}
+.swiper-pagination-bullet-active {
+    background-position: -121px -1px ;
+}
+.swiper-pagination {
+    bottom: 20px !important;
+}
+.swiper-button {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    display: flex;
+    margin-left: 40px;
+    z-index: 1000;
+}
+.swiper-button-play {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    background-image: url(../img/icon_main.svg);
+    background-position: -141px -1px;
+    background-size: 500px;
+    cursor:pointer;
+}
+.swiper-button-stop {
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/icon_main.svg);
+    background-position: -161px -1px;
+    background-size: 500px;
+    cursor:pointer;
+}
+/* 미디어쿼리 */
+@media (max-width:1200px){
+    .slider {
+        text-align: center;
     }
-  </script>
+    .slider__info .desc {
+        width: 100%;
+        padding: 0 5%;
+        box-sizing: border-box;
+    }
+}
+@media (max-width:960px){
+    .slider__info .title {
+        font-size: 40px;
+    }
+    .slider__info .btn {
+        margin-top: 50px;
+    }
+    
+}
+@media (max-width:600px){
+    .slider__info {
+        padding: 50px 0 70px;
+    }
+    .slider__info .title {
+        font-size: 30px;
+    }
+    .slider__info .desc {
+        font-size: 14px;
+    }
+    .slider__info .btn {
+        margin-top: 30px;
+    }
+    .slider__info .btn a {
+        width: 120px;
+        font-size: 14px;
+        padding: 6px 0;
+    }
+    .swiper-pagination {
+        bottom: 10px !important;
+    }
+    .swiper-button {
+        bottom: 14px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+}
+  </style>
 </head>
 <body>
-  <h1>일본어 시계</h1>
-  <span id="clock"></span>
-  </div>
+  <main id="mainType">
+    <section id="sliderType" class="nexon">
+        <h2 class="blind">메인 슬라이드 영역</h2>
+        <div class="slider__inner">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slider img1">
+                                <div class="slider__info container">
+                                    <span class="small">event</span>
+                                    <h1 class="title">커피 원두에 대한 모든것</h1>
+                                    <p class="desc">커피 원두는 커피나무에서 열매가 익어 수확한 후, 내부의 씨앗을 건조시킨 것을 말합니다.
+                                        이러한 원두는 다양한 원산지와 종류, 로스팅 방식에 따라 맛과 향이 다양하게 나타납니다.
+                                        커피 원두는 크게 아라비카(Arabica)와 로부스타(Robusta)로 구분됩니다. 
+                                        아라비카 원두는 부드러운 맛과 향, 그리고 적은 양의 카페인 함량을 가지고 있어 많이 선호됩니다.
+                                        </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#">상담 신청</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-slide">
+                        <div class="slider img2">
+                            <div class="slider__info container">
+                                <span class="small">event</span>
+                                <h1 class="title">커피 원두에 대한 모든것</h1>
+                                <p class="desc">커피 원두는 커피나무에서 열매가 익어 수확한 후, 내부의 씨앗을 건조시킨 것을 말합니다.
+                                    이러한 원두는 다양한 원산지와 종류, 로스팅 방식에 따라 맛과 향이 다양하게 나타납니다.
+                                    커피 원두는 크게 아라비카(Arabica)와 로부스타(Robusta)로 구분됩니다. 
+                                    아라비카 원두는 부드러운 맛과 향, 그리고 적은 양의 카페인 함량을 가지고 있어 많이 선호됩니다.
+                                    </p>
+                        <div class="btn">
+                            <a href="#">자세히 보기</a>
+                            <a href="#">상담 신청</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-slide">
+                        <div class="slider img3">
+                            <div class="slider__info container">
+                                <span class="small">event</span>
+                                <h1 class="title">커피 원두에 대한 모든것</h1>
+                                <p class="desc">커피 원두는 커피나무에서 열매가 익어 수확한 후, 내부의 씨앗을 건조시킨 것을 말합니다.
+                                    이러한 원두는 다양한 원산지와 종류, 로스팅 방식에 따라 맛과 향이 다양하게 나타납니다.
+                                    커피 원두는 크게 아라비카(Arabica)와 로부스타(Robusta)로 구분됩니다. 
+                                    아라비카 원두는 부드러운 맛과 향, 그리고 적은 양의 카페인 함량을 가지고 있어 많이 선호됩니다.
+                                    </p>
+                        <div class="btn">
+                            <a href="#">자세히 보기</a>
+                            <a href="#">상담 신청</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button">
+                    <div class="swiper-button-play"><span class="ir">play</span></div>
+                    <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <!-- <div class="slider">
+                <div class="slider__info container">
+                    <span class="small">event</span>
+                    <h1 class="title">커피 원두에 대한 모든것</h1>
+                    <p class="desc">커피 원두는 커피나무에서 열매가 익어 수확한 후, 내부의 씨앗을 건조시킨 것을 말합니다.
+                        이러한 원두는 다양한 원산지와 종류, 로스팅 방식에 따라 맛과 향이 다양하게 나타납니다.
+                        커피 원두는 크게 아라비카(Arabica)와 로부스타(Robusta)로 구분됩니다. 
+                        아라비카 원두는 부드러운 맛과 향, 그리고 적은 양의 카페인 함량을 가지고 있어 많이 선호됩니다.
+                        </p>
+                    <div class="btn">
+                        <a href="#">자세히 보기</a>
+                        <a href="#">상담 신청</a>
+                    </div>
+                </div>
+                <div class="slider__arrow">
+                    <a href="#"><span class="blind">이전 이미지</span></a>
+                    <a href="#"><span class="blind">다음 이미지</span></a>
+                </div>
+                <div class="slider__dot">
+                    <a href="#" class="dot active"><span class="blind">첫번째 이미지</span></a>
+                    <a href="#" class="dot"><span class="blind">두번째 이미지</span></a>
+                    <a href="#" class="dot"><span class="blind">세번째 이미지</span></a>
+                    <a href="#" class="play"><span class="blind">플레이</span></a>
+                    <a href="#" class="stop"><span class="blind">정지</span></a>
+                </div>
+            </div> -->
+        </div>
+    </section>
 </body>
 </html>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
+        loop: true,
+
+        autoplay: {
+            delay: 1000,
+            disableOnInteraction: false,
+        },
+
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    document.querySelector(".swiper-button-play").style.display = "none";
+
+    document.querySelector(".swiper-button-play").addEventListener("click", () => {
+        swiper.autoplay.start();
+        document.querySelector(".swiper-button-play").style.display = "none";
+        document.querySelector(".swiper-button-stop").style.display = "block";
+    });
+    document.querySelector(".swiper-button-stop").addEventListener("click", () => {
+        swiper.autoplay.stop();
+        document.querySelector(".swiper-button-play").style.display = "block";
+        document.querySelector(".swiper-button-stop").style.display = "none";
+    });
+</script>

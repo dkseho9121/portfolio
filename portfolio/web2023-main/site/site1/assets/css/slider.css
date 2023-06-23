@@ -47,7 +47,6 @@
     font-size: 18px;
     line-height: 1.5;
     color: #fff;
-    width: 50%;
     word-break: keep-all;
 }
 .slider__info .btn {
@@ -63,7 +62,7 @@
     margin-right: 4px;
 }
 .slider__info .btn a:last-child {
-    background-color: #000;
+    background-color: #3c3c3c;
     color: #fff;
 }
 .slider__arrow a {

@@ -1,0 +1,90 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    width: 100%;
+}
+li {
+    list-style: none;
+}
+.footergood{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+
+}
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-width: 1160px;
+}
+.section {
+    padding: 120px 0;
+}
+.section h2 {
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section p {
+    font-size: 22px;
+    font-weight: 3;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.gray {
+    background-color: #f5f5f5;
+}
+
+
+.footer__menu {
+    display: flex;
+    margin-bottom: 70px;
+}
+.footer__menu div {
+    width: 16%;
+}
+.footer__menu h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.footer__menu li a {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+}
+.footer__right {
+    border-top: 1px solid #d9d9d9;
+    text-align: center;
+    color: #666666;
+    margin-top: 50px;
+    line-height: 150%;
+    padding-top: 50px;
+}

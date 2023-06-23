@@ -1,4 +1,4 @@
-/* 여백 초기화 */
+/* margin padding reset */
 body, div, dl, dd, dt, ul, li, ol, h1, h2, h3, h4, h5, h6, pre, code,
 form, fieldset, legend, p, table, th, td, input,
 figure, figcaption, blockquote {
@@ -6,44 +6,44 @@ figure, figcaption, blockquote {
     padding: 0;
 }
 
-/* 폰트 초기화 */
+/* font reset */
 body, button, input, select, table, textarea {
-    font-family: 'NexonLv1Gothic', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', 'dotum', '돋움';
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
-/* 링크 초기화 */
+/* link reset */
 a {
     text-decoration: none;
     color: #000;
 }
 
-/* 목록 초기화 */
+/* list reset */
 li, ol, ul {
     list-style: none;
 }
-/* 제목 초기화 */
+/* title reset */
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     font-size: 1rem;
 }
 
-/* 폰트 스타일 */
+/* font style */
 em, address {
     font-style: normal;
 }
 
-/* 이미지 초기화 */
+/* image reset */
 img {
     width: 100%;
     vertical-align: top;
 }
 
-/* 보더 초기화 */
+/* border reset */
 img, fieldset, button {
     border: 0;
 }
 
-/* 클리어픽스 */
+/* clearfix */
 .clearfix::before,
 .clearfix::after {
     content: '';
@@ -54,7 +54,7 @@ img, fieldset, button {
     clear: both;
 }
 
-/* 블라인드 효과 */
+/* blind effect */
 .blind {
     position: absolute;
     clip: rect(0,0,0,0);
@@ -64,7 +64,7 @@ img, fieldset, button {
     overflow: hidden;
 }
 
-/* ir 효과 */
+/* ir effect */
 .ir {
     display: block;
     overflow: hidden;
@@ -73,7 +73,7 @@ img, fieldset, button {
     text-indent: -9999px;
 }
 
-/* 간격설정 */
+/* Interval reset */
 .mt10 {margin-top: 10px !important;}
 .mt20 {margin-top: 20px !important;}
 .mt30 {margin-top: 30px !important;}
