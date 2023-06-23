@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01.슬라이드 이펙트</title>
+    <title>SlideEffect 01</title>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/slider.css">
@@ -37,11 +37,11 @@
             color: #fff;
             padding: 5px 10px;
         }
-        .slider:nth-child(1)::before {content: '이미지1';}
-        .slider:nth-child(2)::before {content: '이미지2';}
-        .slider:nth-child(3)::before {content: '이미지3';}
-        .slider:nth-child(4)::before {content: '이미지4';}
-        .slider:nth-child(5)::before {content: '이미지5';}
+        .slider:nth-child(1)::before {content: 'image1';}
+        .slider:nth-child(2)::before {content: 'image2';}
+        .slider:nth-child(3)::before {content: 'image3';}
+        .slider:nth-child(4)::before {content: 'image4';}
+        .slider:nth-child(5)::before {content: 'image5';}
         .slider:nth-child(1) {z-index: 5;}
         .slider:nth-child(2) {z-index: 4;}
         .slider:nth-child(3) {z-index: 3;}
@@ -52,7 +52,7 @@
 <body class="img07 bg01 Jamsil" >
     <header id="header">
         <h1>Javascript Slider Effect01</h1>
-        <p>슬라이드 이펙트 : 트렌지션 효과</p>
+        <p>sliderEffect : Transition</p>
         <ul>
             <li class="active"><a href="sliderEffect01.html">1</a></li>
             <li><a href="sliderEffect02.html">2</a></li>
@@ -61,35 +61,36 @@
             <li><a href="sliderEffect05.html">5</a></li>
             <li><a href="sliderEffect06.html">6</a></li>
             <li><a href="sliderEffect07.html">7</a></li>
-
         </ul>
+        
     </header>
     <!-- //haeder-->
     <main id="main">
         <div class="slider__wrap">
             <div class="slider__img">
-                <div class="slider"><img src="./img/sliderEffect01-min.jpg" alt="이미지1"></div>
-                <div class="slider"><img src="./img/sliderEffect02-min.jpg" alt="이미지2"></div>
-                <div class="slider"><img src="./img/sliderEffect03-min.jpg" alt="이미지3"></div>
-                <div class="slider"><img src="./img/sliderEffect04-min.jpg" alt="이미지4"></div>
-                <div class="slider"><img src="./img/sliderEffect05-min.jpg" alt="이미지5"></div>
+                <div class="slider"><img src="./img/sliderEffect01-min.jpg" alt="image1"></div>
+                <div class="slider"><img src="./img/sliderEffect02-min.jpg" alt="image2"></div>
+                <div class="slider"><img src="./img/sliderEffect03-min.jpg" alt="image3"></div>
+                <div class="slider"><img src="./img/sliderEffect04-min.jpg" alt="image4"></div>
+                <div class="slider"><img src="./img/sliderEffect05-min.jpg" alt="image5"></div>
             </div>
         </div>
     </main>
     <!-- //main-->
     <footer id="footer">
-            <a href="dlscks0930@naver.com">dlscks0930@naver.com</a>
+            <a href="https://dlscks0930.tistory.com/102">Coding process</a><br>
+            <a href="dlscks0930@google.com">dlscks0930@google.com</a>
     </footer>
     <!-- //footer-->
     <script>
-        //선택자
+        //Selector
         const sliderWrap = document.querySelector(".slider__wrap");
         const sliderImg = document.querySelector(".slider__img");
         const slider = sliderWrap.querySelectorAll(".slider");
 
-        let currentIndex = 0;               //현재 보이는 이미지
-        let sliderCount = slider.length;    //전체 이미지 갯수
-        let sliderInterval = 3000;           //이미지 변경되는 시간&간격
+        let currentIndex = 0;               //Image currently displayed
+        let sliderCount = slider.length;    //Total number of images
+        let sliderInterval = 3000;          //Time and interval between image changes
 
         setInterval (() => {
             // 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 currentIndex
@@ -103,20 +104,20 @@
 
             console.log(currentIndex);
         }, sliderInterval);
-            // slider[0].style.opacity = "0"; //첫번째 이미지를 안보이게
-            // slider[1].style.opacity = "1"; //두번째 이미지를 보이게
+            // slider[0].style.opacity = "0"; //hide first Image
+            // slider[1].style.opacity = "1"; //show second Image
 
-            // slider[1].style.opacity = "0"; //두번째 이미지를 안보이게
-            // slider[2].style.opacity = "1"; //세번째 이미지를 보이게
+            // slider[1].style.opacity = "0"; //hide second Image
+            // slider[2].style.opacity = "1"; //show third Image
 
-            // slider[2].style.opacity = "0"; //세번째 이미지를 안보이게
-            // slider[3].style.opacity = "1"; //네번째 이미지를 보이게
+            // slider[2].style.opacity = "0"; //hide third Image
+            // slider[3].style.opacity = "1"; //show fourth Image
 
-            // slider[3].style.opacity = "0"; //네번째 이미지를 안보이게
-            // slider[4].style.opacity = "1"; //다섯번째 이미지를 보이게
+            // slider[3].style.opacity = "0"; //hide fourth Image
+            // slider[4].style.opacity = "1"; //show Fifth Image
 
-            // slider[4].style.opacity = "0"; //다섯번째 이미지를 안보이게
-            // slider[0].style.opacity = "1"; //첫번째 이미지를 보이게
+            // slider[4].style.opacity = "0"; //hide Fifth Image
+            // slider[0].style.opacity = "1"; //hide first Image
     </script>
 </body>
 </html>

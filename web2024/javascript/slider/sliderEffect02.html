@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02.슬라이드 이펙트</title>
+    <title>SlideEffect 02</title>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/slider.css">
@@ -17,19 +17,19 @@
             align-items: center;
             justify-content: center;
         }
-        .slider__img {      /*이미지가 보이는 영역*/
+        .slider__img {      /*visible area of the image*/
             position: relative;
             width: 800px;
             height: 450px;
             overflow: hidden;
         }
-        .slider__inner {    /*이미지 움직이는 영역*/
+        .slider__inner {    /*moving area of the image*/
             display: flex;
             flex-wrap: wrap;
             width: 4000px;
             height: 450px;
         }
-        .slider {               /*개별 적인 이미지*/
+        .slider {               /*individual image*/
             position: relative;
             width: 800px;
             height: 450px;
@@ -39,7 +39,7 @@
 <body class="img02 bg08 Jamsil" >
     <header id="header">
         <h1>Javascript Slider Effect02</h1>
-        <p>슬라이드 이펙트 : 좌로 움직이기</p>
+        <p>sliderEffectw : Moving to the left</p>
         <ul>
             <li><a href="sliderEffect01.html">1</a></li>
             <li  class="active"><a href="sliderEffect02.html">2</a></li>
@@ -56,30 +56,30 @@
         <div class="slider__wrap">
             <div class="slider__img">
                 <div class="slider__inner">
-                <div class="slider"><img src="./img/sliderEffect06-min.jpg" alt="이미지1"></div>
-                <div class="slider"><img src="./img/sliderEffect07-min.jpg" alt="이미지2"></div>
-                <div class="slider"><img src="./img/sliderEffect08-min.jpg" alt="이미지3"></div>
-                <div class="slider"><img src="./img/sliderEffect09-min.jpg" alt="이미지4"></div>
-                <div class="slider"><img src="./img/sliderEffect10-min.jpg" alt="이미지5"></div>
+                <div class="slider"><img src="./img/sliderEffect06-min.jpg" alt="image1"></div>
+                <div class="slider"><img src="./img/sliderEffect07-min.jpg" alt="image2"></div>
+                <div class="slider"><img src="./img/sliderEffect08-min.jpg" alt="image3"></div>
+                <div class="slider"><img src="./img/sliderEffect09-min.jpg" alt="image4"></div>
+                <div class="slider"><img src="./img/sliderEffect10-min.jpg" alt="image5"></div>
                 </div>
             </div>
         </div>
     </main>
     <!-- //main-->
     <footer id="footer">
-            <a href="dlscks0930@naver.com">dlscks0930@naver.com</a>
+            <a href="dlscks0930@google.com">dlscks0930@google.com</a>
     </footer>
     <!-- //footer-->
     <script>
-        //선택자
+        //Selector
         const sliderWrap = document.querySelector(".slider__wrap");
-        const sliderImg = document.querySelector(".slider__img");       //보여지는 영역
-        const sliderInner = sliderWrap.querySelector(".slider__inner"); //움직이는 영역
-        const slider = sliderWrap.querySelectorAll(".slider");          //개별 이미지
+        const sliderImg = document.querySelector(".slider__img");       //visible area of the image
+        const sliderInner = sliderWrap.querySelector(".slider__inner"); //moving area of the image
+        const slider = sliderWrap.querySelectorAll(".slider");          //individual image
 
-        let currentIndex = 0;               //현재 보이는 이미지
-        let sliderCount = slider.length;    //전체 이미지 갯수
-        let sliderInterval = 3000;           //이미지 변경되는 시간&간격
+        let currentIndex = 0;               //Image currently displayed
+        let sliderCount = slider.length;    //Total number of images
+        let sliderInterval = 3000;           //Time and interval between image changes
     </script>
 
     <!-- javscript -->
@@ -91,7 +91,7 @@
         // sliderInner.style.transform = translateX("-3200px"); //-800 * 4
         // sliderInner.style.transform = translateX("-0px");    //-800 * 0
 
-        //트렌지션 설정
+        //Transition setting
         // sliderInner.style.transition = "all 0.6s"
         // setInterval (() => {
         //     currentIndex = (currentIndex + 1) % sliderCount;    //1 2 3 4 0 1 2 3 4 5
