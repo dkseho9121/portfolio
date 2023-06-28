@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.main {
+    width: 300px;
+    height: 1200px;
+    background-color: #000000;
+}
+.calculator {
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 50px;
+    height: 30px;
+    margin: 2px;
+}
+</style>
+</style>
+<body>
+<div class="main">
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <div class="buttons">
+            <button onclick="clearResult()">AC</button>
+            <button onclick="appendValue('.')">.</button>
+            <button onclick="appendValue('/')">/</button>
+            <button onclick="appendValue('*')">*</button>
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('-')">-</button>
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('+')">+</button>
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendValue('0')">0</button> 
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function appendValue(value) {
+    document.getElementById('result').value += value;
+}
+
+function clearResult() {
+    document.getElementById('result').value = '';
+}
+
+function calculate() {
+    let result = eval(document.getElementById('result').value);
+    document.getElementById('result').value = result;
+}
+</script>
+</html>
