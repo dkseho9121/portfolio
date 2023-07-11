@@ -1,0 +1,164 @@
+body {
+    background: #008080;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-weight: 300;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: url(../img/windows98_logo2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25%;
+}
+
+/* button */
+button {
+    box-sizing: border-box;
+    border: none;
+    background: #c0c0c0;
+    box-shadow: inset -1px -1px #0a0a0a,
+    inset 1px 1px #ffffff, inset -2px -2px #808080,
+    inset 2px 2px #dfdfdf;
+    border-radius: 0;
+    min-width: 75px;
+    min-height: 23px;
+    padding: 0 12px;
+}
+button:hover {
+    background-color: #a7a7a7 !important;
+}
+button:not(:disabled):active {
+    box-shadow: inset -1px -1px #ffffff,
+    inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf,
+    inset 2px 2px #808080;
+    /* transform: scale(0.95); */
+}
+button:focus {
+    outline: 1px dotted #000000;
+    outline-offset: -4px;
+}
+button:disabled {
+    color: #808080;
+    text-shadow: 1px 1px 0 #ffffff;
+}
+button:disabled + label {
+    color: #808080;
+    text-shadow: 1px 1px 0 #ffffff;
+}
+
+
+#toolbar {
+    background: #c0c0c0;
+    height: 35px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* border-top: 2px solid #fff; */
+    box-shadow: 0 -2px #fffdfc, 0 -4px #cce9eb;
+}
+#toolbar .toolbar-start-menu {
+    float: left;
+}
+#toolbar .toolbar-start-menu .start-button {
+    background: url(../img/windows-0.png) no-repeat 2px center/24px;
+    padding-left: 28px;
+    padding-right: 5px;
+    height: 29px;
+    margin: 2px 3px;
+    font-weight: bold;
+    border: 2px solid #7c7c7c;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    color: #000;
+    font-size: 20px;
+}
+
+/* toolbar-start-menu */
+#toolbar .toolbar-start-menu .start-menu-wrapper {
+    border: 2px solid #7c7c7c;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    background: #c0c0c0;
+    position: fixed;
+    left: 0;
+    bottom: 39px;
+    width: 190px;
+    min-height: 400px;
+    display: none;
+}
+#toolbar .toolbar-start-menu .start-menu-wrapper.show {
+    display: block;
+}
+#toolbar .toolbar-start-menu .start-menu-wrapper .start-menu-title {
+    height: 100%;
+    padding: 5px 5px;
+    background: linear-gradient(180deg, #000080, #1084d0);
+    color: #fff;
+    width: 35px;
+    float: left;
+    text-transform: uppercase;
+    position: absolute;
+}
+#toolbar .toolbar-start-menu .start-menu-wrapper .start-menu-title span {
+    transform: rotate(-90deg);
+    transform-origin: left 0;
+    position: absolute;
+    left: 5px;
+    bottom: -10px;
+    font-size: 26px;
+    font-family: 'Dotum';
+}
+#toolbar .toolbar-start-menu .start-menu-wrapper .start-menu-title span strong {
+    font-family: 'Dotum';
+    font-size: 30px;
+}
+#toolbar .toolbar-start-menu .start-menu-wrapper .start-menu {
+    margin-left: 40px;
+}
+
+#toolbar .toolbar-separator {
+    width: 2px;
+    height: 26px;
+    margin-top: 2px;
+    background: #797979;
+    float: left;
+    border-right: 1px solid #fff;
+}
+#toolbar .toolbar-left {
+    float: left;
+    padding: 0 5px;
+}
+#toolbar .toolbar-icon {
+    background: no-repeat center/auto 25px;
+    min-width: 25px;
+    height: 25px;
+    border: none;
+    box-shadow: none;
+    margin: 3px 0;
+}
+#toolbar .toolbar-icon:active {
+    box-shadow: inset -1px -1px #ffffff,
+    inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf,
+    inset 2px 2px #808080;
+}
+
+#toolbar .toolbar-icon.ie {background-image: url(https://win98icons.alexmeub.com/icons/png/msie1-4.png);}
+#toolbar .toolbar-icon.outlook {background-image: url(https://win98icons.alexmeub.com/icons/png/outlook_express-0.png);}
+#toolbar .toolbar-icon.desktop {background-image: url(https://win98icons.alexmeub.com/icons/png/desktop-4.png);}
+#toolbar .toolbar-icon.channels {background-image: url(https://win98icons.alexmeub.com/icons/png/channels-5.png);}
+
+#toolbar .toolbar-right {
+    float: right;
+    margin: 2px 3px;
+    height: 29px;
+    border: 2px solid #7c7c7c;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+}
+#toolbar .toolbar-right .time {
+    padding: 5px 10px 0 10px;
+    color: #000;
+    font-size: 16px;
+}
