@@ -42,12 +42,48 @@
   <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
+<style>
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container h1{
+  margin: 0;
+  font-size: 200px;
+  color: rgba(225,225,225, .01);
+  background-image: url(../firstsite/asset/img/index_header_image.png);
+  background-repeat: repeat;
+  -webkit-background-clip:text;
+  animation: animate 15s ease-in-out infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 1300;
+}
+
+  @keyframes animate {
+    0%, 100% {
+      background-position: left top;
+    }
+    25%{
+      background-position: right bottom;
+     }
+    50% {
+      background-position: left bottom;
+    }
+    75% {
+      background-position: right top;
+    }   
+}
+</style>
 <body>
     <a class="sr-only" href="#content">Skip to main content</a>
     <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
@@ -70,8 +106,9 @@
     </header>
     <div class="bs-header bgs1" id="content">
         <div class="container">
-            <h1>WebSite</h1>
-            <p><a href="https://dlscks0930.tistory.com/100" target="_blank">Blog</a></p>
+            <div class="text-container">
+                <h1>WebSite</h1>
+            </div>
         </div>
     </div>
     <div class="container bs-docs-container">

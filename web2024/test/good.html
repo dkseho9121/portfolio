@@ -1,72 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-.main {
-    width: 300px;
-    height: 1200px;
-    background-color: #000000;
-}
-.calculator {
-    width: 250px;
-    margin: 0 auto;
-    text-align: center;
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Background animation</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
+  </head>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  background-color: #000;
 }
 
-input[type="text"] {
-    width: 100%;
-    margin-bottom: 10px;
+.text-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-button {
-    width: 50px;
-    height: 30px;
-    margin: 2px;
+.text-container h1{
+  margin: 0;
+  font-size: 150px;
+  color: rgba(225,225,225, .01);
+  background-image: url(../firstsite/asset/img/index_header_image.png);
+  background-repeat: repeat;
+  -webkit-background-clip:text;
+  animation: animate 15s ease-in-out infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
 }
-</style>
-</style>
-<body>
-<div class="main">
-    <div class="calculator">
-        <input type="text" id="result" readonly>
-        <div class="buttons">
-            <button onclick="clearResult()">AC</button>
-            <button onclick="appendValue('.')">.</button>
-            <button onclick="appendValue('/')">/</button>
-            <button onclick="appendValue('*')">*</button>
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="appendValue('-')">-</button>
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="appendValue('+')">+</button>
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('3')">3</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="appendValue('0')">0</button> 
-        </div>
+
+  @keyframes animate {
+    0%, 100% {
+      background-position: left top;
+    }
+    25%{
+      background-position: right bottom;
+     }
+    50% {
+      background-position: left bottom;
+    }
+    75% {
+      background-position: right top;
+    }   
+}
+  </style>
+  <body>
+    <div class="text-container">
+      <h1>Urgenism</h1>
     </div>
-</div>
-</body>
-<script>
-    function appendValue(value) {
-    document.getElementById('result').value += value;
-}
-
-function clearResult() {
-    document.getElementById('result').value = '';
-}
-
-function calculate() {
-    let result = eval(document.getElementById('result').value);
-    document.getElementById('result').value = result;
-}
-</script>
-</html>
+  </body>
+  
