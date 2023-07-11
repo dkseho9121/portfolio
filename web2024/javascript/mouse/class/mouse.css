@@ -73,34 +73,6 @@ body.bg09::after {
 body.bg10::after {
     background-color: rgba(184, 41, 41, 0.692);
 }
-.Jamsil{
-    font-family: "TheJamsil";
+.Sans{
+    font-family: "Noto Sans JP";
 }
-.cafe24{
-    font-family: "Cafe24ClassicType";
-}
-.BMJua{
-    font-family: "BMJua";
-}
-.PyeongChang{
-    font-family: "PyeongChang";
-}
-.MabinogiClassic{
-    font-family: "MabinogiClassic";
-}
-.BMDoHyeon{
-    font-family: "BMDoHyeon";
-}
-.JalpullineunOneul{
-    font-family: "JalpullineunOneul";
-}
-.JalpullineunHaru{
-    font-family: "JalpullineunHaru";
-}
-.BaskinRobbins{
-    font-family: "BaskinRobbins";
-}
-.ROKA{
-    font-family: "ROKA";
-}
-

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja-JP">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,6 +57,21 @@
             border-width: 0;
         }
         .mouse__cursor.s6{
+            background-color: rgba(255, 179, 0, 0.455);
+            border-color: rgb(255, 86, 207);
+            transform: scale(2) rotateY(720deg);
+        }
+        .mouse__cursor.s7{
+            background-color: rgba(50, 255, 118, 0.4);
+            border-color: rgb(0, 255, 34);
+            transform: scale(0.5);
+        }
+        .mouse__cursor.s8{
+            background-color: rgba(102, 152, 228, 0.4);
+            border-color: rgb(255, 85, 0);
+            transform: scale(5) skew(-140deg) rotate(10deg);
+        }
+        .mouse__cursor.s9{
             background-color: rgba(50, 255, 118, 0.4);
             border-color: rgb(0, 255, 34);
             transform: scale(0.1);
@@ -93,10 +108,10 @@
         }
     </style>
 </head>
-<body class="img02 bg01 Jamsil" >
+<body class="img02 bg01 Sans" >
     <header id="header">
         <h1>Javascript Mouse Effect01</h1>
-        <p>마우스 이펙트 - 마우스 따라다니기</p>
+        <p>MouseEffect- mouse move</p>
         <ul>
             <li class="active"><a href="mouseEffect01.html">1</a></li>
             <li><a href="mouseEffect02.html">2</a></li>
@@ -110,13 +125,13 @@
         <div class="mouse_wrap">
             <div class="mouse__cursor"></div>
             <div class="mouse__text">
-                <p>The <span class="s1">most capable man</span> is the most <span class="s2">diligent man</span> in <span class="s3">his studies.</span></p>
-                <p><span class="s4">一番 有能な</span>
-                    <span class="s5">人は</span>
-                    <span class="s6">一番</span>
-                    <span class="s7">勉強に</span>
-                    <span class="s8">熱心な</span> 
-                    <span class="s9">人です。</span>
+                <p>Instead of <span class="s1">fearing</span> failure by <span class="s2">challenging yourself,</span> fear <span class="s3">not doing anything.</span></p>
+                <p><span class="s4">チャレンジし</span>
+                    <span class="s5">て失敗</span>を
+                    <span class="s6">怖れるよりも、</span>
+                    <span class="s7">何も</span>
+                    <span class="s8">しないこと</span>を
+                    <span class="s9">怖れろ。</span>
                 </p>
             </div>
         </div>
@@ -135,7 +150,7 @@
     </main>
     <!-- //main-->
     <footer id="footer">
-            <a href="dlscks0930@naver.com">dlscks0930@naver.com</a>
+            <a href="dlscks0930@gmail.com">dlscks0930@gmail.com</a>
     </footer>
     <!-- //footer-->
     <script>
@@ -149,7 +164,7 @@
             document.querySelector(".screenX").innerHTML = event.screenX;
             document.querySelector(".screenY").innerHTML = event.screenY;
         });
-        // 선택자
+        // selector
         const cursor = document.querySelector(".mouse__cursor");
         window.addEventListener("mousemove", function(e){
             cursor.style.left = e.clientX - 25 + "px";
@@ -197,7 +212,7 @@
         //    cursor.classList.remove("s6");
         //});
 
-        //for문으로 출력
+        //for loop
     //    for(let i=1; i<=6; i++){
     //    document.querySelector(".s"+i).addEventListener("mouseover", function(){
     //        cursor.classList.add("s"+i);
@@ -207,7 +222,7 @@
     //    });
     //}
 
-        //forEach로 출력
+        //forEach
     document.querySelectorAll(".mouse__text span").forEach(function(span, num){
         span.addEventListener("mouseover", function(){
             cursor.classList.add("s"+(num+1));

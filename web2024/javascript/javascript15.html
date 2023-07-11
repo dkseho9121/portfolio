@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja-JP">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01.마우스 이펙트</title>
+    <title>Mouse Effect</title>
     <style>
         #top_btn{
         position: fixed;
@@ -44,28 +44,28 @@
         <h1><a href="index.html">javascript</a></h1>
         <nav>
             <ul>
-                <li><a href="javascript01.html">데이터 저장하기</a></li>
-                <li><a href="javascript02.html">데이터 불러오기</a></li>
-                <li><a href="javascript03.html">데이터 실행하기</a></li>
-                <li><a href="javascript04.html">데이터 제어하기</a></li>
+                <li><a href="javascript01.html">データを保存する</a></li>
+                <li><a href="javascript02.html">データを読み込む</a></li>
+                <li><a href="javascript03.html">データを実行する</a></li>
+                <li><a href="javascript04.html">データを制御する</a></li>
             </ul>
             <ul>
-                <li><a href="javascript05.html">문자열 객체</a></li>
-                <li><a href="javascript06.html">배열 객체</a></li>
-                <li><a href="javascript07.html">수학 개체</a></li>
-                <li><a href="javascript08.html">숫자 개체</a></li>
-                <li><a href="javascript09.html">브라우저 객체</a></li>
-                <li><a href="javascript10.html">요소 객체</a></li>
-                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li><a href="javascript05.html">文字列オブジェクト</a></li>
+                <li><a href="javascript06.html">配列オブジェクト</a></li>
+                <li><a href="javascript07.html">数学オブジェクト</a></li>
+                <li><a href="javascript08.html">数値オブジェクト</a></li>
+                <li><a href="javascript09.html">ブラウザオブジェクト</a></li>
+                <li><a href="javascript10.html">要素オブジェクト</a></li>
+                <li><a href="javascript11.html">イベントオブジェクト</a></li>
             </ul>
             <ul class="last">
-                <li><a href="javascript12.html">데이터 효과</a></li>
-                <li><a href="javascript13.html">검색 효과</a></li>
-                <li><a href="javascript14.html">퀴즈 효과</a></li>
-                <li class="active"><a href="javascript15.html">마우스 효과</a></li>
-                <li><a href="javascript16.html">슬라이드 효과</a></li>
-                <li><a href="javascript17.html">패럴랙스 객체</a></li>
-                <li><a href="javascript18.html">게임 효과</a></li>
+                <li><a href="javascript12.html">Data Effect</a></li>
+                <li><a href="javascript13.html">Search Effect</a></li>
+                <li><a href="javascript14.html">Quiz Effect</a></li>
+                <li class="active"><a href="javascript15.html">Mouse Effect</a></li>
+                <li><a href="javascript16.html">Slide Effect</a></li>
+                <li><a href="javascript17.html">Parallax</a></li>
+                <li><a href="javascript18.html">Game Effect</a></li>
             </ul>
         </nav>
     </header>
@@ -74,41 +74,57 @@
     <main id="main">
         <div class="container">
             <div class="main__desc">
-                <h3>01. 마우스 이펙트</h3>
-                <p>마우스를 따라다니는 기본적인 효과입니다.</p>
+                <h3>01. Mouse Effect</h3>
+                <p>マウスに従って移動する基本的な効果です。</p>
                 <ul>
-                    <li>데이터 저장하기 : 변수</li>
-                    <li>데이터 실행하기 : 함수</li>
-                    <li>데이터 불러오기 : for(), forEach()</li>
-                    <li>이벤트 객체 : addEventListener("mousemove")</li>
-                    <li>이벤트 속성 : clientlX, cientY, offsetX, offsetY, pageX, pageY, screenX, screenY</li>
-                    <li>요소 객체 : querySelector(), querySelectorAll(), getAttribute()</li>
+                    <li><a href="javascript01.html" target="_blank">データを保存する ： 変数</a></li>
+                    <li><a href="javascript03.html" target="_blank">データを実行する ： 関数</a></li>
+                    <li><a href="javascript02.html" target="_blank">データを読み込む : for() , forEach()</a></li>
+                    <li><a href="javascript10.html" target="_blank">要素オブジェクト ： メソッド ： querySelector() , querySelectorAll() , getAttribute()</a></li>
+                    <li><a href="javascript11.html" target="_blank">イベントオブジェクト ： メソッド ： addEventListener("mousemove") , addEventListener("mouseover") , addEventListener("mouseout")</a></li>
+                    <li><a href="javascript11.html" target="_blank">イベントオブジェクト ： 属性 ： clientX  clientY , offsetX , offsetY , pageX , pageY , screenX , screenY</a></li>
                 </ul>
-                <a href="mouse/mouseEffect01.html">확인하기</a>
+                <a class="view" href="mouse/mouseEffect01.html" target="_blank">VIEW</a>
 
-                <h3>02. 마우스 이펙트</h3>
-                <p>GSAP 마우스를 따라다니는 기본적인 효과입니다.</p>
+                <h3>02. Mouse Effect</h3>
+                <p>GSAPを利用してマウスに追従する効果です。</p>
                 <ul>
-                    <li>데이터 저장하기 : 변수</li>
-                    <li>데이터 실행하기 : 함수, 화살표 함수</li>
-                    <li>데이터 불러오기 : for(), forEach()</li>
-                    <li>이벤트 객체 : mousemove, mouseenter, mouseleave</li>
-                    <li>요소 객체 : getAttribute()</li>
-                    <li>라이브러리 : GSAP : to()</li>
+                    <li><a href="javascript01.html" target="_blank">データを保存する ： 変数</a></li>
+                    <li><a href="javascript02.html" target="_blank">データをロードする ： for() , forEach()</a></li>
+                    <li><a href="javascript03.html" target="_blank">-データを実行する ： 関数、アロー関数</a></li>
+                    <li><a href="javascript10.html" target="_blank">要素オブジェクト ： メソッド ： querySelector()</a></li>
+                    <li><a href="javascript11.html" target="_blank">イベントオブジェクト ： メソッド ： addEventListener("mouseenter") , addEventListener("mouseleave")</a></li>
+                    <li><a href="https://greensock.com/gsap/" target="_blank">ライブラリ ： GSAP ： to()</a></li>
                 </ul>
-                <a href="mouse/mouseEffect02.html">확인하기</a>
+                <a class="view" href="mouse/mouseEffect02.html" target="_blank">VIEW</a>
 
-                <h3>03. 마우스 이펙트</h3>
-                <p>GSAP 마우스를 따라다니는 기본적인 효과입니다.</p>
+                <h3>03. Mouse Effect</h3>
+                <p>マウスに追従する照明効果です。</p>
                 <ul>
-                    <li>데이터 저장하기 : 변수</li>
-                    <li>데이터 실행하기 : 함수, 화살표 함수</li>
-                    <li>이벤트 객체 : mousemove</li>
-                    <li>요소 객체 : querySelector() , clientWidth, clientHeight,offsetHeight, offsetLeft</li>
-                    <li>라이브러리 : GSAP : to()</li>
-                    <li>CSS : background-attachment: fixed;</li>
+                    <li><a href="javascript01.html" target="_blank">データを保存する : 変数</a></li>
+                    <li><a href="javascript03.html" target="_blank">データを実行する : 関数、アロー関数</a></li>
+                    <li><a href="javascript10.html" target="_blank">要素オブジェクト : 属性 : clientWidth , clientHeight , offsetWidth , offsetHeight</a></li>
+                    <li><a href="javascript10.html" target="_blank">要素オブジェクト : メソッド : querySelector() , getBoundingClientRect()</a></li>
+                    <li><a href="javascript11.html" target="_blank">イベントオブジェクト : メソッド : addEventListener("mousemove")</a></li>
+                    <li><a href="https://greensock.com/gsap/" target="_blank">ライブラリ : GSAP : to()</a></li>
+                    <li><a href="shearchEffecti.html" target="_blank">CSS : background-attachment : fixed;</a></li>
                 </ul>
-                <a href="mouse/mouseEffect03.html">확인하기</a>
+                <a class="view" href="mouse/mouseEffect03.html" target="_blank">VIEW</a>
+
+                <h3>04. Mouse Effect</h3>
+                <p>マウスに追従する照明効果です。</p>
+                <ul>
+                    <li><a href="javascript01.html" target="_blank">データを保存する : 変数</a></li>
+                    <li><a href="javascript03.html" target="_blank">データを実行する : 関数、アロー関数</a></li>
+                    <li><a href="javascript09.html" target="_blank">ブラウザオブジェクト : window.innerWidth , window.innerHeight</a></li>
+                    <li><a href="javascript10.html" target="_blank">要素オブジェクト : 属性 : clientWidth , clientHeight , offsetWidth , offsetHeight</a></li>
+                    <li><a href="javascript10.html" target="_blank">要素オブジェクト : メソッド : querySelector() , getBoundingClientRect()</a></li>
+                    <li><a href="javascript11.html" target="_blank">イベントオブジェクト : メソッド : addEventListener("mousemove")</a></li>
+                    <li><a href="javascript11.html" target="_blank">イベントオブジェクト : 属性 : pageX , pageY</a></li>
+                    <li><a href="shearchEffecti.html" target="_blank">ライブラリ : GSAP : to()</a></li>
+                </ul>
+                <a class="view" href="mouse/mouseEffect04.html" target="_blank">VIEW</a>
+
             <div class="main__sample">
             </div>
         </div>
@@ -137,7 +153,7 @@
 
     <body>
         <footer id="footer">
-            <a href="mailto:dlscks0930@naver.com">dlscks0930@naver.com</a>
+            <a href="mailto:dlscks0930@google.com">dlscks0930@google.com</a>
         </footer>
         <!-- //footer -->
         <script src="assets/js/prism.js"></script>

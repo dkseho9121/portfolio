@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Effect</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body class="pink">
+    <main id="main">
+        <div class="search__wrap">
+            <div class="search__header">
+                <h2 class="title">Portfolio</h2>
+            </div>
+            <div class="search__conts">
+                <hgroup>
+                    <h3>CSS<br>プロパティ検索</h3>
+                    <h4>indexOf() / search()</h4>
+                </hgroup>
+                <div class="search__box">
+                    <label for="search">検索</label>
+                    <input type="text" name="search" id="search" placeholder="CSSのプロパティを検索してください">
+                </div>
+                <div class="search__info">
+                    <div>
+                        CSS属性個数 : <span>0</span>個
+                    </div>
+                </div>
+                <div class="search__list">
+                    <ul>
+                        <li data-name="align-content"><strong>align-content</strong> : コンテンツアイテムの上下関係の整列状態を設定します。</li>
+                        <li data-name="align-items"><strong>align-items</strong> : コンテンツアイテムの内部上下関係の整列状態を設定します。</li>
+                        <li data-name="align-self"><strong>align-self</strong> : 個別のコンテンツアイテムの整列状態を設定します。</li>
+                        <li data-name="all"><strong>all</strong> : 要素の属性を初期化または継承に設定します。</li>
+                        <li data-name="animation"><strong>animation</strong> : アニメーションに関連する属性を一括で設定します。</li>
+                        <li data-name="animation-delay"><strong>animation-delay</strong> : アニメーションの遅延時間を設定します。</li>
+                        <li data-name="animation-direction"><strong>animation-direction</strong> : アニメーションの動きの方向を設定します。</li>
+                        <li data-name="animation-duration"><strong>animation-duration</strong> : アニメーションの動きの時間を設定します。</li>
+                        <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : アニメーションが終了した後の状態を設定します。</li>
+                        <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong> : アニメーションの繰り返し回数を設定します。</li>
+                        <li data-name="animation-name"><strong>animation-name</strong> : アニメーションのキーフレーム名を設定します。</li>
+                        <li data-name="animation-play-state"><strong>animation-play-state</strong> : アニメーションの進行状態を設定します。</li>
+                        <li data-name="animation-timing-function"><strong>animation-timing-function</strong> : アニメーションの動きの速度を設定します。</li>
+                        <li data-name="backdrop-filter"><strong>backdrop-filter</strong> : 背景にグラフィック効果を設定します。</li>
+                        <li data-name="backface-visibility"><strong>backface-visibility</strong> : 要素の裏面を設定します。</li>
+                        <li data-name="background-attachment"><strong>background-attachment</strong> : 背景画像の固定の有無を設定します。</li>
+                        <li data-name="background-blend-mode"><strong>background-blend-mode</strong> : 背景のミックス時の状態を設定します。</li>
+                        <li data-name="background-clip"><strong>background-clip</strong> : 背景画像の位置基準点を設定するための属性です。</li>
+                        <li data-name="background-color"><strong>background-color</strong> : 背景色を設定します。</li>
+                        <li data-name="background-image"><strong>background-image</strong> : 背景画像および背景属性を設定します。</li>
+                        <li data-name="background-origin"><strong>background-origin</strong> : 背景画像の位置基準点を設定するための属性です。</li>
+                        <li data-name="background-position"><strong>background-position</strong> : 背景画像の位置領域を設定します。</li>
+                        <li data-name="background-repeat"><strong>background-repeat</strong> : 背景画像の繰り返しの有無を設定します。</li>
+                        <li data-name="background-size"><strong>background-size</strong> : 背景画像のサイズを設定します。</li>
+                        <li data-name="background"><strong>background</strong> : 背景属性を一括で設定します。</li>
+                        <li data-name="border"><strong>border</strong> : 枠線の属性を一括で設定します。</li>
+                        <li data-name="border-bottom"><strong>border-bottom</strong> : 枠線の下側属性を一括で設定します。</li>
+                        <li data-name="border-bottom-color"><strong>border-bottom-color</strong> : 枠線の下側の色属性を設定します。</li>
+                        <li data-name="border-bottom-left-radius"><strong>border-bottom-left-radius</strong> : 下部の左の角の湾曲を設定します。</li>
+                        <li data-name="border-bottom-right-radius"><strong>border-bottom-right-radius</strong> : 下部の右の角の湾曲を設定します。</li>
+                        <li data-name="border-bottom-style"><strong>border-bottom-style</strong> : 枠線の下側のスタイル属性を設定します。</li>
+                        <li data-name="border-bottom-width"><strong>border-bottom-width</strong> : 枠線の下側の厚さ属性を設定します。</li>
+                        <li data-name="border-collapse"><strong>border-collapse</strong> : テーブルの枠線の分離の有無を設定します。</li>
+                        <li data-name="border-color"><strong>border-color</strong> : 枠線の色属性を設定します。</li>
+                        <li data-name="border-image"><strong>border-image</strong> : 枠線画像の属性を設定します。</li>
+                        <li data-name="border-image-outset"><strong>border-image-outset</strong> : 枠線画像の間隔属性を設定します。</li>
+                        <li data-name="border-image-repeat"><strong>border-image-repeat</strong> : 枠線画像の繰り返し属性を設定します。</li>
+                        <li data-name="border-image-slice"><strong>border-image-slice</strong> : 枠線画像のサイズ属性を設定します。</li>
+                        <li data-name="border-image-source"><strong>border-image-source</strong> : 枠線画像のパス属性を設定します。</li>
+                        <li data-name="border-image-width"><strong>border-image-width</strong> : 枠線画像の厚み属性を設定します。</li>
+                        <li data-name="border-left"><strong>border-left</strong> : 枠線の左側属性を一括で設定します。</li>
+                        <li data-name="border-left-color"><strong>border-left-color</strong> : 枠線の左側の色属性を設定します。</li>
+                        <li data-name="border-left-style"><strong>border-left-style</strong> : 枠線の左側のスタイル属性を設定します。</li>
+                        <li data-name="border-left-width"><strong>border-left-width</strong> : 枠線の左側の厚さ属性を設定します。</li>
+                        <li data-name="border-radius"><strong>border-radius</strong> : 角のカーブを設定します。</li>
+                        <li data-name="border-right"><strong>border-right</strong> : 枠線の右側属性を一括で設定します。</li>
+                        <li data-name="border-right-color"><strong>border-right-color</strong> : 枠線の右側の色属性を設定します。</li>
+                        <li data-name="border-right-style"><strong>border-right-style</strong> : 枠線の右側のスタイル属性を設定します。</li>
+                        <li data-name="border-right-width"><strong>border-right-width</strong> : 枠線の右側の厚さ属性を設定します。</li>
+                        <li data-name="border-spacing"><strong>border-spacing</strong> : テーブルの枠線の間隔を設定します。</li>
+                        <li data-name="border-style"><strong>border-style</strong> : 枠線のスタイル属性を設定します。</li>
+                        <li data-name="border-top"><strong>border-top</strong> : 枠線の上側属性を一括で設定します。</li>
+                        <li data-name="border-top-color"><strong>border-top-color</strong> : 枠線の上側の色属性を設定します。</li>
+                        <li data-name="border-top-left-radius"><strong>border-top-left-radius</strong> : 上部の左の角の湾曲を設定します。</li>
+                        <li data-name="border-top-right-radius"><strong>border-top-right-radius</strong> : 上部の右の角の湾曲を設定します。</li>
+                        <li data-name="border-top-style"><strong>border-top-style</strong> : 枠線の上側のスタイル属性を設定します。</li>
+                        <li data-name="border-top-width"><strong>border-top-width</strong> : 枠線の上側の厚さ属性を設定します。</li>
+                        <li data-name="border-width"><strong>border-width</strong> : 枠線の厚さ属性を設定します。</li>
+                        <li data-name="bottom"><strong>bottom</strong> : 位置要素の下側属性を設定します。</li>
+                        <li data-name="box-decoration-break"><strong>box-decoration-break</strong> : カラムと改行時の枠線およびパディングの方法を設定します。</li>
+                        <li data-name="box-shadow"><strong>box-shadow</strong> : ボックス要素の影を設定します。</li>
+                        <li data-name="box-sizing"><strong>box-sizing</strong> : 要素の大きさにパディングを含めるかどうかを設定します。</li>
+                        <li data-name="caption-side"><strong>caption-side</strong> : 表（table）要素でキャプション（caption）要素が配置される側を指定するために使用されます。</li>
+                        <li data-name="caret-color"><strong>caret-color</strong> : 入力カーソル（caret）の色を指定します。</li>
+                        <li data-name="clear"><strong>clear</strong> : 要素の左右および上下のマージンに対するフローティング要素の影響を消去または残すかどうかを設定します。</li>
+                        <li data-name="clip"><strong>clip</strong> : 要素の内容をクリップする範囲を指定します。</li>
+                        <li data-name="color"><strong>color</strong> : テキストの色を指定します。</li>
+                        <li data-name="column-count"><strong>column-count</strong> : 多段（column）レイアウトでコンテナの列（column）数を指定します。</li>
+                        <li data-name="column-fill"><strong>column-fill</strong> : 多段レイアウトで最後の列を埋める方法を指定します。</li>
+                        <li data-name="column-gap"><strong>column-gap</strong> : 多段レイアウトでカラム（column）の間隔を指定します。</li>
+                        <li data-name="column-rule"><strong>column-rule</strong> : 多段レイアウトでカラム間に配置される線のスタイルを設定します。</li>
+                        <li data-name="column-rule-color"><strong>column-rule-color</strong> : 多段レイアウトでカラム間に配置される線の色を設定します。</li>
+                        <li data-name="column-rule-style"><strong>column-rule-style</strong> : 多段レイアウトでカラム間に配置される線のスタイルを設定します。</li>
+                        <li data-name="column-rule-width"><strong>column-rule-width</strong> : 多段レイアウトでカラム間に配置される線の幅を設定します。</li>
+                        <li data-name="column-span"><strong>column-span</strong> : 多段レイアウトで要素が複数の列（column）にまたがるかどうかを指定します。</li>
+                        <li data-name="column-width"><strong>column-width</strong> : 多段レイアウトで各列（column）の幅を指定します。</li>
+                        <li data-name="columns"><strong>columns</strong> : 多段レイアウトでコンテナの列（column）数と各列の幅を指定します。</li>
+                        <li data-name="content"><strong>content</strong> : 疑似要素（pseudo-element）でコンテンツを定義します。</li>
+                        <li data-name="counter-increment"><strong>counter-increment</strong> : リスト（list）やカウンター（counter）で数字を増やす方法を指定します。</li>
+                        <li data-name="counter-reset"><strong>counter-reset</strong> : リスト（list）やカウンター（counter）で数字を初期化する方法を指定します。</li>
+                        <li data-name="cursor"><strong>cursor</strong> : マウスカーソルの形を指定します。</li>
+                        <li data-name="display"><strong>display</strong> : 要素が画面にどのように表示されるかを指定します。</li>
+                        <li data-name="empty-cells"><strong>empty-cells</strong> : 表（table）でセル（cell）が空の場合の表示方法を指定します。</li>
+                        <li data-name="filter"><strong>filter</strong> : 表（table）でセル（cell）が空の場合の表示方法を指定します。</li>
+                        <li data-name="flex"><strong>flex</strong> : 要素を柔軟な（flexible）ボックスモデル（flexbox）に設定します。</li>
+                        <li data-name="flex-basis"><strong>flex-basis</strong> : flexitemの初期サイズを指定します。この属性は、flexshorthand属性でflexitemの初期サイズを設定する場合にも使用されます。</li>
+                        <li data-name="flex-flow"><strong>flex-flow</strong> : flex-direction属性とflex-wrap属性を一緒に指定するショートカット属性です。</li>
+                        <li data-name="flex-direction"><strong>flex-direction</strong> : flex container内でflex itemの配置方向を指定する属性です。</li>
+                        <li data-name="flex-grow"><strong>flex-grow</strong> : flex itemのサイズを増やすために使用される属性です。</li>
+                        <li data-name="flex-shrink"><strong>flex-shrink</strong> : flex itemのサイズを減らすために使用する属性です。</li>
+                        <li data-name="flex-wrap"><strong>flex-wrap</strong> : flex container内でflex itemが複数行に配置されるかどうかを指定する属性です。</li>
+                        <li data-name="float"><strong>float</strong> : 要素を左右方向に浮かせる属性です。</li>
+                        <li data-name="font"><strong>font</strong> : フォントに関連する属性を一括で指定するショートカット属性です。</li>
+                        <li data-name="font-family"><strong>font-family</strong> : フォントの種類を設定します。</li>
+                        <li data-name="font-size"><strong>font-size</strong> : フォントサイズ属性を設定します。</li>
+                        <li data-name="font-size-adjust"><strong>font-size-adjust</strong> : 小文字を基準にフォントサイズを設定します。</li>
+                        <li data-name="font-stretch"><strong>font-stretch</strong> : CSSの属性のうちのひとつで、フォントの幅を指定する属性です。</li>
+                        <li data-name="font-style"><strong>font-style</strong> : フォントのスタイルを設定します。</li>
+                        <li data-name="font-variant"><strong>font-variant</strong> : フォントの変形形態を一括で設定します。</li>
+                        <li data-name="font-variant-numeric"><strong>font-variant-numeric</strong> : 数字に対するフォントのグリフ（表示形式）を設定します。</li>
+                        <li data-name="font-variant-ligatures"><strong>font-variant-ligatures</strong> : フォントグリフが重なるときに設定します。</li>
+                        <li data-name="font-variant-emoji"><strong>font-variant-emoji</strong> : font-variant-emoji属性は絵文字フォントグリフを設定します。</li>
+                        <li data-name="font-variant-east-asian"><strong>font-variant-east-asian</strong> : アジア言語のフォントグリフを設定します</li>
+                        <li data-name="font-variant-caps"><strong>font-variant-caps</strong> : 小文字/大文字に対するフォントグリフを設定します。</li>
+                        <li data-name="font-variant-alternates"><strong>font-variant-alternates</strong> : フォントグリフの代替形態を設定します。</li>
+                        <li data-name="font-variant-position"><strong>font-variant-position</strong> : フォントグリフの位置を設定します。</li>
+                        <li data-name="font-variation-settings"><strong>font-variation-settings</strong> : 可変フォントを設定します。</li>
+                        <li data-name="font-weight"><strong>font-weight</strong> : フォントの太さを設定します。</li>
+                        <li data-name="grid"><strong>grid</strong> : CSSグリッドレイアウトを作成する属性で、要素を行(row)と列(column)のグリッドに配置します。</li>
+                        <li data-name="grid-area"><strong>grid-area</strong> : CSSグリッドレイアウトでアイテムの位置とサイズを指定するショートカット属性です。</li>
+                        <li data-name="grid-auto-columns"><strong>grid-auto-columns</strong> : グリッドコンテナに対する自動生成された列(column)のサイズを指定します。</li>
+                        <li data-name="grid-auto-flow"><strong>grid-auto-flow</strong> : グリッドアイテムが配置される方向を指定します。</li>
+                        <li data-name="grid-auto-rows"><strong>grid-auto-rows</strong> : グリッドコンテナに対する自動生成された行(row)のサイズを指定します。</li>
+                        <li data-name="grid-column"><strong>grid-column</strong> : グリッドアイテムが占める列(column)の範囲を指定するショートカット属性です。</li>
+                        <li data-name="grid-column-end"><strong>grid-column-end</strong> : グリッドアイテムの終了列(column)位置を指定します。</li>
+                        <li data-name="grid-column-gap"><strong>grid-column-gap</strong> : グリッドアイテム間の列(column)の間隔を指定します。</li>
+                        <li data-name="grid-column-start"><strong>grid-column-start</strong> : グリッドアイテムの開始列(column)位置を指定します。</li>
+                        <li data-name="grid-gap"><strong>grid-gap</strong> : グリッドアイテム間の行(row)と列(column)間隔を指定するショートカット属性です。</li>
+                        <li data-name="grid-row"><strong>grid-row</strong> : グリッドアイテムが占める行(row)の範囲を指定するショートカット属性です。</li>
+                        <li data-name="grid-row-end"><strong>grid-row-end</strong> : グリッドアイテムの終了行(row)位置を指定します。</li>
+                        <li data-name="grid-row-gap"><strong>grid-row-gap</strong> : グリッドアイテム間の行(row)の間隔を指定します。</li>
+                        <li data-name="grid-row-start"><strong>grid-row-start</strong> : グリッドアイムの開始行(row)位置を指定します。</li>
+                        <li data-name="grid-template"><strong>grid-template</strong> : グリッドの行(row)と列(column)のサイズと間隔を指定するショートカット属性です。</li>
+                        <li data-name="grid-template-areas"><strong>grid-template-areas</strong> : グリッドレイアウトの領域名と位置を指定します。</li>
+                        <li data-name="grid-template-columns"><strong>grid-template-columns</strong> : グリッドの列(column)のサイズと数を指定します。</li>
+                        <li data-name="grid-template-rows"><strong>grid-template-rows</strong> : グリッドの行(row)のサイズと数を指定します。</li>
+                        <li data-name="hanging-punctuation"><strong>hanging-punctuation</strong> : 句読点の位置を調整する属性です。句読点が現在行の左側または右側にかけるように指定できます。</li>
+                        <li data-name="height"><strong>height</strong> : 要素の縦サイズを設定します。</li>
+                        <li data-name="hyphens"><strong>hyphens</strong> : テキストの改行についてハイフンでつなぐ方法を設定します。</li>
+                        <li data-name="isolation"><strong>isolation</strong> : 要素が子要素と隔離されているかどうかを示す属性です。隔離された要素は子要素と互いのレイアウトに影響を与えません。</li>
+                        <li data-name="justify-content"><strong>justify-content</strong> : フレックスボックスまたはグリッドのアイテムを水平方向に整列する方法を指定します。</li>
+                        <li data-name="left"><strong>left</strong> : 要素の左位置を指定します。</li>
+                        <li data-name="letter-spacing"><strong>letter-spacing</strong> : 文字間の間隔を指定します。</li>
+                        <li data-name="line-height"><strong>line-height</strong> : 行間隔を指定します。</li>
+                        <li data-name="list-style"><strong>list-style</strong> : リストのマーカー（記号）形状、位置、イメージなどを指定するショートカット属性です。</li>
+                        <li data-name="list-style-image"><strong>list-style-image</strong> : リストのマーカー（記号）として使用する画像を指定します。</li>
+                        <li data-name="list-style-position"><strong>list-style-position</strong> : リストマーカー（記号）の位置を指定します。</li>
+                        <li data-name="list-style-type"><strong>list-style-type</strong> : リストマーカーのタイプを指定する属性です。 disc, circle, square,decimal,lower-roman, upper-roman, lower-alpha, upper-alphaなどの値があります。 </li>
+                        <li data-name="margin"><strong>margin</strong> : 要素の4方向(margin-top, margin-right,margin-bottom,margin-left)のマージン値を一度に指定する属性です。</li>
+                        <li data-name="margin-bottom"><strong>margin-bottom</strong> : 要素の下側マージン値を指定する属性です。</li>
+                        <li data-name="margin-left"><strong>margin-left</strong> : 要素の左側マージン値を指定する属性です。</li>
+                        <li data-name="margin-right"><strong>margin-right</strong> : 要素の右側マージン値を指定する属性です。</li>
+                        <li data-name="margin-top"><strong>margin-top</strong> : 要素の上側マージン値を指定する属性です。</li>
+                        <li data-name="max-height"><strong>max-height</strong> : 要素の最大縦サイズを設定します。</li>
+                        <li data-name="max-width"><strong>max-width</strong> : 要素の最大横サイズを設定します。</li>
+                        <li data-name="min-height"><strong>min-height</strong> : 最小縦サイズを設定します。</li>
+                        <li data-name="min-width"><strong>min-width</strong> : 最小横サイズを設定します。</li>
+                        <li data-name="mix-blend-mode"><strong>mix-blend-mode</strong> : 要素の背景色と一緒に組み合わされるカラーブレンディングモードを指定する属性です。</li>
+                        <li data-name="object-fit"><strong>object-fit</strong> : 画像またはビデオ要素のサイズと画面のサイズが異なる場合、要素をどのように合わせるかを指定する属性です。contain,cover, fill, none, scale-downなどの値があります。</li>
+                        <li data-name="object-position"><strong>object-position</strong> : 画像またはビデオ要素の位置を指定する属性です。</li>
+                        <li data-name="opacity"><strong>opacity</strong> : 要素の透明度を指定する属性です。 0が完全透明で、1が完全不透明を意味します。</li>
+                        <li data-name="order"><strong>order</strong> : flexboxで要素の順序を指定する属性です。 0がデフォルト値であり、負の値と正の値を指定できます。</li>
+                        <li data-name="outline"><strong>outline</strong> : 要素周囲に輪郭線を指定する属性で、outline-style,outline-width,outline-color属性を一度に指定できるショートカット属性です。</li>
+                        <li data-name="outline-color"><strong>outline-color</strong> : 輪郭線の色を指定する属性です。</li>
+                        <li data-name="outline-offset"><strong>outline-offset</strong> : 輪郭線と要素の間隔を指定する属性です。</li>
+                        <li data-name="outline-style"><strong>outline-style</strong> : 輪郭線のスタイルを指定する属性です。solid、dotted、dashed、doubleなどの値があります。</li>
+                        <li data-name="outline-width"><strong>outline-width</strong> : 輪郭線の幅を指定する属性です。medium, thin, thickなどの相対的な値や絶対的な値を使用できます。</li>
+                        <li data-name="overflow"><strong>overflow</strong> : 要素内部のコンテンツが要素のサイズより大きい場合、どのように処理するかを指定する属性です。visible, hidden,scroll, autoなどの値があります。</li>
+                        <li data-name="overflow-x"><strong>overflow-x</strong> : 要素内部の横方向のコンテンツが要素の横サイズより大きい場合、どのように処理するかを指定する属性です。</li>
+                        <li data-name="overflow-y"><strong>overflow-y</strong> : 要素内部の縦方向のコンテンツが要素の縦サイズより大きい場合、どのように処理するかを指定する属性です。</li>
+                        <li data-name="overflow-wrap"><strong>overflow-wrap</strong> : 改行するテキストの無意味な改行を設定します。</li>
+                        <li data-name="padding"><strong>padding</strong> : 要素のコンタンツと枠線の間隔を設定します。</li>
+                        <li data-name="padding-bottom"><strong>padding-bottom</strong> : 要素の下側のパディング(スペース)を設定します。</li>
+                        <li data-name="padding-left"><strong>padding-left</strong> : 要素の左側のパディング(スペース)を設定します。</li>
+                        <li data-name="padding-right"><strong>padding-right</strong> : 要素の右側のパディング(スペース)を設定します。</li>
+                        <li data-name="padding-top"><strong>padding-top</strong> : 要素の上側のパディング(スペース)を設定します。</li>
+                        <li data-name="page-break-after"><strong>page-break-after</strong> : 印刷文書でページの区切りの後、現在の要素の次にページを開始します。</li>
+                        <li data-name="page-break-before"><strong>page-break-before</strong> : 印刷文書でページの区切りの前に、現在の要素の前にページを開始します。</li>
+                        <li data-name="page-break-inside"><strong>page-break-inside</strong> : 印刷文書で現在の要素内でページを分割できないように指定します。</li>
+                        <li data-name="perspective"><strong>perspective</strong> : 3D変換のための遠近効果の距離を設定します。</li>
+                        <li data-name="perspective-origin"><strong>perspective-origin</strong> : 3D変換のための遠近効果の原点を設定します。</li>
+                        <li data-name="pointer-events"><strong>pointer-events</strong> : 要素に対するマウスイベントの処理を有効化または無効化します。</li>
+                        <li data-name="position"><strong>position</strong> : 要素の位置指定方法を設定します。</li>
+                        <li data-name="quotes"><strong>quotes</strong> : 引用文の区切り記号の引用符を設します。</li>
+                        <li data-name="resize"><strong>resize</strong> : 要素のサイズ変更の可否を指定します。</li>
+                        <li data-name="right"><strong>right</strong> : 要素の右位置を設定します。</li>
+                        <li data-name="tab-size"><strong>tab-size</strong> : タブ文字の幅を指定します。</li>
+                        <li data-name="table-layout"><strong>table-layout</strong> : テーブルの幅を設定するアルゴリズムを指定します。</li>
+                        <li data-name="text-align"><strong>text-align</strong> : テキストの整列方法を設定します。</li>
+                        <li data-name="text-align-last"><strong>text-align-last</strong> : 段落の最後のテキストの整列方法を設定します。</li>
+                        <li data-name="text-decoration"><strong>text-decoration</strong> : テキストに対する線の属性（下線、打ち消し線など）を設定します。</li>
+                        <li data-name="text-decoration-color"><strong>text-decoration-color</strong> : 文字の線の色属性を設定します。</li>
+                        <li data-name="text-decoration-line"><strong>text-decoration-line</strong> : 文字の線の位置属性を設定します。</li>
+                        <li data-name="text-decoration-style"><strong>text-decoration-style</strong> : テキストに対する線の表示（下線、取消線など）のスタイルを設定します。</li>
+                        <li data-name="text-decoration-skip-ink"><strong>text-decoration-skip-ink</strong> : アンダーラインの文字の重なりを設定します。</li>
+                        <li data-name="text-decoration-thickness"><strong>text-decoration-thickness</strong> : 文字の線の太さ属性を設定します。</li>
+                        <li data-name="text-emphasis-color"><strong>text-emphasis-color</strong> : 強調表示の色を設定します。</li>
+                        <li data-name="text-emphasis-position"><strong>text-emphasis-position</strong> : テキストに強調表示の位置を設定します。</li>
+                        <li data-name="text-emphasis-style"><strong>text-emphasis-style</strong> : テキストに強調表示のスタイルを設定します。</li>
+                        <li data-name="text-emphasis"><strong>text-emphasis</strong> : テキストに強調表示を一括設定します。</li>
+                        <li data-name="text-indent"><strong>text-indent</strong> : 段落の字下げ属性を設定します。</li>
+                        <li data-name="text-justify"><strong>text-justify</strong> : 両側揃えが行われた場合の整列方法を設定します。</li>
+                        <li data-name="text-overflow"><strong>text-overflow</strong> : テキストが領域を超えた場合の属性を設定します。</li>
+                        <li data-name="text-shadow"><strong>text-shadow</strong> : テキストの影を設定します。</li>
+                        <li data-name="text-transform"><strong>text-transform</strong> : テキストの大文字小文字変換を指定します。</li>
+                        <li data-name="text-underline-offset"><strong>text-underline-offset</strong> : アンダーラインのオフセット値を設定します。</li>
+                        <li data-name="text-underline-position"><strong>text-underline-position</strong> : アンダーラインの位置を設定します。</li>
+                        <li data-name="top"><strong>top</strong> : 要素の上側エッジ(top)位置を設定します。</li>
+                        <li data-name="transform"><strong>transform</strong> : 要素に2D、3D変換（回転、移動、サイズ変更など）を適用します。</li>
+                        <li data-name="transform-origin"><strong>transform-origin</strong> : 要素の変換の基準点(origin) を設定します。</li>
+                        <li data-name="transform-style"><strong>transform-style</strong> : 3D変換を使用する際に子要素を3D空間に配置する方法を指定します。</li>
+                        <li data-name="transition"><strong>transition</strong> :要素に対する遷移効果を指定します。複数の属性の中で一部だけ遷移を適用する場合はtransition-propertyを使用します。</li>
+                        <li data-name="transition-delay"><strong>transition-delay</strong> : 遷移効果が開始するタイミングを遅らせます。</li>
+                        <li data-name="transition-duration"><strong>transition-duration</strong> : 遷移効果の持続時間を設定します。</li>
+                        <li data-name="transition-property"><strong>transition-property</strong> : 遷移効果を適用する属性を指定します。</li>
+                        <li data-name="transition-timing-function"><strong>transition-timing-function</strong> : 遷移効果のタイミング関数を設定します。</li>
+                        <li data-name="unicode-bidi"><strong>unicode-bidi</strong> : テキストの言語の方向を設定します。</li>
+                        <li data-name="user-select"><strong>user-select</strong> : 要素内でのユーザーのテキスト選択を許可するかどうかを指定します。</li>
+                        <li data-name="vertical-align"><strong>vertical-align</strong> : インライン要素の垂直方向の整列方法を設定します。</li>
+                        <li data-name="visibility"><strong>visibility</strong> : 要素が表示されるかどうかを設定します。hidden値で設定されると要素は表示されませんが、スペースは占有します。</li>
+                        <li data-name="white-space"><strong>white-space</strong> : 改行および空白を設定します。</li>
+                        <li data-name="width"><strong>width</strong> : 要素の横幅を設定します。</li>
+                        <li data-name="word-break"><strong>word-break</strong> : 改行する場合、単語を基準に設定します。</li>
+                        <li data-name="word-spacing"><strong>word-spacing</strong> : 単語間の間隔を設定します。</li>
+                        <li data-name="word-wrap"><strong>word-wrap</strong> : 要素の幅が小さいため一に収まらない単語の改行処理方法を指定します。</li>
+                        <li data-name="z-index"><strong>z-index</strong> : 要素が重なる順序(z軸方向)を設定します。値が大きいほど上に重なります。値が負の場合、他の要素よりも下に重なります。</li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <a href="dlscks0930@google.com">dlscks0930@google.com</a>
+    </footer>
+
+    <script>
+        // selector
+        const searchBox = document.querySelector(".search__box input");     // search
+        const serchList = document.querySelectorAll(".search__list li");    // list
+        document.querySelector(".search__info span").textContent = serchList.length;
+        // search
+        searchBox.addEventListener("keyup", () => {
+            const userWord = searchBox.value;   // Keywords entered by the user
+            // forEach(Value (Tag), Index Number, Array)
+            serchList.forEach(el => {
+                // const cssName = el.getAttribute("data-name");
+                const cssName = el.dataset.name;
+                if(cssName.indexOf(userWord)){
+                    // When I have data
+                    el.classList.add("hide");
+                } else {
+                    // When I don't have data
+                    el.classList.remove("hide");
+                }
+            })
+        });
+    </script>
+</body>
+</html>

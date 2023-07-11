@@ -126,21 +126,24 @@
     font-size: 8vw;
     text-shadow: 0.4vw 0.4vw 0px #000;
     -webkit-text-stroke: 0.2vw rgb(0, 0, 0);
+    font-family:'CookieRun';
 }
 .search__conts hgroup h4 {
     color: #AF6EE3;
     font-size: 6vw;
     text-shadow: 0.4vw 0.4vw 0px #000;
     -webkit-text-stroke: 0.2vw rgb(0, 0, 0);
+    font-family:'CookieRun';
 }
 .search__box {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 17px;
     text-align: center;
     padding: 3vw 2vw;
 }
 .search__box label {
-    padding: 1w;
+    padding: 1vw;
     font-size: 2vw;
-    font-family: 'CookieRun';
 }
 .search__box input{
     border: 0.3vw solid #000;
@@ -155,6 +158,8 @@
     padding: 2vw;
 }
 .search__list li {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 17px;
     list-style: none;
     line-height: 2;
 }

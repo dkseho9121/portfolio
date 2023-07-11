@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja-JP">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02. 마우스 이펙트</title>
+    <title>02. mouse Effect</title>
 
     <link rel="stylesheet" href="class/reset.css">
     <link rel="stylesheet" href="class/mouse.css">
@@ -64,8 +64,8 @@
             transform: scale(0);
         }
         .mouse__cursor2.active {
-            transform: scale(5);
-            background-color: rgba(255, 166, 0, 0.6);
+            transform: scale(5) rotateX(545deg);
+            background-color: rgba(247, 215, 101, 0.6);
         }
         .mouse__cursor.active2 {
             
@@ -73,25 +73,23 @@
             background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
         }
         .mouse__cursor.active3 {
-            transform: scale(15) rotateX(545deg);
+            transform: scale(15) rotateY(545deg);
             background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
         }
 
     </style>
 </head>
-<body class="img04 bg07 Jamsil" >
+<body class="img04 bg07 Sans" >
     <header id="header">
         <div class="mouse__header">
-        <h1>Javascript Mouse Effect02</h1>
-        <p>마우스 이펙트 - 마우스 따라다니기</p>
+            <h1>Javascript Mouse Effect02</h1>
+            <p>MouseEffect- mouse move</p>
         
         <ul>
             <li><a href="mouseEffect01.html">1</a></li>
             <li class="active"><a href="mouseEffect02.html">2</a></li>
             <li><a href="mouseEffect03.html">3</a></li>
-            <li><a href="mouseEffect01.html">4</a></li>
-            <li><a href="mouseEffect01.html">5</a></li>
-            <li><a href="mouseEffect01.html">6</a></li>
+            <li><a href="mouseEffect04.html">4</a></li>
 
         </ul>
     </div>
@@ -103,21 +101,21 @@
                 <div class="mouse__cursor"></div>
                 <div class="mouse__cursor2"></div>
                 <div class="mouse__text">
-                    <p>They must <span>often change</span> who would be constant in happiness or wisdom</p>
-                    <p>늘 행복하고 지혜로운 사람이 되려면 <span>자주 변해야 한다</span></p>
+                    <p>My pace may be <span>slow</span>, but I never turn back on the path I have walked.</p>
+                    <p>私の歩みは遅いが、<span>歩んだ道を引き返すことはない。</span></p>
                 </div>
             </div>
     </main>
     <!-- //main-->
     <footer id="footer">
         <div class="mouse__footer">
-        <a href="dlscks0930@naver.com">dlscks0930@naver.com</a>
+        <a href="dlscks0930@google.com">dlscks0930@google.com</a>
         </div>
     </footer>
     <!-- //footer-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script>
-        // 선택자
+        // selector
         const cursor = document.querySelector(".mouse__cursor");
         const cursor2 = document.querySelector(".mouse__cursor2");
     
